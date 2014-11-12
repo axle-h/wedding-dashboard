@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axh.Wedding.Application", "Axh.Wedding.Application\Axh.Wedding.Application.csproj", "{BC8A74E1-2663-4958-BF97-7DC85AD2C391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axh.Wedding.Mvc", "Axh.Wedding.Mvc\Axh.Wedding.Mvc.csproj", "{3F6AA85A-BB2D-44B1-914C-54C87B345020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axh.Wedding.DependencyInjection", "Axh.Wedding.DependencyInjection\Axh.Wedding.DependencyInjection.csproj", "{CB2D6608-9033-4419-A633-1A173131FEE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axh.Wedding.Application.Contracts", "Axh.Wedding.Application.Contracts\Axh.Wedding.Application.Contracts.csproj", "{AAD1C83A-9371-40C7-808A-5E53FE3DB584}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axh.Wedding.Application.ViewModels", "Axh.Wedding.Application.ViewModels\Axh.Wedding.Application.ViewModels.csproj", "{277067D4-C8D4-485F-A746-EFDE9B5A0996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axh.Wedding.Application.Resources", "Axh.Wedding.Application.Resources\Axh.Wedding.Application.Resources.csproj", "{6E6E922A-2FA6-45E1-8C51-DBF6C7B86D67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC8A74E1-2663-4958-BF97-7DC85AD2C391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8A74E1-2663-4958-BF97-7DC85AD2C391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8A74E1-2663-4958-BF97-7DC85AD2C391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8A74E1-2663-4958-BF97-7DC85AD2C391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F6AA85A-BB2D-44B1-914C-54C87B345020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F6AA85A-BB2D-44B1-914C-54C87B345020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F6AA85A-BB2D-44B1-914C-54C87B345020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F6AA85A-BB2D-44B1-914C-54C87B345020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB2D6608-9033-4419-A633-1A173131FEE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB2D6608-9033-4419-A633-1A173131FEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB2D6608-9033-4419-A633-1A173131FEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB2D6608-9033-4419-A633-1A173131FEE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD1C83A-9371-40C7-808A-5E53FE3DB584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD1C83A-9371-40C7-808A-5E53FE3DB584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD1C83A-9371-40C7-808A-5E53FE3DB584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD1C83A-9371-40C7-808A-5E53FE3DB584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{277067D4-C8D4-485F-A746-EFDE9B5A0996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277067D4-C8D4-485F-A746-EFDE9B5A0996}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277067D4-C8D4-485F-A746-EFDE9B5A0996}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277067D4-C8D4-485F-A746-EFDE9B5A0996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6E922A-2FA6-45E1-8C51-DBF6C7B86D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6E922A-2FA6-45E1-8C51-DBF6C7B86D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6E922A-2FA6-45E1-8C51-DBF6C7B86D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6E922A-2FA6-45E1-8C51-DBF6C7B86D67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
