@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\ApplicationConfigModule.cs" />
     <Compile Include="Application\ApplicationFactoriesModule.cs" />
     <Compile Include="Application\ApplicationServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +54,10 @@
     <ProjectReference Include="..\Axh.Wedding.Application.Contracts\Axh.Wedding.Application.Contracts.csproj">
       <Project>{aad1c83a-9371-40c7-808a-5e53fe3db584}</Project>
       <Name>Axh.Wedding.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Wedding.Application.ViewModels\Axh.Wedding.Application.ViewModels.csproj">
+      <Project>{277067d4-c8d4-485f-a746-efde9b5a0996}</Project>
+      <Name>Axh.Wedding.Application.ViewModels</Name>
     </ProjectReference>
     <ProjectReference Include="..\Axh.Wedding.Application\Axh.Wedding.Application.csproj">
       <Project>{bc8a74e1-2663-4958-bf97-7dc85ad2c391}</Project>

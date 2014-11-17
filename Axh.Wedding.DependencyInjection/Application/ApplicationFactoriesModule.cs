@@ -1,7 +1,11 @@
 ﻿namespace Axh.Wedding.DependencyInjection.Application
 {
+    using Axh.Wedding.Application.Contracts.ViewModelFactories;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Home;
+    using Axh.Wedding.Application.Contracts.ViewModelFactories.Rsvp;
+    using Axh.Wedding.Application.ViewModelFactories;
     using Axh.Wedding.Application.ViewModelFactories.Home;
+    using Axh.Wedding.Application.ViewModelFactories.Rsvp;
 
     using Ninject.Modules;
 
@@ -12,7 +16,9 @@
         /// </summary>
         public override void Load()
         {
-            this.Bind<IHomePageViewModelFactory>().To<HomePageViewModelFactory>();
+            this.Bind<IPageViewModelFactory>().To<PageViewModelFactory>();
+            this.Bind<IStaticContentViewModelFactory>().To<StaticContentViewModelFactory>();
+            this.Bind<IRsvpViewModelFactory>().To<RsvpViewModelFactory>();
         }
     }
 }

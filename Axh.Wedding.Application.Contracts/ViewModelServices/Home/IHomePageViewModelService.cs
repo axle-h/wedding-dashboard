@@ -5,5 +5,9 @@ namespace Axh.Wedding.Application.Contracts.ViewModelServices.Home
     public interface IHomePageViewModelService
     {
         HomePageViewModel GetHomePageViewModel();
+
+        InformationPageViewModel GetInformationPageViewModel();
+
+        ContactPageViewModel GetContactPageViewModel();
     }
 }

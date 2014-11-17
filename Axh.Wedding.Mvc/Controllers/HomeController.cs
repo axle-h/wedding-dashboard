@@ -13,10 +13,21 @@
             this.homePageViewModelService = homePageViewModelService;
         }
 
-        // GET: Home
         public virtual ActionResult Index()
         {
             var model = homePageViewModelService.GetHomePageViewModel();
+            return View(model);
+        }
+
+        public virtual ActionResult Information()
+        {
+            var model = homePageViewModelService.GetInformationPageViewModel();
+            return View(model);
+        }
+
+        public virtual ActionResult Contact()
+        {
+            var model = homePageViewModelService.GetContactPageViewModel();
             return View(model);
         }
     }

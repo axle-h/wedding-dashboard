@@ -2,11 +2,10 @@
 {
     public abstract class PageViewModelBase
     {
-        protected PageViewModelBase(string title)
-        {
-            this.Title = title;
-        }
+        public string PageTitle { get; set; }
 
-        public string Title { get; set; }
+        public string ApplicationTitle { get; set; }
+
+        public string ApplicationSubTitle { get; set; }
     }
 }

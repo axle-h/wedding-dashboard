@@ -61,11 +61,38 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string ContactPage_Title {
+            get {
+                return ResourceManager.GetString("ContactPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string HomePage_Title {
             get {
                 return ResourceManager.GetString("HomePage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        public static string InformationPage_Title {
+            get {
+                return ResourceManager.GetString("InformationPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RSVP.
+        /// </summary>
+        public static string RsvpPage_Title {
+            get {
+                return ResourceManager.GetString("RsvpPage_Title", resourceCulture);
             }
         }
     }

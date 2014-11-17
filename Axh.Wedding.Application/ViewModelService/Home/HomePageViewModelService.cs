@@ -6,16 +6,26 @@
 
     public class HomePageViewModelService : IHomePageViewModelService
     {
-        private readonly IHomePageViewModelFactory homePageViewModelFactory;
+        private readonly IStaticContentViewModelFactory staticContentViewModelFactory;
 
-        public HomePageViewModelService(IHomePageViewModelFactory homePageViewModelFactory)
+        public HomePageViewModelService(IStaticContentViewModelFactory staticContentViewModelFactory)
         {
-            this.homePageViewModelFactory = homePageViewModelFactory;
+            this.staticContentViewModelFactory = staticContentViewModelFactory;
         }
 
         public HomePageViewModel GetHomePageViewModel()
         {
-            return this.homePageViewModelFactory.GetHomePageViewModel();
+            return this.staticContentViewModelFactory.GetHomePageViewModel();
+        }
+
+        public InformationPageViewModel GetInformationPageViewModel()
+        {
+            return this.staticContentViewModelFactory.GetInformationPageViewModel();
+        }
+
+        public ContactPageViewModel GetContactPageViewModel()
+        {
+            return this.staticContentViewModelFactory.GetContactPageViewModel();
         }
     }
 }

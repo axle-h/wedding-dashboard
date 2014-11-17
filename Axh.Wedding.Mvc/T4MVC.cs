@@ -26,7 +26,9 @@ using T4MVC;
 public static partial class MVC
 {
     public static Axh.Wedding.Mvc.Controllers.HomeController Home = new Axh.Wedding.Mvc.Controllers.T4MVC_HomeController();
+    public static Axh.Wedding.Mvc.Controllers.RsvpController Rsvp = new Axh.Wedding.Mvc.Controllers.T4MVC_RsvpController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
+    public static T4MVC.StaticContentController StaticContent = new T4MVC.StaticContentController();
 }
 
 namespace T4MVC
@@ -107,8 +109,6 @@ namespace Links
             public static readonly string post_sample_image_jpg = Url("post-sample-image.jpg");
         }
     
-        public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
-             
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class SiteLess {
             private const string URLPATH = "~/Content/SiteLess";

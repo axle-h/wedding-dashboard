@@ -2,7 +2,7 @@
 {
     using Axh.Wedding.Application.ViewModels.Page;
 
-    public class HomePageViewModel : PageViewModelBase
+    public class ContactPageViewModel : PageViewModelBase
     {
 
     }

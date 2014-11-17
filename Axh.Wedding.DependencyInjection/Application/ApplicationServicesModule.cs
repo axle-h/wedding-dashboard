@@ -1,7 +1,9 @@
 ﻿namespace Axh.Wedding.DependencyInjection.Application
 {
     using Axh.Wedding.Application.Contracts.ViewModelServices.Home;
+    using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
     using Axh.Wedding.Application.ViewModelService.Home;
+    using Axh.Wedding.Application.ViewModelService.Rsvp;
 
     using Ninject.Modules;
 
@@ -13,6 +15,7 @@
         public override void Load()
         {
             this.Bind<IHomePageViewModelService>().To<HomePageViewModelService>();
+            this.Bind<IRsvpViewModelService>().To<RsvpViewModelService>();
         }
     }
 }

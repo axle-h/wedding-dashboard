@@ -41,7 +41,7 @@
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            var modules = new INinjectModule[] { new MvcApplicationModule(), new ApplicationFactoriesModule(), new ApplicationServicesModule() };
+            var modules = new INinjectModule[] { new MvcApplicationModule(), new ApplicationFactoriesModule(), new ApplicationServicesModule(), new ApplicationConfigModule(),  };
             kernel.Load(modules);
         }
 
