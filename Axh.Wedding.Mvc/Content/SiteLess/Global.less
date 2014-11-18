@@ -49,12 +49,6 @@ blockquote {
 	font-style: italic;
 }
 
-hr.small {
-	max-width: 100px;
-	margin: 15px auto;
-	border-width: 4px;
-	border-color: white;
-}
 
 // Navigation
 
@@ -160,7 +154,16 @@ hr.small {
 	background: no-repeat center center; 
 	background-attachment: scroll;
 	.background-cover;
-	// NOTE: Background images are set within the HTML using inline CSS!
+
+    hr {
+        &.small {
+            max-width: 100px;
+	        margin: 15px auto;
+	        border-width: 4px;
+	        border-color: white;
+        }
+    }
+
 	margin-bottom: 50px;
 	.site-heading,
 	.post-heading,
@@ -171,6 +174,7 @@ hr.small {
 			padding: 150px 0;
 		}
 	}
+
 	.site-heading,
 	.page-heading {
 		text-align: center;

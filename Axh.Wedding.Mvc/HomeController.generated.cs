@@ -94,9 +94,13 @@ namespace Axh.Wedding.Mvc.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Contact = "Contact";
                 public readonly string Index = "Index";
+                public readonly string Information = "Information";
             }
+            public readonly string Contact = "~/Views/Home/Contact.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string Information = "~/Views/Home/Information.cshtml";
         }
     }
 

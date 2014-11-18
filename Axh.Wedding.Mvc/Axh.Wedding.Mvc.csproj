@@ -132,6 +132,8 @@
     <Content Include="Content\Images\about-bg.jpg" />
     <Content Include="Content\Images\contact-bg.jpg" />
     <Content Include="Content\Images\home-bg.jpg" />
+    <Content Include="Content\Images\home-bg.png" />
+    <Content Include="Content\Images\template-home-bg.jpg" />
     <Content Include="Content\Images\post-bg.jpg" />
     <Content Include="Content\Images\post-sample-image.jpg" />
     <Content Include="fonts\fontawesome-webfont.svg" />

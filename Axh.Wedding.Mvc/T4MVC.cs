@@ -105,8 +105,10 @@ namespace Links
             public static readonly string about_bg_jpg = Url("about-bg.jpg");
             public static readonly string contact_bg_jpg = Url("contact-bg.jpg");
             public static readonly string home_bg_jpg = Url("home-bg.jpg");
+            public static readonly string home_bg_png = Url("home-bg.png");
             public static readonly string post_bg_jpg = Url("post-bg.jpg");
             public static readonly string post_sample_image_jpg = Url("post-sample-image.jpg");
+            public static readonly string template_home_bg_jpg = Url("template-home-bg.jpg");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
