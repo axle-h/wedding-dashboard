@@ -2,10 +2,10 @@
 {
     public abstract class PageViewModelBase
     {
-        public string PageTitle { get; set; }
-
         public string ApplicationTitle { get; set; }
 
         public string ApplicationSubTitle { get; set; }
+
+        public HeaderViewModel Header { get; set; }
     }
 }

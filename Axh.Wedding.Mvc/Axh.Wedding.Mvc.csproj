@@ -129,13 +129,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Images\about-bg.jpg" />
-    <Content Include="Content\Images\contact-bg.jpg" />
+    <Content Include="Content\Images\contact_bg.jpg" />
     <Content Include="Content\Images\home-bg.jpg" />
-    <Content Include="Content\Images\home-bg.png" />
-    <Content Include="Content\Images\template-home-bg.jpg" />
-    <Content Include="Content\Images\post-bg.jpg" />
-    <Content Include="Content\Images\post-sample-image.jpg" />
+    <Content Include="Content\Images\info-bg.jpg" />
+    <Content Include="Content\Images\rsvp-bg.jpg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -11,16 +11,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@Model.PageTitle</title>
+    <title>@Model.ApplicationTitle - @Model.ApplicationSubTitle</title>
     
     @Styles.Render(BundleConfig.SiteCssBundleVirtualPath)
 
     @Scripts.Render(BundleConfig.HeadJsBundleVirtualPath)
     
+    @RenderSection("JavascriptHead", false)
+
 </head>
     <body>
         <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-            <div class="container-fluid">
+            <div class="container-fluid @Html.Raw(Model.Header.IsLight ? "light" : "dark")">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -35,16 +37,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            @Html.ActionLink(Resources.HomePage_Title.ToUpper(), MVC.Home.Index())
+                            @Html.ActionLink(Resources.RsvpPage_Link, MVC.Rsvp.Index())
                         </li>
                         <li>
-                            @Html.ActionLink(Resources.RsvpPage_Title.ToUpper(), MVC.Rsvp.Index())
+                            @Html.ActionLink(Resources.InformationPage_Link, MVC.Home.Information())
                         </li>
                         <li>
-                            @Html.ActionLink(Resources.InformationPage_Title.ToUpper(), MVC.Home.Information())
-                        </li>
-                        <li>
-                            @Html.ActionLink(Resources.ContactPage_Title.ToUpper(), MVC.Home.Contact())
+                            @Html.ActionLink(Resources.ContactPage_Link, MVC.Home.Contact())
                         </li>
                     </ul>
                 </div>
@@ -52,14 +51,14 @@
         </nav>
 
         <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('@Links.Content.Images.home_bg_png')">
+        <header class="intro-header" style="background-image: url('@Model.Header.HeaderBackgroundUrl')">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="site-heading">
-                            <h1>@Model.ApplicationTitle</h1>
+                            <h1>@Model.Header.PageTitle</h1>
                             <hr class="small" />
-                            <span class="subheading">@Model.ApplicationSubTitle</span>
+                            <span class="subheading">@Model.Header.PageSubTitle</span>
                         </div>
                     </div>
                 </div>
@@ -68,8 +67,6 @@
 
         <!-- Main Content -->
         <div class="container">
-            <h2>@Model.PageTitle</h2>
-
             @RenderBody()
         </div>
 

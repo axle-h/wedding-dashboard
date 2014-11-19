@@ -102,13 +102,10 @@ namespace Links
             private const string URLPATH = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string about_bg_jpg = Url("about-bg.jpg");
-            public static readonly string contact_bg_jpg = Url("contact-bg.jpg");
+            public static readonly string contact_bg_jpg = Url("contact_bg.jpg");
             public static readonly string home_bg_jpg = Url("home-bg.jpg");
-            public static readonly string home_bg_png = Url("home-bg.png");
-            public static readonly string post_bg_jpg = Url("post-bg.jpg");
-            public static readonly string post_sample_image_jpg = Url("post-sample-image.jpg");
-            public static readonly string template_home_bg_jpg = Url("template-home-bg.jpg");
+            public static readonly string info_bg_jpg = Url("info-bg.jpg");
+            public static readonly string rsvp_bg_jpg = Url("rsvp-bg.jpg");
         }
     
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

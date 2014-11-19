@@ -4,6 +4,6 @@ namespace Axh.Wedding.Application.Contracts.ViewModelFactories
 
     public interface IPageViewModelFactory
     {
-        TPageViewModel GetPageViewModel<TPageViewModel>(string title) where TPageViewModel : PageViewModelBase, new();
+        TPageViewModel GetPageViewModel<TPageViewModel>(string headerBackgroundUrl, bool headerTextIsLight, string title = null, string subtitle = null) where TPageViewModel : PageViewModelBase, new();
     }
 }

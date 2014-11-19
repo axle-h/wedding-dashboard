@@ -117,16 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ContactPage_Link" xml:space="preserve">
+    <value>CONTACT</value>
+  </data>
+  <data name="ContactPage_SubTitle" xml:space="preserve">
+    <value>Have questions? We have answers (maybe)</value>
+  </data>
   <data name="ContactPage_Title" xml:space="preserve">
-    <value>Contact</value>
+    <value>Contact Us</value>
   </data>
   <data name="HomePage_Title" xml:space="preserve">
-    <value>Home</value>
+    <value>Our Wedding</value>
+  </data>
+  <data name="InformationPage_Link" xml:space="preserve">
+    <value>INFO</value>
+  </data>
+  <data name="InformationPage_SubTitle" xml:space="preserve">
+    <value>Maps, hotels and stuff</value>
   </data>
   <data name="InformationPage_Title" xml:space="preserve">
-    <value>Info</value>
+    <value>Information</value>
+  </data>
+  <data name="RsvpPage_Link" xml:space="preserve">
+    <value>RSVP</value>
+  </data>
+  <data name="RsvpPage_SubTitle" xml:space="preserve">
+    <value>We hope to see you there</value>
   </data>
   <data name="RsvpPage_Title" xml:space="preserve">
-    <value>RSVP</value>
+    <value>If It Pleases You</value>
   </data>
 </root>

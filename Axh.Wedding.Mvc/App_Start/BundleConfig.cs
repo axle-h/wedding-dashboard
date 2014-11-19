@@ -18,7 +18,8 @@ namespace Axh.Wedding.Mvc
             siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Global_less));
             bundles.Add(siteStyleBundle);
 
-            var headJsBundle = new ScriptBundle(HeadJsBundleVirtualPath).Include(VirtualPathUtility.ToAppRelative(Links.Scripts.modernizr_2_8_3_js));
+            var headJsBundle = new ScriptBundle(HeadJsBundleVirtualPath);
+            headJsBundle.Include(VirtualPathUtility.ToAppRelative(Links.Scripts.modernizr_2_8_3_js));
             bundles.Add(headJsBundle);
 
             var mainBodyJsBundle = new ScriptBundle(MainBodyJsBundleVirtualPath);

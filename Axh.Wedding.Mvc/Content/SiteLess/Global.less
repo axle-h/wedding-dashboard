@@ -59,9 +59,17 @@ blockquote {
 	width: 100%;
 	z-index: 3;
 	.sans-serif;
-	.navbar-brand {
+
+    .navbar-brand
+    {
 		font-weight: 800;
+        color: @gray;
+        &:hover,
+			&:focus {
+				color: @brand-primary;
+			}
 	}
+
 	.nav {
 		li {
 			a {
@@ -69,34 +77,49 @@ blockquote {
 				font-size: 12px;
 				font-weight: 800;
 				letter-spacing: 1px;
-			}
-		}
-	}
-	@media only screen and (min-width: 768px) {
-		background: transparent;
-		border-bottom: 1px solid transparent;
-		.navbar-brand {
-			color: white;
-			padding: 20px;
-			&:hover,
-			&:focus {
-				color: @white-faded;
-			}
-		}
-		.nav {
-			li {
-				a {
-					color: white;
-					padding: 20px;
-					&:hover,
-					&:focus {
-						color: @white-faded;
-					}
+                color: @gray;
+                &:hover,
+				&:focus {
+					color: @brand-primary;
 				}
 			}
 		}
 	}
-	@media only screen and (min-width: 1170px) {
+
+	@media only screen and (min-width: 768px)
+    {
+		background: transparent;
+		border-bottom: 1px solid transparent;
+		.navbar-brand {
+			padding: 20px;
+		}
+
+		.nav {
+			li {
+				a {
+					padding: 20px;
+				}
+			}
+		}
+
+        .light
+        {
+            .navbar-brand
+            {
+                color: white;
+            }
+            .nav {
+			    li {
+				    a {
+					    color: white;
+				    }
+			    }
+		    }
+        }
+	}
+
+	@media only screen and (min-width: 1170px)
+    {
 		-webkit-transition: background-color 0.3s;
 		-moz-transition: background-color 0.3s;
 		transition: background-color 0.3s;
@@ -117,24 +140,6 @@ blockquote {
 			-webkit-transition: -webkit-transform 0.3s;
 			-moz-transition: -moz-transform 0.3s;
 			transition: transform 0.3s;
-			.navbar-brand {
-				color: @gray-dark;
-				&:hover,
-				&:focus {
-					color: @brand-primary;
-				}
-			}
-			.nav {
-				li {
-					a {
-						color: @gray-dark;
-						&:hover,
-						&:focus {
-							color: @brand-primary;
-						}
-					}
-				}
-			}
 		}
 		&.is-visible {
 			/* if the user changes the scrolling direction, we show the header */
@@ -145,6 +150,7 @@ blockquote {
 			transform: translate3d(0, 100%, 0);
 		}
 	}
+    
 }
 
 // Header
@@ -154,18 +160,9 @@ blockquote {
 	background: no-repeat center center; 
 	background-attachment: scroll;
 	.background-cover;
+    margin-bottom: 50px;
 
-    hr {
-        &.small {
-            max-width: 100px;
-	        margin: 15px auto;
-	        border-width: 4px;
-	        border-color: white;
-        }
-    }
-
-	margin-bottom: 50px;
-	.site-heading,
+    .site-heading,
 	.post-heading,
 	.page-heading {
 		padding: 100px 0 50px;
@@ -176,13 +173,20 @@ blockquote {
 	}
 
 	.site-heading,
-	.page-heading {
+	.page-heading
+    {
 		text-align: center;
-		h1 {
+		h1
+        {
 			margin-top: 0;
 			font-size: 50px;
+            @media only screen and (min-width: 768px)
+            {
+                font-size: 80px;
+            }
 		}
-		.subheading {
+		.subheading
+        {
 			font-size: 24px;
 			line-height: 1.1;
 			display: block;
@@ -190,14 +194,45 @@ blockquote {
 			font-weight: 300;
 			margin: 10px 0 0;
 		}
-		@media only screen and (min-width: 768px) {
-			h1 {
-				font-size: 80px;
-			}
-		}
 	}
-	.post-heading {
-		h1 {
+
+    .site-heading
+    {
+        hr
+        {
+            display: block;
+            &.small
+            {
+                max-width: 100px;
+	            margin: 15px auto;
+	            border-width: 4px;
+	            border-color: white;
+            }
+        }
+        
+        @media only screen and (min-width: 768px)
+        {
+            margin-top: 90px;
+        }
+
+        @media only screen and (max-width: 500px)
+        {
+            margin-top: 50px;
+            .subheading
+            {
+                display: none;
+            }
+            hr
+            {
+                display: none;
+            }
+        }
+    }
+
+	.post-heading
+    {
+		h1
+        {
 			font-size: 35px;
 		}
 		.subheading,
@@ -459,4 +494,9 @@ img::-moz-selection {
 
 body {
 	-webkit-tap-highlight-color: @brand-primary;
+}
+
+.margin-bottom
+{
+    margin-bottom: @margin;
 }

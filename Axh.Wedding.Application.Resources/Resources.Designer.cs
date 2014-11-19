@@ -61,7 +61,25 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Contact.
+        ///   Looks up a localized string similar to CONTACT.
+        /// </summary>
+        public static string ContactPage_Link {
+            get {
+                return ResourceManager.GetString("ContactPage_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Have questions? We have answers (maybe).
+        /// </summary>
+        public static string ContactPage_SubTitle {
+            get {
+                return ResourceManager.GetString("ContactPage_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string ContactPage_Title {
             get {
@@ -70,7 +88,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Our Wedding.
         /// </summary>
         public static string HomePage_Title {
             get {
@@ -79,7 +97,25 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Info.
+        ///   Looks up a localized string similar to INFO.
+        /// </summary>
+        public static string InformationPage_Link {
+            get {
+                return ResourceManager.GetString("InformationPage_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maps, hotels and stuff.
+        /// </summary>
+        public static string InformationPage_SubTitle {
+            get {
+                return ResourceManager.GetString("InformationPage_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
         /// </summary>
         public static string InformationPage_Title {
             get {
@@ -89,6 +125,24 @@ namespace Axh.Wedding.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to RSVP.
+        /// </summary>
+        public static string RsvpPage_Link {
+            get {
+                return ResourceManager.GetString("RsvpPage_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We hope to see you there.
+        /// </summary>
+        public static string RsvpPage_SubTitle {
+            get {
+                return ResourceManager.GetString("RsvpPage_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If It Pleases You.
         /// </summary>
         public static string RsvpPage_Title {
             get {
