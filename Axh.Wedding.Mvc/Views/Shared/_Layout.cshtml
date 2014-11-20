@@ -1,6 +1,7 @@
 ﻿@model Axh.Wedding.Application.ViewModels.Page.PageViewModelBase
 
 @using System.Web.Optimization
+@using Axh.Wedding.Mvc.Infrastructure.Helpers
 @using Axh.Wedding.Resources
 <!DOCTYPE html>
 <html>
@@ -17,12 +18,13 @@
 
     @Scripts.Render(BundleConfig.HeadJsBundleVirtualPath)
     
-    @RenderSection("JavascriptHead", false)
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css' />
 
 </head>
     <body>
         <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-            <div class="container-fluid @Html.Raw(Model.Header.IsLight ? "light" : "dark")">
+            <div class="container-fluid @Html.Raw(Model.Header.HeaderImage.IsLight ? "light" : "dark")">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -37,13 +39,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            @Html.ActionLink(Resources.RsvpPage_Link, MVC.Rsvp.Index())
+                            @Html.ActionLink(Resources.RsvpPage_Link.ToUpper(), MVC.Rsvp.Index())
                         </li>
                         <li>
-                            @Html.ActionLink(Resources.InformationPage_Link, MVC.Home.Information())
+                            @Html.ActionLink(Resources.InformationPage_Link.ToUpper(), MVC.Home.Information())
                         </li>
                         <li>
-                            @Html.ActionLink(Resources.ContactPage_Link, MVC.Home.Contact())
+                            @Html.ActionLink(Resources.ContactPage_Link.ToUpper(), MVC.Home.Contact())
                         </li>
                     </ul>
                 </div>
@@ -51,14 +53,19 @@
         </nav>
 
         <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('@Model.Header.HeaderBackgroundUrl')">
+        <header class="intro-header" style="background-image: url('@Html.Raw(Model.Header.HeaderImage.Url)')">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <div class="site-heading">
+                        <div class="site-heading @Html.Raw(Model.Header.HeaderImage.ExtraVerticalMargin ? "big" : "")">
                             <h1>@Model.Header.PageTitle</h1>
                             <hr class="small" />
                             <span class="subheading">@Model.Header.PageSubTitle</span>
+
+                            @if (!string.IsNullOrEmpty(Model.Header.ButtonUrl) && !string.IsNullOrEmpty(Model.Header.ButtonText))
+                            {
+                                <a href="@Model.Header.ButtonUrl" class="btn btn-dark btn-lg margin-top">@Model.Header.ButtonText</a>
+                            }
                         </div>
                     </div>
                 </div>
@@ -66,7 +73,7 @@
         </header>
 
         <!-- Main Content -->
-        <div class="container">
+        <div class="" id="pg-@Html.Raw(Model.Header.PageLink)">
             @RenderBody()
         </div>
 
@@ -108,6 +115,7 @@
             </div>
         </footer>
        
+        @Html.WriteModelJson()
         @Scripts.Render(BundleConfig.MainBodyJsBundleVirtualPath)
     </body>
 </html>

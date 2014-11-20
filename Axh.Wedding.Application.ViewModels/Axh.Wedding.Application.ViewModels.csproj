@@ -42,6 +42,8 @@
     <Compile Include="Home\ContactPageViewModel.cs" />
     <Compile Include="Home\HomePageViewModel.cs" />
     <Compile Include="Home\InformationPageViewModel.cs" />
+    <Compile Include="Page\BindClientPropertyAttribute.cs" />
+    <Compile Include="Page\HeaderImageViewModel.cs" />
     <Compile Include="Page\HeaderViewModel.cs" />
     <Compile Include="Page\PageViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

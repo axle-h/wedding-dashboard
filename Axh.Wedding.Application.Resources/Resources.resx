@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ContactPage_Link" xml:space="preserve">
-    <value>CONTACT</value>
+    <value>contact</value>
   </data>
   <data name="ContactPage_SubTitle" xml:space="preserve">
     <value>Have questions? We have answers (maybe)</value>
@@ -126,11 +126,17 @@
   <data name="ContactPage_Title" xml:space="preserve">
     <value>Contact Us</value>
   </data>
+  <data name="HomePage_Link" xml:space="preserve">
+    <value>home</value>
+  </data>
   <data name="HomePage_Title" xml:space="preserve">
     <value>Our Wedding</value>
   </data>
+  <data name="InformationPage_GettingThere" xml:space="preserve">
+    <value>Getting there</value>
+  </data>
   <data name="InformationPage_Link" xml:space="preserve">
-    <value>INFO</value>
+    <value>info</value>
   </data>
   <data name="InformationPage_SubTitle" xml:space="preserve">
     <value>Maps, hotels and stuff</value>
@@ -139,12 +145,15 @@
     <value>Information</value>
   </data>
   <data name="RsvpPage_Link" xml:space="preserve">
-    <value>RSVP</value>
+    <value>rsvp</value>
   </data>
   <data name="RsvpPage_SubTitle" xml:space="preserve">
-    <value>We hope to see you there</value>
+    <value>We can't wait to see you</value>
   </data>
   <data name="RsvpPage_Title" xml:space="preserve">
-    <value>If It Pleases You</value>
+    <value>Come Celebrate</value>
+  </data>
+  <data name="TelephoneNumber" xml:space="preserve">
+    <value>Telephone Number</value>
   </data>
 </root>

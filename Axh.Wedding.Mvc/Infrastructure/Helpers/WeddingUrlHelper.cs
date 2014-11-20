@@ -1,45 +1,56 @@
 ﻿namespace Axh.Wedding.Mvc.Infrastructure.Helpers
 {
+    using System.Web.Mvc;
+
     using Axh.Wedding.Application.Contracts.Helpers;
+    using Axh.Wedding.Application.ViewModels.Page;
 
     internal class WeddingUrlHelper : IWeddingUrlHelper
     {
-        private readonly IUrlHelperFactory urlHelperFactory;
+        private readonly UrlHelper urlHelper;
 
         public WeddingUrlHelper(IUrlHelperFactory urlHelperFactory)
         {
-            this.urlHelperFactory = urlHelperFactory;
+            this.urlHelper = urlHelperFactory.GetUrlHelper();
         }
 
-        public string HomePageHeader
+        public HeaderImageViewModel HomePageHeader
         {
             get
             {
-                return Links.Content.Images.home_bg_jpg;
+                return new HeaderImageViewModel { Url = Links.Content.Images.home_bg_jpg, IsLight = false, ExtraVerticalMargin = true };
             }
         }
 
-        public string RsvpPageHeader
+        public HeaderImageViewModel RsvpPageHeader
         {
             get
             {
-                return Links.Content.Images.rsvp_bg_jpg;
+                return new HeaderImageViewModel { Url = Links.Content.Images.rsvp_bg_jpg, IsLight = true, ExtraVerticalMargin = false };
             }
         }
 
-        public string InfoPageHeader
+        public HeaderImageViewModel InfoPageHeader
         {
             get
             {
-                return Links.Content.Images.info_bg_jpg;
+                return new HeaderImageViewModel { Url = Links.Content.Images.info_bg_jpg, IsLight = true, ExtraVerticalMargin = false };
             }
         }
 
-        public string ContactPageHeader
+        public HeaderImageViewModel ContactPageHeader
         {
             get
             {
-                return Links.Content.Images.contact_bg_jpg;
+                return new HeaderImageViewModel { Url = Links.Content.Images.contact_bg_jpg, IsLight = true, ExtraVerticalMargin = false };
+            }
+        }
+
+        public string Rsvp
+        {
+            get
+            {
+                return this.urlHelper.RouteUrl(MVC.Rsvp.Index());
             }
         }
     }

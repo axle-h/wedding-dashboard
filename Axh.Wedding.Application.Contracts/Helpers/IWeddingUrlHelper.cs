@@ -1,13 +1,17 @@
 ﻿namespace Axh.Wedding.Application.Contracts.Helpers
 {
+    using Axh.Wedding.Application.ViewModels.Page;
+
     public interface IWeddingUrlHelper
     {
-        string HomePageHeader { get; }
+        HeaderImageViewModel HomePageHeader { get; }
 
-        string RsvpPageHeader { get; }
+        HeaderImageViewModel RsvpPageHeader { get; }
 
-        string InfoPageHeader { get; }
+        HeaderImageViewModel InfoPageHeader { get; }
 
-        string ContactPageHeader { get; }
+        HeaderImageViewModel ContactPageHeader { get; }
+
+        string Rsvp { get; }
     }
 }

@@ -7,5 +7,6 @@
         public string ApplicationSubTitle { get; set; }
 
         public HeaderViewModel Header { get; set; }
+
     }
 }

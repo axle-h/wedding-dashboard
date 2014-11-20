@@ -11,8 +11,10 @@
         {
             this.Bride = ConfigurationManager.AppSettings["Bride"];
             this.Groom = ConfigurationManager.AppSettings["Groom"];
-            this.Venue = ConfigurationManager.AppSettings["Venue"];
             this.Date = DateTime.Parse(ConfigurationManager.AppSettings["Date"]);
+            this.Venue = ConfigurationManager.AppSettings["Venue_Name"];
+            this.VenueAddress = ConfigurationManager.AppSettings["Venue_Address"];
+            this.VenuePhone = ConfigurationManager.AppSettings["Venue_Phone"];
         }
 
         public string Bride { get; private set; }
@@ -22,6 +24,9 @@
         public string Venue { get; private set; }
 
         public DateTime Date { get; private set; }
-        
+
+        public string VenueAddress { get; private set; }
+
+        public string VenuePhone { get; private set; }
     }
 }

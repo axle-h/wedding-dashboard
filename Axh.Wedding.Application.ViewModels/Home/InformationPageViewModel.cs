@@ -4,6 +4,9 @@
 
     public class InformationPageViewModel : PageViewModelBase
     {
+        [BindClientProperty("GoogleMapsPlace")]
+        public string VenueAddress { get; set; }
 
+        public string VenuePhone { get; set; }
     }
 }

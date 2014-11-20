@@ -25,6 +25,8 @@ namespace Axh.Wedding.Mvc
             var mainBodyJsBundle = new ScriptBundle(MainBodyJsBundleVirtualPath);
 		    mainBodyJsBundle.Include(VirtualPathUtility.ToAppRelative(Links.Scripts.jquery_2_1_1_js));
             mainBodyJsBundle.Include(VirtualPathUtility.ToAppRelative(Links.Scripts.bootstrap_js));
+            mainBodyJsBundle.IncludeDirectory(VirtualPathUtility.ToAppRelative(Links.Scripts.ViewModels.Url()), "*.js");
+            mainBodyJsBundle.Include(VirtualPathUtility.ToAppRelative(Links.Scripts.Site_js));
             bundles.Add(mainBodyJsBundle);
 		}
 	}

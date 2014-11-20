@@ -1,34 +1,31 @@
-﻿@model Axh.Wedding.Application.ViewModels.Home.InformationPageViewModel
+﻿@using Axh.Wedding.Mvc.Infrastructure.Helpers
+@using Axh.Wedding.Resources
+@model Axh.Wedding.Application.ViewModels.Home.InformationPageViewModel
 
-<div class="row">
-    <div class="col-md-6">
-        <address>
-            <strong>Twitter, Inc.</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            <abbr title="Phone">P:</abbr> (123) 456-7890
-        </address>
+
+<div class="container margin-bottom">
+    <div class="row">
+        <div class="col-md-12">
+            <h2><span class="fa fa-map-marker padding-right"></span>@Resources.InformationPage_GettingThere</h2>
+            <h4>That's right, we changed the venue...</h4>
+            <p>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</p>
+        </div>
     </div>
-    <div class="col-md-6">
-        <div id="map-canvas" style="width: 100%; min-width:100%; height: 300px;"></div>
+</div>
+
+<div class="row margin-bottom-large">
+    <div class="col-md-12">
+        <div id="map-canvas"></div>
+    </div>
+</div>
+
+<div class="container margin-bottom">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            @Html.FormatAddress(m => m.VenueAddress, m => m.VenuePhone)
+        </div>
     </div>
 </div>
 
 
-@section JavascriptHead
-{
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-        var map;
-        function initialize() {
-            var mapOptions = {
-                zoom: 8,
-                center: new google.maps.LatLng(-34.397, 150.644)
-            };
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        }
 
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-}

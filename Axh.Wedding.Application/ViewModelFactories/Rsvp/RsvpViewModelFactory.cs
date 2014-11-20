@@ -20,7 +20,7 @@
 
         public RsvpPageViewModel GetRsvpPageViewModel()
         {
-            return this.pageViewModelFactory.GetPageViewModel<RsvpPageViewModel>(weddingUrlHelper.RsvpPageHeader, true, Resources.RsvpPage_Title, Resources.RsvpPage_SubTitle);
+            return this.pageViewModelFactory.GetPageViewModel<RsvpPageViewModel>(weddingUrlHelper.RsvpPageHeader, Resources.RsvpPage_Link, Resources.RsvpPage_Title, Resources.RsvpPage_SubTitle);
         }
     }
 }

@@ -13,7 +13,13 @@
             this.weddingConfig = weddingConfig;
         }
 
-        public TPageViewModel GetPageViewModel<TPageViewModel>(string headerBackgroundUrl, bool headerTextIsLight, string title = null, string subtitle = null) where TPageViewModel : PageViewModelBase, new()
+        public TPageViewModel GetPageViewModel<TPageViewModel>(
+            HeaderImageViewModel headerImage,
+            string pageLink,
+            string title = null,
+            string subtitle = null,
+            string buttonUrl = null,
+            string buttonText = null) where TPageViewModel : PageViewModelBase, new()
         {
             var applicationTitle = string.Format("{0} & {1}", weddingConfig.Bride, weddingConfig.Groom);
             var applicationSubTitle = string.Format("{0} {1}", weddingConfig.Date.ToString("dddd d MMMM yyyy h tt"), weddingConfig.Venue);
@@ -23,10 +29,12 @@
                        ApplicationSubTitle = applicationSubTitle,
                        Header = new HeaderViewModel
                                 {
-                                    HeaderBackgroundUrl = headerBackgroundUrl,
+                                    PageLink = pageLink,
+                                    HeaderImage = headerImage,
                                     PageTitle = title ?? applicationTitle,
                                     PageSubTitle = subtitle ?? applicationSubTitle,
-                                    IsLight = headerTextIsLight
+                                    ButtonUrl = buttonUrl,
+                                    ButtonText = buttonText
                                 }
                    };
         }

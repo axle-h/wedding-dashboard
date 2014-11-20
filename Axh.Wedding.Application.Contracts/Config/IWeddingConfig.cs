@@ -11,5 +11,9 @@
         string Venue { get; }
 
         DateTime Date { get; }
+
+        string VenueAddress { get; }
+
+        string VenuePhone { get; }
     }
 }

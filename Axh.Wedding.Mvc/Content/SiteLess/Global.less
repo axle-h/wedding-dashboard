@@ -29,6 +29,13 @@ h6 {
 	font-weight: 800;
 }
 
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    color: @gray;
+}
+
 a {
 	color: @gray-dark;
 	&:hover,
@@ -148,6 +155,18 @@ blockquote {
 			-ms-transform: translate3d(0, 100%, 0);
 			-o-transform: translate3d(0, 100%, 0);
 			transform: translate3d(0, 100%, 0);
+
+            .navbar-brand
+            {
+                color: @gray;
+            }
+            .nav {
+			    li {
+				    a {
+					    color: @gray;
+				    }
+			    }
+		    }
 		}
 	}
     
@@ -165,10 +184,29 @@ blockquote {
     .site-heading,
 	.post-heading,
 	.page-heading {
-		padding: 100px 0 50px;
+		padding: 100px 0 50px 0;
 		color: white;
-		@media only screen and (min-width: 768px) {
-			padding: 150px 0;
+        
+        &.big
+        {
+            padding: 150px 0 50px 0;
+        }
+        
+        @media only screen and (min-width: 500px)
+        {
+            &.big
+            {
+                padding: 200px 0 50px 0;
+            }
+        }
+
+		@media only screen and (min-width: 768px)
+        {
+			padding: 150px 0 150px 0;
+            &.big
+            {
+                padding: 250px 0 250px 0;
+            }
 		}
 	}
 
@@ -264,6 +302,14 @@ blockquote {
 			}
 		}
 	}
+}
+
+
+#map-canvas
+{
+    width: 100%;
+    min-width:100%;
+    height: 400px;
 }
 
 // Post Preview Pages
@@ -415,7 +461,7 @@ form .row:first-child .floating-label-form-group {
 	padding: 15px 25px;
 }
 
-.btn-lg {
+.btn-hi {
 	font-size: 16px;
 	padding: 25px 35px;
 }
@@ -427,6 +473,28 @@ form .row:first-child .floating-label-form-group {
 		border: 1px solid @brand-primary;
 		color: white;
 	}
+}
+
+.btn-dark
+{
+    color: white;
+    background-color: @black-transparent-40;
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff;
+        background-color: @black-transparent-70;
+    }
+}
+
+.margin-top
+{
+    margin-top: @margin;
+}
+
+.margin-bottom
+{
+    margin-bottom: @margin;
 }
 
 // Pager Styling
@@ -499,4 +567,19 @@ body {
 .margin-bottom
 {
     margin-bottom: @margin;
+}
+
+.margin-bottom-large
+{
+    margin-bottom: @margin-large;
+}
+
+.font-large
+{
+    font-size: @font-large;
+}
+
+.padding-right
+{
+    padding-right: @padding;
 }
