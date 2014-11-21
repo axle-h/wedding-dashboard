@@ -27,7 +27,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div id="map-canvas"></div>
+        <div id="map-canvas-venue" class="map-canvas"></div>
     </div>
 </div>
 
@@ -38,24 +38,40 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="site-heading">
-                            <h1>Hotels</h1>
-                            <hr class="small" />
-                            <span class="subheading">Hello sailor</span>
+                            <h1>Somewhere to Sleep</h1>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 
-<div class="container margin-bottom">
+<div class="container margin-bottom-large">
     <div class="row">
         <div class="col-md-12">
-            <p class="subtle">We'd love to wake up with our closest friends and family.</p>
-            <p>We'll be staying at the Dakota hotel, which is a 5 minute drive from Goosedale.</p>
+            <p>The closest hotel is Dakota Nottingham, a ten minute drive from Goosedale.</p>
+            <p>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. <span class="subtle">Yeah even you mum...</span> To gurantee a room, call quoting 'Kathryn & Alex, Goosedale Wedding 14th March 2015' by the 14th February 2015.</p>
+            <p>We will be staying there and we couldn't wish for a better ending to our wedding than to share our first breakfast (as in proper bacon and eggs breakfast) as husband and wife with our closest friends and family.</p>
         </div>
+    </div>
+</div>
+
+<div class="row bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    @Html.FormatAddress(m => m.HotelAddress, m => m.HotelPhone)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="map-canvas-hotel" class="map-canvas"></div>
     </div>
 </div>
 

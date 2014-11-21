@@ -15,5 +15,9 @@
         string VenueAddress { get; }
 
         string VenuePhone { get; }
+
+        string HotelAddress { get; }
+
+        string HotelPhone { get; }
     }
 }

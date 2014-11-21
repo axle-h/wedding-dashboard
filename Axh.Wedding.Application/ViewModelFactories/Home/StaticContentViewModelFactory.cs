@@ -44,6 +44,9 @@
             viewModel.VenueAddress = weddingConfig.VenueAddress;
             viewModel.VenuePhone = weddingConfig.VenuePhone;
 
+            viewModel.HotelAddress = weddingConfig.HotelAddress;
+            viewModel.HotelPhone = weddingConfig.HotelPhone;
+
             return viewModel;
         }
 

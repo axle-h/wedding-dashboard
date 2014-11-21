@@ -15,7 +15,10 @@
             this.Venue = ConfigurationManager.AppSettings["Venue_Name"];
             this.VenueAddress = ConfigurationManager.AppSettings["Venue_Address"];
             this.VenuePhone = ConfigurationManager.AppSettings["Venue_Phone"];
+            this.HotelAddress = ConfigurationManager.AppSettings["Hotel_Address"];
+            this.HotelPhone = ConfigurationManager.AppSettings["Hotel_Phone"];
         }
+
 
         public string Bride { get; private set; }
 
@@ -28,5 +31,9 @@
         public string VenueAddress { get; private set; }
 
         public string VenuePhone { get; private set; }
+
+        public string HotelAddress { get; private set; }
+
+        public string HotelPhone { get; private set; }
     }
 }
