@@ -131,6 +131,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\contact_bg.jpg" />
     <Content Include="Content\Images\home-bg.jpg" />
+    <Content Include="Content\Images\hotel.jpg" />
     <Content Include="Content\Images\info-bg.jpg" />
     <Content Include="Content\Images\rsvp-bg.jpg" />
     <Content Include="fonts\fontawesome-webfont.svg" />

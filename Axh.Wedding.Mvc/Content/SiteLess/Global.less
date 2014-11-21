@@ -487,15 +487,6 @@ form .row:first-child .floating-label-form-group {
     }
 }
 
-.margin-top
-{
-    margin-top: @margin;
-}
-
-.margin-bottom
-{
-    margin-bottom: @margin;
-}
 
 // Pager Styling
 
@@ -536,6 +527,16 @@ form .row:first-child .floating-label-form-group {
 	}
 }
 
+.banner-image
+{
+    background-color: @gray; 
+	background: no-repeat center center; 
+	background-attachment: scroll;
+	.background-cover;
+    padding: 200px 0 200px 0;
+	color: white;
+}
+
 // -- Highlight Color Customization
 
 ::-moz-selection {
@@ -564,6 +565,11 @@ body {
 	-webkit-tap-highlight-color: @brand-primary;
 }
 
+.margin-top
+{
+    margin-top: @margin;
+}
+
 .margin-bottom
 {
     margin-bottom: @margin;
@@ -583,3 +589,16 @@ body {
 {
     padding-right: @padding;
 }
+
+.subtle
+{
+    color: @gray;
+    font-style: italic;
+}
+
+.bg-light
+{
+    color: @gray;
+    background-color: @gray-light;
+}
+

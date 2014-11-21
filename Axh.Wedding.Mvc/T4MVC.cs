@@ -84,7 +84,7 @@ namespace Links
             private const string URLPATH = "~/Scripts/ViewModels";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string Information_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Information.min.js") ? Url("Information.min.js") : Url("Information.js");
+            public static readonly string InformationViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/InformationViewModel.min.js") ? Url("InformationViewModel.min.js") : Url("InformationViewModel.js");
         }
     
     }
@@ -112,6 +112,7 @@ namespace Links
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
             public static readonly string contact_bg_jpg = Url("contact_bg.jpg");
             public static readonly string home_bg_jpg = Url("home-bg.jpg");
+            public static readonly string hotel_jpg = Url("hotel.jpg");
             public static readonly string info_bg_jpg = Url("info-bg.jpg");
             public static readonly string rsvp_bg_jpg = Url("rsvp-bg.jpg");
         }

@@ -6,26 +6,59 @@
 <div class="container margin-bottom">
     <div class="row">
         <div class="col-md-12">
-            <h2><span class="fa fa-map-marker padding-right"></span>@Resources.InformationPage_GettingThere</h2>
-            <h4>That's right, we changed the venue...</h4>
+            <p class="subtle">That's right, we changed the venue...</p>
             <p>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</p>
         </div>
     </div>
 </div>
 
-<div class="row margin-bottom-large">
+
+<div class="row bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                    @Html.FormatAddress(m => m.VenueAddress, m => m.VenuePhone)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-md-12">
         <div id="map-canvas"></div>
     </div>
 </div>
 
-<div class="container margin-bottom">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            @Html.FormatAddress(m => m.VenueAddress, m => m.VenuePhone)
+<div class="row margin-bottom-large">
+    <div class="col-md-12">
+        <div class="intro-header" style="background-image: url('@Html.Raw(Links.Content.Images.hotel_jpg)')">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="site-heading">
+                            <h1>Hotels</h1>
+                            <hr class="small" />
+                            <span class="subheading">Hello sailor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
+
+<div class="container margin-bottom">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="subtle">We'd love to wake up with our closest friends and family.</p>
+            <p>We'll be staying at the Dakota hotel, which is a 5 minute drive from Goosedale.</p>
+        </div>
+    </div>
+</div>
+
 
 
 
