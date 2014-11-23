@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading @Html.Raw(Model.ExtraVerticalMargin ? "big" : "")">
+                <div class="site-heading @Html.Raw(Model.ExtraVerticalMargin || string.IsNullOrEmpty(Model.Title) ? "big" : "")">
                     @if (!string.IsNullOrEmpty(Model.Title))
                     {
                         <h1>@Model.Title</h1>
@@ -18,10 +18,6 @@
                                 <a href="@Model.ButtonUrl" class="btn btn-dark btn-lg margin-top">@Model.ButtonText</a>
                             }
                         }
-                    }
-                    else
-                    {
-                        <h1>.</h1>
                     }
                 </div>
             </div>

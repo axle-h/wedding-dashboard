@@ -114,6 +114,8 @@ namespace Links
             public static readonly string contact_bg_jpg = Url("contact_bg.jpg");
             public static readonly string home_bg_jpg = Url("home-bg.jpg");
             public static readonly string honeymoon_poem_1_jpg = Url("honeymoon-poem-1.jpg");
+            public static readonly string honeymoon_poem_2_jpg = Url("honeymoon-poem-2.jpg");
+            public static readonly string honeymoon_poem_3_jpg = Url("honeymoon-poem-3.jpg");
             public static readonly string hotel_jpg = Url("hotel.jpg");
             public static readonly string info_bg_jpg = Url("info-bg.jpg");
             public static readonly string rsvp_bg_jpg = Url("rsvp-bg.jpg");

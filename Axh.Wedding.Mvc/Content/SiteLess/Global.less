@@ -71,10 +71,16 @@ blockquote {
     {
 		font-weight: 800;
         color: @gray;
+
         &:hover,
-			&:focus {
-				color: @brand-primary;
-			}
+		&:focus {
+			color: @brand-primary;
+		}
+
+        @media only screen and (min-width: 768px)
+        {
+            padding: 20px;
+        }
 	}
 
 	.nav {
@@ -85,10 +91,16 @@ blockquote {
 				font-weight: 800;
 				letter-spacing: 1px;
                 color: @gray;
+
                 &:hover,
 				&:focus {
 					color: @brand-primary;
 				}
+                
+                @media only screen and (min-width: 768px)
+                {
+                    padding: 20px;
+                }
 			}
 		}
 	}
@@ -97,28 +109,25 @@ blockquote {
     {
 		background: transparent;
 		border-bottom: 1px solid transparent;
-		.navbar-brand {
-			padding: 20px;
-		}
-
-		.nav {
-			li {
-				a {
-					padding: 20px;
-				}
-			}
-		}
 
         .light
         {
             .navbar-brand
             {
                 color: white;
+                &:hover,
+				&:focus {
+					color: @brand-primary;
+				}
             }
             .nav {
 			    li {
 				    a {
 					    color: white;
+                        &:hover,
+				        &:focus {
+					        color: @brand-primary;
+				        }
 				    }
 			    }
 		    }
@@ -179,50 +188,24 @@ blockquote {
 	background: no-repeat center center; 
 	background-attachment: scroll;
 	.background-cover;
-    margin-bottom: 50px;
 
-    .site-heading,
-	.post-heading,
-	.page-heading {
+    .site-heading
+    {
 		padding: 100px 0 50px 0;
 		color: white;
-        
+        text-align: center;
+
         &.big
         {
             padding: 150px 0 50px 0;
         }
         
-        @media only screen and (min-width: 500px)
-        {
-            &.big
-            {
-                padding: 200px 0 50px 0;
-            }
-        }
-
-		@media only screen and (min-width: 768px)
-        {
-			padding: 150px 0 150px 0;
-            &.big
-            {
-                padding: 250px 0 250px 0;
-            }
-		}
-	}
-
-	.site-heading,
-	.page-heading
-    {
-		text-align: center;
 		h1
         {
 			margin-top: 0;
 			font-size: 50px;
-            @media only screen and (min-width: 768px)
-            {
-                font-size: 80px;
-            }
 		}
+
 		.subheading
         {
 			font-size: 24px;
@@ -232,13 +215,11 @@ blockquote {
 			font-weight: 300;
 			margin: 10px 0 0;
 		}
-	}
 
-    .site-heading
-    {
         hr
         {
             display: block;
+
             &.small
             {
                 max-width: 100px;
@@ -248,62 +229,44 @@ blockquote {
             }
         }
         
-        @media only screen and (min-width: 768px)
-        {
-            margin-top: 90px;
-        }
-
         @media only screen and (max-width: 500px)
         {
             margin-top: 50px;
+
             .subheading
             {
                 display: none;
             }
+
             hr
             {
                 display: none;
             }
+
+            &.big
+            {
+                padding: 200px 0 50px 0;
+            }
         }
-    }
 
-	.post-heading
-    {
-		h1
+        @media only screen and (min-width: 768px)
         {
-			font-size: 35px;
-		}
-		.subheading,
-		.meta {
-			line-height: 1.1;
-			display: block;
-		}
-		.subheading {
-			.sans-serif;
-			font-size: 24px;
-			margin: 10px 0 30px;
-			font-weight: 600;
-		}
-		.meta {
-			.serif;
-			font-style: italic;
-			font-weight: 300;
-			font-size: 20px;
-			a {
-				color: white;
-			}
-		}
-		@media only screen and (min-width: 768px) {
-			h1 {
-				font-size: 55px;
-			}
-			.subheading {
-				font-size: 30px;
-			}
-		}
-	}
-}
+            margin-top: 90px;
+            padding: 150px 0 150px 0;
 
+            &.big
+            {
+                padding: 250px 0 250px 0;
+            }
+
+            h1   
+            {
+                font-size: 80px;
+            }
+        }        
+    }
+	
+}
 
 .map-canvas
 {
@@ -312,69 +275,6 @@ blockquote {
     height: 400px;
 }
 
-// Post Preview Pages
-
-.post-preview {
-	> a {
-		color: @gray-dark;
-		&:hover,
-		&:focus {
-			text-decoration: none;
-			color: @brand-primary;
-		}
-		> .post-title {
-			font-size: 30px;
-			margin-top: 30px;
-			margin-bottom: 10px;
-		}
-		> .post-subtitle {
-			margin: 0;
-			font-weight: 300;
-			margin-bottom: 10px;
-		}
-	}
-	> .post-meta {
-		color: @gray;
-		font-size: 18px;
-		font-style: italic;
-		margin-top: 0;
-		> a {
-			text-decoration: none;
-			color: @gray-dark;
-			&:hover,
-			&:focus {
-				color: @brand-primary;
-				text-decoration: underline;
-			}
-		}
-	}
-	@media only screen and (min-width: 768px) {
-		> a {
-			> .post-title {
-				font-size: 36px;
-			}
-		}
-	}
-}
-
-// Sections
-
-.section-heading {
-	font-size: 36px;
-	margin-top: 60px;
-	font-weight: 700;
-}
-
-.caption {
-	text-align: center;
-	font-size: 14px;
-	padding: 10px;
-	font-style: italic;
-	margin: 0;
-	display: block;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
 
 footer {
 	padding: 50px 0 65px;
@@ -487,56 +387,6 @@ form .row:first-child .floating-label-form-group {
     }
 }
 
-
-// Pager Styling
-
-.pager {
-
-	margin: 20px 0 0;
-
-	li {
-		> a,
-		> span {
-			.sans-serif;
-			text-transform: uppercase;
-			font-size: 14px;
-			font-weight: 800;
-			letter-spacing: 1px;
-			padding: 15px 25px;
-			background-color: white;
-			border-radius: 0;
-		}
-
-		> a:hover,
-		> a:focus {
-			color: white;
-			background-color: @brand-primary;
-			border: 1px solid @brand-primary;
-		}
-	}
-
-	.disabled {
-		> a,
-		> a:hover,
-		> a:focus,
-		> span {
-			color: @gray;
-			background-color: @gray-dark;
-			cursor: not-allowed;
-		}
-	}
-}
-
-.banner-image
-{
-    background-color: @gray; 
-	background: no-repeat center center; 
-	background-attachment: scroll;
-	.background-cover;
-    padding: 200px 0 200px 0;
-	color: white;
-}
-
 // -- Highlight Color Customization
 
 ::-moz-selection {
@@ -599,7 +449,7 @@ body {
 .bg-light
 {
     color: @gray;
-    background-color: @gray-light;
+    background-color: @brand-primary-light;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
