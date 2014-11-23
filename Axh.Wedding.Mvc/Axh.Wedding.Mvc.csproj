@@ -131,6 +131,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Images\contact_bg.jpg" />
     <Content Include="Content\Images\home-bg.jpg" />
+    <Content Include="Content\Images\honeymoon-poem-1.jpg" />
     <Content Include="Content\Images\hotel.jpg" />
     <Content Include="Content\Images\info-bg.jpg" />
     <Content Include="Content\Images\rsvp-bg.jpg" />
@@ -208,6 +209,7 @@
     <Content Include="Views\Rsvp\Index.cshtml" />
     <Content Include="Views\Home\Information.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\_SectionHeading.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

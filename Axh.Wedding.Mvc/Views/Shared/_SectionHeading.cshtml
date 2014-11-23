@@ -1,0 +1,30 @@
+﻿@model Axh.Wedding.Application.ViewModels.Page.HeaderImageViewModel
+
+<header class="intro-header" style="background-image: url('@Html.Raw(Model.Url)')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading @Html.Raw(Model.ExtraVerticalMargin ? "big" : "")">
+                    @if (!string.IsNullOrEmpty(Model.Title))
+                    {
+                        <h1>@Model.Title</h1>
+                        if (!string.IsNullOrEmpty(Model.SubTitle))
+                        {
+                            <hr class="small" />
+                            <span class="subheading">@Model.SubTitle</span>
+
+                            if (!string.IsNullOrEmpty(Model.ButtonUrl) && !string.IsNullOrEmpty(Model.ButtonText))
+                            {
+                                <a href="@Model.ButtonUrl" class="btn btn-dark btn-lg margin-top">@Model.ButtonText</a>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <h1>.</h1>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

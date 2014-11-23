@@ -53,24 +53,7 @@
         </nav>
 
         <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('@Html.Raw(Model.Header.HeaderImage.Url)')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <div class="site-heading @Html.Raw(Model.Header.HeaderImage.ExtraVerticalMargin ? "big" : "")">
-                            <h1>@Model.Header.PageTitle</h1>
-                            <hr class="small" />
-                            <span class="subheading">@Model.Header.PageSubTitle</span>
-
-                            @if (!string.IsNullOrEmpty(Model.Header.ButtonUrl) && !string.IsNullOrEmpty(Model.Header.ButtonText))
-                            {
-                                <a href="@Model.Header.ButtonUrl" class="btn btn-dark btn-lg margin-top">@Model.Header.ButtonText</a>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @Html.Partial(MVC.Shared.Views._SectionHeading, Model.Header.HeaderImage)
 
         <!-- Main Content -->
         <div class="" id="pg-@Html.Raw(Model.Header.PageLink)">

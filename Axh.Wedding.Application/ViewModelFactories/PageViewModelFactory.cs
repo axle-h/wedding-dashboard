@@ -23,6 +23,12 @@
         {
             var applicationTitle = string.Format("{0} & {1}", weddingConfig.Bride, weddingConfig.Groom);
             var applicationSubTitle = string.Format("{0} {1}", weddingConfig.Date.ToString("dddd d MMMM yyyy h tt"), weddingConfig.Venue);
+
+            headerImage.Title = title ?? applicationTitle;
+            headerImage.SubTitle = subtitle ?? applicationSubTitle;
+            headerImage.ButtonUrl = buttonUrl;
+            headerImage.ButtonText = buttonText;
+
             return new TPageViewModel
                    {
                        ApplicationTitle = applicationTitle,
@@ -30,11 +36,7 @@
                        Header = new HeaderViewModel
                                 {
                                     PageLink = pageLink,
-                                    HeaderImage = headerImage,
-                                    PageTitle = title ?? applicationTitle,
-                                    PageSubTitle = subtitle ?? applicationSubTitle,
-                                    ButtonUrl = buttonUrl,
-                                    ButtonText = buttonText
+                                    HeaderImage = headerImage
                                 }
                    };
         }
