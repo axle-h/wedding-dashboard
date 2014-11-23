@@ -115,6 +115,99 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Something to Buy.
+        /// </summary>
+        public static string InformationPage_Gifts_Title {
+            get {
+                return ResourceManager.GetString("InformationPage_Gifts_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The date has been set and we’d love you to come,&lt;br /&gt;
+        ///To celebrate our wedding, a long way for some,&lt;br /&gt;
+        ///All you must do, is decide what to wear,&lt;br /&gt;
+        ///Then polish your jewellery and comb up your hair..
+        /// </summary>
+        public static string InformationPage_Honeymoon_Poem_1 {
+            get {
+                return ResourceManager.GetString("InformationPage_Honeymoon_Poem_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don’t worry about gifts, don’t buy us a yacht,&lt;br /&gt;
+        ///The things that we need, we’ve already got.&lt;br /&gt;
+        ///Our home is quite compact, we may have to move&lt;br /&gt;
+        ///Then our storage and space will surely improve..
+        /// </summary>
+        public static string InformationPage_Honeymoon_Poem_2 {
+            get {
+                return ResourceManager.GetString("InformationPage_Honeymoon_Poem_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don’t go out shopping or get yourself stressed,&lt;br /&gt;
+        ///Don’t alter your plans for a pre wedding rest.&lt;br /&gt;
+        ///If you want to be generous, despite what we’ve said,&lt;br /&gt;
+        ///Then save all the hassle and do this instead....
+        /// </summary>
+        public static string InformationPage_Honeymoon_Poem_3 {
+            get {
+                return ResourceManager.GetString("InformationPage_Honeymoon_Poem_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don’t know how to word this but will give it our best shot…&lt;br /&gt;
+        ///Contributions are most welcome, we’ll go somewhere hot!&lt;br /&gt;
+        ///A honeymoon would be marvellous, to start off our life.&lt;br /&gt;
+        ///In our long winding journey, as new husband and wife!.
+        /// </summary>
+        public static string InformationPage_Honeymoon_Poem_4 {
+            get {
+                return ResourceManager.GetString("InformationPage_Honeymoon_Poem_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The closest hotel is Dakota Nottingham, a ten minute drive from Goosedale..
+        /// </summary>
+        public static string InformationPage_Hotels_1 {
+            get {
+                return ResourceManager.GetString("InformationPage_Hotels_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £99. To guarantee a room, call quoting &lt;span class=&quot;subtle&quot;&gt;&apos;Kathryn &amp; Alex, Goosedale Wedding 14th March 2015&apos;&lt;/span&gt;..
+        /// </summary>
+        public static string InformationPage_Hotels_2 {
+            get {
+                return ResourceManager.GetString("InformationPage_Hotels_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We will be staying there and we couldn&apos;t wish for a better ending to our wedding than to share our first breakfast as husband and wife (as in proper bacon and eggs breakfast) with our closest friends and family..
+        /// </summary>
+        public static string InformationPage_Hotels_3 {
+            get {
+                return ResourceManager.GetString("InformationPage_Hotels_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Somewhere to Stay.
+        /// </summary>
+        public static string InformationPage_Hotels_Title {
+            get {
+                return ResourceManager.GetString("InformationPage_Hotels_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to info.
         /// </summary>
         public static string InformationPage_Link {
@@ -124,7 +217,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maps, hotels and stuff.
+        ///   Looks up a localized string similar to The stuff we couldn&apos;t fit on the invitation.
         /// </summary>
         public static string InformationPage_SubTitle {
             get {
@@ -142,6 +235,24 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to That&apos;s right, we changed the venue....
+        /// </summary>
+        public static string InformationPage_Venue_1 {
+            get {
+                return ResourceManager.GetString("InformationPage_Venue_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We&apos;ll be getting married at a lovely little place called Goosedale. It&apos;s in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1..
+        /// </summary>
+        public static string InformationPage_Venue_2 {
+            get {
+                return ResourceManager.GetString("InformationPage_Venue_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to rsvp.
         /// </summary>
         public static string RsvpPage_Link {
@@ -151,7 +262,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to We can&apos;t wait to see you.
+        ///   Looks up a localized string similar to We can&apos;t wait to share our special day with you.
         /// </summary>
         public static string RsvpPage_SubTitle {
             get {

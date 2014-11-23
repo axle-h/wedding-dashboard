@@ -7,8 +7,8 @@
 <div class="container margin-bottom">
     <div class="row">
         <div class="col-md-12">
-            <p class="subtle">That's right, we changed the venue...</p>
-            <p>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</p>
+            <p class="subtle">@Html.Raw(Resources.InformationPage_Venue_1)</p>
+            <p>@Html.Raw(Resources.InformationPage_Venue_2)</p>
         </div>
     </div>
 </div>
@@ -31,19 +31,15 @@
 </div>
 
 <div class="col-md-12 bg-light margin-bottom-large">
-    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel
-    {
-        Url = Links.Content.Images.hotel_jpg,
-        Title = "Somewhere to Stay"
-    })
+    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel { Url = Links.Content.Images.hotel_jpg, Title = Resources.InformationPage_Hotels_Title })
 </div>
 
 <div class="container margin-bottom-large">
     <div class="row">
         <div class="col-md-12">
-            <p>The closest hotel is Dakota Nottingham, a ten minute drive from Goosedale.</p>
-            <p>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. <span class="subtle">Yeah even you mum...</span> To gurantee a room, call quoting 'Kathryn & Alex, Goosedale Wedding 14th March 2015' by the 14th February 2015.</p>
-            <p>We will be staying there and we couldn't wish for a better ending to our wedding than to share our first breakfast as husband and wife (as in proper bacon and eggs breakfast) with our closest friends and family.</p>
+            <p>@Html.Raw(Resources.InformationPage_Hotels_1)</p>
+            <p>@Html.Raw(Resources.InformationPage_Hotels_2)</p>
+            <p>@Html.Raw(Resources.InformationPage_Hotels_3)</p>
         </div>
     </div>
 </div>
@@ -67,21 +63,14 @@
 
 
 <div class="bg-light col-md-12 margin-bottom-large">
-    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel
-    {
-        Url = Links.Content.Images.honeymoon_poem_1_jpg,
-        Title = "Something to Buy"
-    })
+    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel { Url = Links.Content.Images.honeymoon_poem_1_jpg, Title = Resources.InformationPage_Gifts_Title })
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <p>
-                The date has been set and we’d love you to come,<br />
-                To celebrate our wedding, a long way for some,<br />
-                All you must do, is decide what to wear,<br />
-                Then polish your jewellery and comb up your hair.
+                @Html.Raw(Resources.InformationPage_Honeymoon_Poem_1)
             </p>
         </div>
     </div>
@@ -91,11 +80,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>
-                    Don’t worry about gifts, don’t buy us a yacht,<br />
-                    The things that we need, we’ve already got.<br />
-                    Our home is quite compact, we may have to move<br />
-                    Then our storage and space will surely improve.
+                <p class="padding-bottom">
+                    @Html.Raw(Resources.InformationPage_Honeymoon_Poem_2)
                 </p>
             </div>
         </div>
@@ -103,21 +89,14 @@
 </div>
 
 <div class="bg-light col-md-12 margin-bottom-large">
-    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel
-    {
-        Url = Links.Content.Images.honeymoon_poem_2_jpg,
-        Title = ""
-    })
+    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel { Url = Links.Content.Images.honeymoon_poem_2_jpg })
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <p>
-                Don’t go out shopping or get yourself stressed,<br />
-                Don’t alter your plans for a pre wedding rest.<br />
-                If you want to be generous, despite what we’ve said,<br />
-                Then save all the hassle and do this instead….
+                @Html.Raw(Resources.InformationPage_Honeymoon_Poem_3)
             </p>
         </div>
     </div>
@@ -127,11 +106,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>
-                    Don’t know how to word this but will give it our best shot…<br />
-                    Contributions are most welcome, we’ll go somewhere hot!<br />
-                    A honeymoon would be marvellous, to start off our life.<br />
-                    In our long winding journey, as new husband and wife!
+                <p class="padding-bottom">
+                    @Html.Raw(Resources.InformationPage_Honeymoon_Poem_4)
                 </p>
             </div>
         </div>
@@ -139,11 +115,7 @@
 </div>
 
 <div class="bg-light col-md-12 margin-bottom-large">
-    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel
-{
-    Url = Links.Content.Images.honeymoon_poem_3_jpg,
-    Title = ""
-})
+    @Html.Partial(MVC.Shared.Views._SectionHeading, new HeaderImageViewModel { Url = Links.Content.Images.honeymoon_poem_3_jpg })
 </div>
 
 

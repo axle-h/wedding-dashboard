@@ -135,20 +135,65 @@
   <data name="InformationPage_GettingThere" xml:space="preserve">
     <value>Getting there</value>
   </data>
+  <data name="InformationPage_Gifts_Title" xml:space="preserve">
+    <value>Something to Buy</value>
+  </data>
+  <data name="InformationPage_Honeymoon_Poem_1" xml:space="preserve">
+    <value>The date has been set and we’d love you to come,&lt;br /&gt;
+To celebrate our wedding, a long way for some,&lt;br /&gt;
+All you must do, is decide what to wear,&lt;br /&gt;
+Then polish your jewellery and comb up your hair.</value>
+  </data>
+  <data name="InformationPage_Honeymoon_Poem_2" xml:space="preserve">
+    <value>Don’t worry about gifts, don’t buy us a yacht,&lt;br /&gt;
+The things that we need, we’ve already got.&lt;br /&gt;
+Our home is quite compact, we may have to move&lt;br /&gt;
+Then our storage and space will surely improve.</value>
+  </data>
+  <data name="InformationPage_Honeymoon_Poem_3" xml:space="preserve">
+    <value>Don’t go out shopping or get yourself stressed,&lt;br /&gt;
+Don’t alter your plans for a pre wedding rest.&lt;br /&gt;
+If you want to be generous, despite what we’ve said,&lt;br /&gt;
+Then save all the hassle and do this instead...</value>
+  </data>
+  <data name="InformationPage_Honeymoon_Poem_4" xml:space="preserve">
+    <value>Don’t know how to word this but will give it our best shot…&lt;br /&gt;
+Contributions are most welcome, we’ll go somewhere hot!&lt;br /&gt;
+A honeymoon would be marvellous, to start off our life.&lt;br /&gt;
+In our long winding journey, as new husband and wife!</value>
+  </data>
+  <data name="InformationPage_Hotels_1" xml:space="preserve">
+    <value>The closest hotel is Dakota Nottingham, a ten minute drive from Goosedale.</value>
+  </data>
+  <data name="InformationPage_Hotels_2" xml:space="preserve">
+    <value>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £99. To guarantee a room, call quoting &lt;span class="subtle"&gt;'Kathryn &amp; Alex, Goosedale Wedding 14th March 2015'&lt;/span&gt;.</value>
+  </data>
+  <data name="InformationPage_Hotels_3" xml:space="preserve">
+    <value>We will be staying there and we couldn't wish for a better ending to our wedding than to share our first breakfast as husband and wife (as in proper bacon and eggs breakfast) with our closest friends and family.</value>
+  </data>
+  <data name="InformationPage_Hotels_Title" xml:space="preserve">
+    <value>Somewhere to Stay</value>
+  </data>
   <data name="InformationPage_Link" xml:space="preserve">
     <value>info</value>
   </data>
   <data name="InformationPage_SubTitle" xml:space="preserve">
-    <value>Maps, hotels and stuff</value>
+    <value>The stuff we couldn't fit on the invitation</value>
   </data>
   <data name="InformationPage_Title" xml:space="preserve">
     <value>Information</value>
+  </data>
+  <data name="InformationPage_Venue_1" xml:space="preserve">
+    <value>That's right, we changed the venue...</value>
+  </data>
+  <data name="InformationPage_Venue_2" xml:space="preserve">
+    <value>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</value>
   </data>
   <data name="RsvpPage_Link" xml:space="preserve">
     <value>rsvp</value>
   </data>
   <data name="RsvpPage_SubTitle" xml:space="preserve">
-    <value>We can't wait to see you</value>
+    <value>We can't wait to share our special day with you</value>
   </data>
   <data name="RsvpPage_Title" xml:space="preserve">
     <value>Come Celebrate</value>
