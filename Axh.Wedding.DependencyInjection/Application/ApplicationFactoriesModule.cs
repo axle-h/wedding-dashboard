@@ -16,9 +16,9 @@
         /// </summary>
         public override void Load()
         {
-            this.Bind<IPageViewModelFactory>().To<PageViewModelFactory>();
-            this.Bind<IStaticContentViewModelFactory>().To<StaticContentViewModelFactory>();
-            this.Bind<IRsvpViewModelFactory>().To<RsvpViewModelFactory>();
+            Bind<IPageViewModelFactory>().To<PageViewModelFactory>();
+            Bind<IStaticContentViewModelFactory>().To<StaticContentViewModelFactory>();
+            Bind<IRsvpViewModelFactory>().To<RsvpViewModelFactory>();
         }
     }
 }

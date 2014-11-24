@@ -5,6 +5,7 @@
 
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.DependencyInjection.Application;
+    using Axh.Wedding.DependencyInjection.Core;
     using Axh.Wedding.Mvc.Infrastructure.Helpers;
 
     using Ninject;
@@ -41,7 +42,11 @@
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            var modules = new INinjectModule[] { new MvcApplicationModule(), new ApplicationFactoriesModule(), new ApplicationServicesModule(), new ApplicationConfigModule(),  };
+            var modules = new INinjectModule[]
+            {
+                new MvcApplicationModule(), new ApplicationFactoriesModule(), new ApplicationServicesModule(),
+                new ApplicationConfigModule(), new CoreServicesModule()
+            };
             kernel.Load(modules);
         }
 

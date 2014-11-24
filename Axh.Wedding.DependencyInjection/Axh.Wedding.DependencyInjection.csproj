@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -45,12 +46,18 @@
     <Compile Include="Application\ApplicationConfigModule.cs" />
     <Compile Include="Application\ApplicationFactoriesModule.cs" />
     <Compile Include="Application\ApplicationServicesModule.cs" />
+    <Compile Include="Core\CoreServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.Services.Logging.Contracts\Axh.Core.Services.Logging.Contracts.csproj">
+      <Project>{BDAD9055-8215-43C5-9238-FA6630C6EC46}</Project>
+      <Name>Axh.Core.Services.Logging.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.Logging\Axh.Core.Services.Logging.csproj">
+      <Project>{F7561297-4871-4598-9BA1-43AFAFEF3811}</Project>
+      <Name>Axh.Core.Services.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Wedding.Application.Contracts\Axh.Wedding.Application.Contracts.csproj">
       <Project>{aad1c83a-9371-40c7-808a-5e53fe3db584}</Project>
       <Name>Axh.Wedding.Application.Contracts</Name>
@@ -63,6 +70,9 @@
       <Project>{bc8a74e1-2663-4958-bf97-7dc85ad2c391}</Project>
       <Name>Axh.Wedding.Application</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

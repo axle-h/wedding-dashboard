@@ -4,7 +4,6 @@
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
     using Axh.Wedding.Application.ViewModelService.Home;
     using Axh.Wedding.Application.ViewModelService.Rsvp;
-
     using Ninject.Modules;
 
     public class ApplicationServicesModule : NinjectModule
@@ -14,8 +13,8 @@
         /// </summary>
         public override void Load()
         {
-            this.Bind<IHomePageViewModelService>().To<HomePageViewModelService>();
-            this.Bind<IRsvpViewModelService>().To<RsvpViewModelService>();
+            Bind<IHomePageViewModelService>().To<HomePageViewModelService>();
+            Bind<IRsvpViewModelService>().To<RsvpViewModelService>();
         }
     }
 }

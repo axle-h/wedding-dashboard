@@ -12,7 +12,7 @@
         /// </summary>
         public override void Load()
         {
-            this.Bind<IWeddingConfig>().To<WeddingConfig>().InSingletonScope();
+            Bind<IWeddingConfig>().To<WeddingConfig>().InSingletonScope();
         }
     }
 }

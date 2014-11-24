@@ -1,10 +1,11 @@
 ﻿namespace Axh.Wedding.Mvc
 {
+    using System.Configuration;
     using System.Reflection;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
-
+    using log4net.Config;
     using Ninject;
     using Ninject.Web.Common;
 
@@ -19,6 +20,7 @@
         {
             base.OnApplicationStarted();
 
+            XmlConfigurator.Configure();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
