@@ -291,14 +291,16 @@ footer {
 
 // Contact Form Styles
 
-.floating-label-form-group {
+.floating-label-form-group
+{
 	font-size: 14px;
 	position: relative;
 	margin-bottom: 0;
 	padding-bottom: 0.5em;
 	border-bottom: 1px solid @gray-light;
 	input,
-	textarea {
+	textarea
+    {
 		z-index: 1;
 		position: relative;
 		padding-right: 0;
@@ -310,13 +312,14 @@ footer {
 		box-shadow: none !important;
 		resize: none;
 	}
-	label {
+	label
+    {
 		display: block;
 		z-index: 0;
 		position: relative;
 		top: 2em;
 		margin: 0;
-		font-size: 0.85em;
+		font-size: 1em;
 		line-height: 1.764705882em;
 		vertical-align: middle;
 		vertical-align: baseline;
@@ -333,15 +336,17 @@ footer {
 }
 
 .floating-label-form-group-with-value {
-	label {
+	label
+    {
 		top: 0;
 		opacity: 1;
 	}
 }
 
 .floating-label-form-group-with-focus {
-	label {
-		color: @brand-primary;
+	label
+    {
+		color: @brand-primary-dark;
 	}
 }
 
@@ -369,8 +374,8 @@ form .row:first-child .floating-label-form-group {
 .btn-default {
 	&:hover,
 	&:focus {
-		background-color: @brand-primary;
-		border: 1px solid @brand-primary;
+		background-color: @brand-primary-dark;
+		border: 1px solid @brand-primary-dark;
 		color: white;
 	}
 }

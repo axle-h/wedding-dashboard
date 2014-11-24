@@ -163,6 +163,7 @@
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\ViewModels\RsvpFormViewModel.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
   </ItemGroup>

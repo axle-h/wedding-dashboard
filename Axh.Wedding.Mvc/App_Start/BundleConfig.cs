@@ -13,7 +13,6 @@ namespace Axh.Wedding.Mvc
 		{
             var siteStyleBundle = new LessBundle(SiteCssBundleVirtualPath);
             siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.bootstrap_css));
-            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.bootstrap_theme_css));
             siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.font_awesome_css));
             siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Global_less));
             bundles.Add(siteStyleBundle);

@@ -35,6 +35,9 @@ $(function () {
     if (document.getElementById("pg-info")) {
         new InformationViewModel(model);
     }
+    else if (document.getElementById("pg-rsvp")) {
+        new RsvpFormViewModel(model);
+    }
 });
 
 
