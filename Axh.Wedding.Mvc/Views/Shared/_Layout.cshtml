@@ -58,7 +58,7 @@
         @Html.Partial(MVC.Shared.Views._SectionHeading, Model.Header.HeaderImage)
 
         <!-- Main Content -->
-        <div class="margin-top" id="pg-@Html.Raw(Model.Header.PageLink)">
+        <div class="margin-top" id="pg-@Html.Raw(Model.Header.PageLink.ToLower())">
             @RenderBody()
         </div>
 

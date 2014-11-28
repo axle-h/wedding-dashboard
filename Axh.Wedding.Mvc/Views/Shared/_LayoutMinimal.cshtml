@@ -15,7 +15,7 @@
 </head>
 <body>
     
-    <div class="margin-top margin-bottom" id="pg-@Html.Raw(Model.Header.PageLink)">
+    <div class="margin-top margin-bottom" id="pg-@Html.Raw(Model.Header.PageLink.ToLower())">
         @RenderBody()
     </div>
 
