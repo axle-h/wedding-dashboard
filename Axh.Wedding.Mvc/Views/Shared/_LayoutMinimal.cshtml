@@ -1,0 +1,27 @@
+﻿
+@model Axh.Wedding.Application.ViewModels.Page.PageViewModelBase
+
+@using System.Web.Optimization
+@using Axh.Wedding.Mvc.Infrastructure.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial(MVC.Shared.Views._Meta, Model)
+
+    @Styles.Render(BundleConfig.SiteCssBundleVirtualPath)
+
+    @Scripts.Render(BundleConfig.HeadJsBundleVirtualPath)
+
+</head>
+<body>
+    
+    <div class="margin-top margin-bottom" id="pg-@Html.Raw(Model.Header.PageLink)">
+        @RenderBody()
+    </div>
+
+    @Html.Partial(MVC.Shared.Views._Footer, Model.Footer)
+
+    @Html.WriteModelJson()
+    @Scripts.Render(BundleConfig.MainBodyJsBundleVirtualPath)
+</body>
+</html>

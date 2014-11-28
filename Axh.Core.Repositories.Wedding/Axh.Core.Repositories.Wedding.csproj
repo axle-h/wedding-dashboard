@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +47,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRepository.cs" />
+    <Compile Include="UserRoleRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.DbContexts.Contracts\Axh.Core.DbContexts.Contracts.csproj">
+      <Project>{106458AD-4387-4401-8B24-F1C143F532E1}</Project>
+      <Name>Axh.Core.DbContexts.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.DbContexts.WeddingContext\Axh.Core.DbContexts.WeddingContext.csproj">
+      <Project>{F09F9216-0B96-474A-AFB0-221163DAD55B}</Project>
+      <Name>Axh.Core.DbContexts.WeddingContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.DomainModels\Axh.Core.DomainModels.csproj">
+      <Project>{83CD54FB-3EB0-4631-810D-7064905034EB}</Project>
+      <Name>Axh.Core.DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Repositories.Common\Axh.Core.Repositories.Common.csproj">
+      <Project>{366C825E-66D3-4F54-AA93-CD619A407271}</Project>
+      <Name>Axh.Core.Repositories.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Repositories.Wedding.Contracts\Axh.Core.Repositories.Wedding.Contracts.csproj">
+      <Project>{13F50F1D-CC17-4004-998D-5E9D21ED351A}</Project>
+      <Name>Axh.Core.Repositories.Wedding.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.Logging.Contracts\Axh.Core.Services.Logging.Contracts.csproj">
+      <Project>{BDAD9055-8215-43C5-9238-FA6630C6EC46}</Project>
+      <Name>Axh.Core.Services.Logging.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

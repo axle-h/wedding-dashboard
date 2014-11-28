@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,19 +43,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\IWeddingConfig.cs" />
+    <Compile Include="Factories\IWeddingUserFactory.cs" />
     <Compile Include="Helpers\IWeddingUrlHelper.cs" />
+    <Compile Include="Models\Account\WeddingUser.cs" />
+    <Compile Include="Models\Account\WeddingUserRole.cs" />
+    <Compile Include="Services\IWeddingUserService.cs" />
+    <Compile Include="ViewModelFactories\Account\IAccountViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IPageViewModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelFactories\Home\IStaticContentViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Rsvp\IRsvpViewModelFactory.cs" />
+    <Compile Include="ViewModelServices\Account\IAccountViewModelService.cs" />
     <Compile Include="ViewModelServices\Home\IHomePageViewModelService.cs" />
     <Compile Include="ViewModelServices\Rsvp\IRsvpViewModelService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.DomainModels\Axh.Core.DomainModels.csproj">
+      <Project>{83cd54fb-3eb0-4631-810d-7064905034eb}</Project>
+      <Name>Axh.Core.DomainModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Wedding.Application.ViewModels\Axh.Wedding.Application.ViewModels.csproj">
       <Project>{277067D4-C8D4-485F-A746-EFDE9B5A0996}</Project>
       <Name>Axh.Wedding.Application.ViewModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

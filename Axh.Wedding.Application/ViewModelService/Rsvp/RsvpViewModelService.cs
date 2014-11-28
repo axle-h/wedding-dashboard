@@ -13,9 +13,9 @@
             this.rsvpViewModelFactory = rsvpViewModelFactory;
         }
 
-        public RsvpPageViewModel GetRsvpPageViewModel()
+        public RsvpPageViewModel GetRsvpPageViewModel(string user)
         {
-            return this.rsvpViewModelFactory.GetRsvpPageViewModel();
+            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user);
         }
     }
 }

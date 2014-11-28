@@ -4,10 +4,10 @@ namespace Axh.Wedding.Application.Contracts.ViewModelFactories.Home
 
     public interface IStaticContentViewModelFactory
     {
-        HomePageViewModel GetHomePageViewModel();
+        HomePageViewModel GetHomePageViewModel(string user);
 
-        InformationPageViewModel GetInformationPageViewModel();
+        InformationPageViewModel GetInformationPageViewModel(string user);
 
-        ContactPageViewModel GetContactPageViewModel();
+        ContactPageViewModel GetContactPageViewModel(string user);
     }
 }

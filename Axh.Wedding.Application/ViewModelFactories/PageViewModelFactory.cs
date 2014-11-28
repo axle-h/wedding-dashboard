@@ -2,6 +2,7 @@
 {
     using Axh.Wedding.Application.Contracts.Config;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Page;
 
     public class PageViewModelFactory : IPageViewModelFactory
@@ -14,6 +15,7 @@
         }
 
         public TPageViewModel GetPageViewModel<TPageViewModel>(
+            UserViewModel user,
             HeaderImageViewModel headerImage,
             string pageLink,
             string title = null,
@@ -33,10 +35,16 @@
                    {
                        ApplicationTitle = applicationTitle,
                        ApplicationSubTitle = applicationSubTitle,
-                       Header = new HeaderViewModel
+                       Header = new HeaderViewModel { PageLink = pageLink, HeaderImage = headerImage },
+                       User = user,
+                       Footer = new FooterViewModel
                                 {
-                                    PageLink = pageLink,
-                                    HeaderImage = headerImage
+                                    EmailAddress = weddingConfig.Email,
+                                    FacebookLink = "https://www.facebook.com/" + weddingConfig.Facebook,
+                                    GitHubLink ="https://github.com/" + weddingConfig.GitHub,
+                                    GooglePlusLink = "https://plus.google.com/" + weddingConfig.GooglePlus,
+                                    LinkedInLink = "https://www.linkedin.com/" + weddingConfig.LinkedIn,
+                                    TwitterLink = "https://twitter.com/" + weddingConfig.Twitter
                                 }
                    };
         }

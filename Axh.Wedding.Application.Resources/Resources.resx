@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Account_InvalidUserNameOrPassword" xml:space="preserve">
+    <value>Invalid username or password</value>
+  </data>
+  <data name="Account_SignIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Account_SignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
   <data name="ContactPage_Link" xml:space="preserve">
-    <value>contact</value>
+    <value>Contact</value>
   </data>
   <data name="ContactPage_SubTitle" xml:space="preserve">
     <value>Have questions? We have answers (maybe)</value>
@@ -127,7 +136,7 @@
     <value>Contact Us</value>
   </data>
   <data name="HomePage_Link" xml:space="preserve">
-    <value>home</value>
+    <value>Wedding</value>
   </data>
   <data name="HomePage_Title" xml:space="preserve">
     <value>Our Wedding</value>
@@ -175,7 +184,7 @@ In our long winding journey, as new husband and wife!</value>
     <value>Somewhere to Stay</value>
   </data>
   <data name="InformationPage_Link" xml:space="preserve">
-    <value>info</value>
+    <value>Info</value>
   </data>
   <data name="InformationPage_SubTitle" xml:space="preserve">
     <value>The stuff we couldn't fit on the invitation</value>
@@ -189,8 +198,17 @@ In our long winding journey, as new husband and wife!</value>
   <data name="InformationPage_Venue_2" xml:space="preserve">
     <value>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</value>
   </data>
+  <data name="LoginPage_Link" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="LoginPage_SubTitle" xml:space="preserve">
+    <value>Who are you?</value>
+  </data>
+  <data name="LoginPage_Title" xml:space="preserve">
+    <value>Hello.</value>
+  </data>
   <data name="RsvpPage_Link" xml:space="preserve">
-    <value>rsvp</value>
+    <value>Rsvp</value>
   </data>
   <data name="RsvpPage_SubTitle" xml:space="preserve">
     <value>We can't wait to share our special day with you</value>

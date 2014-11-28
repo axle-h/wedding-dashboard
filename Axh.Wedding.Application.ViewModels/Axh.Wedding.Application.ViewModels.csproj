@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\LoginPageViewModel.cs" />
+    <Compile Include="Account\UserViewModel.cs" />
     <Compile Include="Home\ContactPageViewModel.cs" />
     <Compile Include="Home\HomePageViewModel.cs" />
     <Compile Include="Home\InformationPageViewModel.cs" />
     <Compile Include="Page\BindClientPropertyAttribute.cs" />
+    <Compile Include="Page\FooterViewModel.cs" />
     <Compile Include="Page\HeaderImageViewModel.cs" />
     <Compile Include="Page\HeaderViewModel.cs" />
     <Compile Include="Page\PageViewModelBase.cs" />

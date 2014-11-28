@@ -1,4 +1,4 @@
-﻿function RsvpFormViewModel(model) {
+﻿function FloatingFormViewModel() {
     var self = this;
 
     $("body").on("input propertychange", ".floating-label-form-group", function (e) {
@@ -8,5 +8,4 @@
     }).on("blur", ".floating-label-form-group", function () {
         $(this).removeClass("floating-label-form-group-with-focus");
     });
-
 };

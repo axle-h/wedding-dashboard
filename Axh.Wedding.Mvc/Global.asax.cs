@@ -1,40 +1,23 @@
 ﻿namespace Axh.Wedding.Mvc
 {
-    using System.Configuration;
-    using System.Reflection;
+    using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
+
     using log4net.Config;
-    using Ninject;
-    using Ninject.Web.Common;
 
-    public class MvcApplication : NinjectHttpApplication
+    public class MvcApplication : HttpApplication
     {
-        internal static string Version = Assembly.GetAssembly(typeof(MvcApplication)).GetName().Version.ToString();
+        //internal static string Version = Assembly.GetAssembly(typeof(MvcApplication)).GetName().Version.ToString();
+        internal static string Version = "1.0.0.0";
 
-        /// <summary>
-        /// Called when the application is started.
-        /// </summary>
-        protected override void OnApplicationStarted()
+        protected void Application_Start()
         {
-            base.OnApplicationStarted();
-
             XmlConfigurator.Configure();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
-
-        /// <summary>
-        /// Creates the kernel that will manage your application.
-        /// </summary>
-        /// <returns>
-        /// The created kernel.
-        /// </returns>
-        protected override IKernel CreateKernel()
-        {
-            return DependencyInjection.CreateKernel();
         }
     }
 }

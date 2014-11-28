@@ -30,7 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,17 +51,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\WeddingConfig.cs" />
+    <Compile Include="DbInitializers\DevelopmentDbInitializer.cs" />
+    <Compile Include="Factories\WeddingUserFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\WeddingUserService.cs" />
+    <Compile Include="ViewModelFactories\Account\AccountViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Home\StaticContentViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\PageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Rsvp\RsvpViewModelFactory.cs" />
+    <Compile Include="ViewModelService\Account\AccountViewModelService.cs" />
     <Compile Include="ViewModelService\Home\HomePageViewModelService.cs" />
     <Compile Include="ViewModelService\Rsvp\RsvpViewModelService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.DbContexts.WeddingContext\Axh.Core.DbContexts.WeddingContext.csproj">
+      <Project>{f09f9216-0b96-474a-afb0-221163dad55b}</Project>
+      <Name>Axh.Core.DbContexts.WeddingContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.DomainModels\Axh.Core.DomainModels.csproj">
+      <Project>{83CD54FB-3EB0-4631-810D-7064905034EB}</Project>
+      <Name>Axh.Core.DomainModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Core.Services.Logging.Contracts\Axh.Core.Services.Logging.Contracts.csproj">
       <Project>{BDAD9055-8215-43C5-9238-FA6630C6EC46}</Project>
       <Name>Axh.Core.Services.Logging.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.User.Contracts\Axh.Core.Services.User.Contracts.csproj">
+      <Project>{6548B828-7239-4065-8EAC-7D5223F7801D}</Project>
+      <Name>Axh.Core.Services.User.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Axh.Wedding.Application.Contracts\Axh.Wedding.Application.Contracts.csproj">
       <Project>{aad1c83a-9371-40c7-808a-5e53fe3db584}</Project>
@@ -65,6 +92,9 @@
       <Project>{6e6e922a-2fa6-45e1-8c51-dbf6c7b86d67}</Project>
       <Name>Axh.Wedding.Application.Resources</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -53,5 +53,13 @@
                 return this.urlHelper.RouteUrl(MVC.Rsvp.Index());
             }
         }
+
+        public HeaderImageViewModel LoginPageHeader
+        {
+            get
+            {
+                return new HeaderImageViewModel { Url = Links.Content.Images.home_bg_jpg, IsLight = false, ExtraVerticalMargin = true };
+            }
+        }
     }
 }

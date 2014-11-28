@@ -35,7 +35,10 @@ $(function () {
         new InformationViewModel(model);
     }
     else if (document.getElementById("pg-rsvp")) {
-        new RsvpFormViewModel(model);
+        new RsvpViewModel(model);
+    }
+    else if (document.getElementById("pg-login")) {
+        new LoginViewModel(model);
     }
 });
 

@@ -7,14 +7,31 @@
     {
         private readonly TContext contextInstance;
 
+        private bool isDisposed;
+
         public DefaultDbContextActivator()
         {
+            isDisposed = false;
             contextInstance = new TContext();
         }
 
         public TContext Instance
         {
             get { return contextInstance; }
+        }
+
+        public void Dispose()
+        {
+            lock (contextInstance)
+            {
+                if (isDisposed)
+                {
+                    return;
+                }
+
+                this.contextInstance.Dispose();
+                this.isDisposed = true;
+            }
         }
     }
 }

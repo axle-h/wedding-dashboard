@@ -3,6 +3,7 @@
     using Axh.Wedding.Application.Contracts.Config;
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
+    using Axh.Wedding.Application.Contracts.ViewModelFactories.Account;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Home;
     using Axh.Wedding.Application.ViewModels.Home;
     using Axh.Wedding.Resources;
@@ -15,16 +16,20 @@
 
         private readonly IWeddingConfig weddingConfig;
 
-        public StaticContentViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IWeddingConfig weddingConfig)
+        private readonly IAccountViewModelFactory accountViewModelFactory;
+
+        public StaticContentViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IWeddingConfig weddingConfig, IAccountViewModelFactory accountViewModelFactory)
         {
             this.pageViewModelFactory = pageViewModelFactory;
             this.weddingUrlHelper = weddingUrlHelper;
             this.weddingConfig = weddingConfig;
+            this.accountViewModelFactory = accountViewModelFactory;
         }
 
-        public HomePageViewModel GetHomePageViewModel()
+        public HomePageViewModel GetHomePageViewModel(string user)
         {
             return this.pageViewModelFactory.GetPageViewModel<HomePageViewModel>(
+                accountViewModelFactory.GetUserViewModel(user),
                 weddingUrlHelper.HomePageHeader,
                 Resources.HomePage_Link,
                 Resources.HomePage_Title,
@@ -33,9 +38,10 @@
                 Resources.RsvpPage_Link);
         }
 
-        public InformationPageViewModel GetInformationPageViewModel()
+        public InformationPageViewModel GetInformationPageViewModel(string user)
         {
             var viewModel = this.pageViewModelFactory.GetPageViewModel<InformationPageViewModel>(
+                accountViewModelFactory.GetUserViewModel(user),
                 weddingUrlHelper.InfoPageHeader,
                 Resources.InformationPage_Link,
                 Resources.InformationPage_Title,
@@ -50,9 +56,10 @@
             return viewModel;
         }
 
-        public ContactPageViewModel GetContactPageViewModel()
+        public ContactPageViewModel GetContactPageViewModel(string user)
         {
             return this.pageViewModelFactory.GetPageViewModel<ContactPageViewModel>(
+                accountViewModelFactory.GetUserViewModel(user),
                 weddingUrlHelper.ContactPageHeader,
                 Resources.ContactPage_Link,
                 Resources.ContactPage_Title,

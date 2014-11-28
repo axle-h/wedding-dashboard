@@ -13,19 +13,19 @@
             this.staticContentViewModelFactory = staticContentViewModelFactory;
         }
 
-        public HomePageViewModel GetHomePageViewModel()
+        public HomePageViewModel GetHomePageViewModel(string user)
         {
-            return this.staticContentViewModelFactory.GetHomePageViewModel();
+            return this.staticContentViewModelFactory.GetHomePageViewModel(user);
         }
 
-        public InformationPageViewModel GetInformationPageViewModel()
+        public InformationPageViewModel GetInformationPageViewModel(string user)
         {
-            return this.staticContentViewModelFactory.GetInformationPageViewModel();
+            return this.staticContentViewModelFactory.GetInformationPageViewModel(user);
         }
 
-        public ContactPageViewModel GetContactPageViewModel()
+        public ContactPageViewModel GetContactPageViewModel(string user)
         {
-            return this.staticContentViewModelFactory.GetContactPageViewModel();
+            return this.staticContentViewModelFactory.GetContactPageViewModel(user);
         }
     }
 }

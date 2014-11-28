@@ -5,5 +5,7 @@ namespace Axh.Core.DbContexts.Contracts.Activators
     public interface IDbContextActivator<out TContext> where TContext : DbContext, new()
     {
         TContext Instance { get; }
+
+        void Dispose();
     }
 }

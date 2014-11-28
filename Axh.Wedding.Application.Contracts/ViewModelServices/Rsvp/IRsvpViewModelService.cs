@@ -4,6 +4,6 @@
 
     public interface IRsvpViewModelService
     {
-        RsvpPageViewModel GetRsvpPageViewModel();
+        RsvpPageViewModel GetRsvpPageViewModel(string user);
     }
 }

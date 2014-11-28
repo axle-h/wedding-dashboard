@@ -1,0 +1,45 @@
+﻿@using Axh.Wedding.Resources
+@model Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel
+
+@{
+    Layout = MVC.Shared.Views._LayoutMinimal;   
+}
+
+
+<header class="intro-header" style="background-image: url('@Html.Raw(Model.Header.HeaderImage.Url)')">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="login-heading">
+                    <div class="margin-bottom-large">
+                        <h1>@Model.Header.HeaderImage.Title</h1>
+                        <hr class="small" />
+                        <span class="subheading">@Model.Header.HeaderImage.SubTitle</span>
+                    </div>
+
+                    <div>
+                        <div class="form-signin-bg">
+                            @using (Html.BeginForm(MVC.Account.Login(), FormMethod.Post, new { @class = "form-signin" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(m => m.ReturnUrl)
+
+                                @Html.LabelFor(m => m.UserName, new { @class = "sr-only" })
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "User name" })
+
+                                @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+
+                                <button class="btn btn-lg btn-block" type="submit">@Resources.Account_SignIn</button>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</header>

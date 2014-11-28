@@ -189,7 +189,7 @@ blockquote {
 	background-attachment: scroll;
 	.background-cover;
 
-    .site-heading
+    .site-heading, .login-heading
     {
 		padding: 100px 0 50px 0;
 		color: white;
@@ -233,16 +233,6 @@ blockquote {
         {
             margin-top: 50px;
 
-            .subheading
-            {
-                display: none;
-            }
-
-            hr
-            {
-                display: none;
-            }
-
             &.big
             {
                 padding: 200px 0 50px 0;
@@ -264,6 +254,32 @@ blockquote {
                 font-size: 80px;
             }
         }        
+    }
+
+    .login-heading
+    {
+        padding-top: 300px;
+
+        @media only screen and (max-width: 500px)
+        {
+            padding-top: 250px;
+        }
+    }
+
+    .site-heading
+    {
+        @media only screen and (max-width: 500px)
+        {
+            .subheading
+            {
+                display: none;
+            }
+
+            hr
+            {
+                display: none;
+            }
+        }
     }
 	
 }
@@ -289,11 +305,11 @@ footer {
 	}
 }
 
-// Contact Form Styles
+// Floating Form Styles
 
 .floating-label-form-group
 {
-	font-size: 14px;
+	font-size: 1em;
 	position: relative;
 	margin-bottom: 0;
 	padding-bottom: 0.5em;
@@ -354,6 +370,65 @@ form .row:first-child .floating-label-form-group {
 	border-top: 1px solid @gray-light;
 }
 
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+
+    .form-control
+    {
+        position: relative;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .form-control:focus
+    {
+        z-index: 2;
+    }
+
+    input[type="text"]
+    {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    input[type="password"]
+    {
+        margin-bottom: @margin;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .btn
+    {
+        color: white;
+        background-color: @black-transparent;
+        border: 1px solid @black-transparent-80;
+
+        &:hover, &:focus {
+		    background-color: @black-transparent-40;
+		    border-color: @black-transparent-70;
+            outline: none;
+	    }
+    }
+}
+
+.form-signin-bg
+{
+    color: white;
+    background-color: @black-transparent-40;
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+
 // Button Styles
 
 .btn {
@@ -377,6 +452,7 @@ form .row:first-child .floating-label-form-group {
 		background-color: @brand-primary-dark;
 		border: 1px solid @brand-primary-dark;
 		color: white;
+        outline: none;
 	}
 }
 
@@ -385,10 +461,10 @@ form .row:first-child .floating-label-form-group {
     color: white;
     background-color: @black-transparent-40;
     &:hover,
-    &:focus,
-    &:active {
+    &:focus {
         color: #fff;
         background-color: @black-transparent-70;
+        outline: none;
     }
 }
 

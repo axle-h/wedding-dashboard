@@ -61,7 +61,34 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to contact.
+        ///   Looks up a localized string similar to Invalid username or password.
+        /// </summary>
+        public static string Account_InvalidUserNameOrPassword {
+            get {
+                return ResourceManager.GetString("Account_InvalidUserNameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign In.
+        /// </summary>
+        public static string Account_SignIn {
+            get {
+                return ResourceManager.GetString("Account_SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign Out.
+        /// </summary>
+        public static string Account_SignOut {
+            get {
+                return ResourceManager.GetString("Account_SignOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string ContactPage_Link {
             get {
@@ -88,7 +115,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to home.
+        ///   Looks up a localized string similar to Wedding.
         /// </summary>
         public static string HomePage_Link {
             get {
@@ -208,7 +235,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to info.
+        ///   Looks up a localized string similar to Info.
         /// </summary>
         public static string InformationPage_Link {
             get {
@@ -253,7 +280,34 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to rsvp.
+        ///   Looks up a localized string similar to Hello.
+        /// </summary>
+        public static string LoginPage_Link {
+            get {
+                return ResourceManager.GetString("LoginPage_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Who are you?.
+        /// </summary>
+        public static string LoginPage_SubTitle {
+            get {
+                return ResourceManager.GetString("LoginPage_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello..
+        /// </summary>
+        public static string LoginPage_Title {
+            get {
+                return ResourceManager.GetString("LoginPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rsvp.
         /// </summary>
         public static string RsvpPage_Link {
             get {

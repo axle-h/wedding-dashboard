@@ -25,6 +25,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static Axh.Wedding.Mvc.Controllers.AccountController Account = new Axh.Wedding.Mvc.Controllers.T4MVC_AccountController();
     public static Axh.Wedding.Mvc.Controllers.HomeController Home = new Axh.Wedding.Mvc.Controllers.T4MVC_HomeController();
     public static Axh.Wedding.Mvc.Controllers.RsvpController Rsvp = new Axh.Wedding.Mvc.Controllers.T4MVC_RsvpController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -84,8 +85,11 @@ namespace Links
             private const string URLPATH = "~/Scripts/ViewModels";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string FloatingFormViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/FloatingFormViewModel.min.js") ? Url("FloatingFormViewModel.min.js") : Url("FloatingFormViewModel.js");
             public static readonly string GoogleMapsViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/GoogleMapsViewModel.min.js") ? Url("GoogleMapsViewModel.min.js") : Url("GoogleMapsViewModel.js");
             public static readonly string InformationViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/InformationViewModel.min.js") ? Url("InformationViewModel.min.js") : Url("InformationViewModel.js");
+            public static readonly string LoginViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoginViewModel.min.js") ? Url("LoginViewModel.min.js") : Url("LoginViewModel.js");
+            public static readonly string RsvpViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/RsvpViewModel.min.js") ? Url("RsvpViewModel.min.js") : Url("RsvpViewModel.js");
         }
     
     }

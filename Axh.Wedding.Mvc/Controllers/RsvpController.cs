@@ -4,6 +4,9 @@
 
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
 
+    using Microsoft.AspNet.Identity;
+
+    [Authorize]
     public partial class RsvpController : Controller
     {
         private readonly IRsvpViewModelService rsvpViewModelService;
@@ -15,7 +18,8 @@
 
         public virtual ActionResult Index()
         {
-            var model = this.rsvpViewModelService.GetRsvpPageViewModel();
+            var user = User.Identity.GetUserName();
+            var model = this.rsvpViewModelService.GetRsvpPageViewModel(user);
             return View(model);
         }
     }

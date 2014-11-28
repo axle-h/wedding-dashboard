@@ -13,5 +13,7 @@
         HeaderImageViewModel ContactPageHeader { get; }
 
         string Rsvp { get; }
+
+        HeaderImageViewModel LoginPageHeader { get; }
     }
 }

@@ -19,5 +19,17 @@
         string HotelAddress { get; }
 
         string HotelPhone { get; }
+
+        string Email { get; }
+
+        string Facebook { get; }
+
+        string GitHub { get; }
+
+        string GooglePlus { get; }
+
+        string LinkedIn { get; }
+
+        string Twitter { get; }
     }
 }
