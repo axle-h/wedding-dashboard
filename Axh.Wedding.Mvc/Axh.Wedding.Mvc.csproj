@@ -266,6 +266,7 @@
     <Content Include="Views\Shared\_LayoutMinimal.cshtml" />
     <Content Include="Views\Shared\_Meta.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_SocialCircle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

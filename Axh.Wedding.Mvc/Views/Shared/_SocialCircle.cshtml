@@ -1,0 +1,39 @@
+﻿@using Axh.Wedding.Application.ViewModels.Page
+@model SocialCircleViewModel
+
+@{
+    string faClass;
+    switch (Model.Type)
+    {
+        case SocialCircleType.Twitter:
+            faClass = "fa-twitter";
+            break;
+        case SocialCircleType.Facebook:
+            faClass = "fa-facebook";
+            break;
+        case SocialCircleType.GooglePlus:
+            faClass = "fa-google-plus";
+            break;
+        case SocialCircleType.GitHub:
+            faClass = "fa-github";
+            break;
+        case SocialCircleType.LinkedIn:
+            faClass = "fa-linkedin";
+            break;
+        case SocialCircleType.Email:
+            faClass = "fa-envelope";
+            break;
+        default:
+            throw new ArgumentOutOfRangeException();
+    }
+}
+
+<li>
+    <a href="@Html.Raw(Model.Url)" target="@Html.Raw(Model.Type == SocialCircleType.Email ? string.Empty : "_blank")">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa @Html.Raw(faClass) fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+

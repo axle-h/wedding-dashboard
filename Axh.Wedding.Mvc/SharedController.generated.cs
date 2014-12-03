@@ -41,12 +41,14 @@ namespace T4MVC
                 public readonly string _LayoutMinimal = "_LayoutMinimal";
                 public readonly string _Meta = "_Meta";
                 public readonly string _SectionHeading = "_SectionHeading";
+                public readonly string _SocialCircle = "_SocialCircle";
             }
             public readonly string _Footer = "~/Views/Shared/_Footer.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _LayoutMinimal = "~/Views/Shared/_LayoutMinimal.cshtml";
             public readonly string _Meta = "~/Views/Shared/_Meta.cshtml";
             public readonly string _SectionHeading = "~/Views/Shared/_SectionHeading.cshtml";
+            public readonly string _SocialCircle = "~/Views/Shared/_SocialCircle.cshtml";
         }
     }
 

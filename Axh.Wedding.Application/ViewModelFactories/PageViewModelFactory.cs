@@ -37,15 +37,20 @@
                        ApplicationSubTitle = applicationSubTitle,
                        Header = new HeaderViewModel { PageLink = pageLink, HeaderImage = headerImage },
                        User = user,
-                       Footer = new FooterViewModel
-                                {
-                                    EmailAddress = weddingConfig.Email,
-                                    FacebookLink = "https://www.facebook.com/" + weddingConfig.Facebook,
-                                    GitHubLink ="https://github.com/" + weddingConfig.GitHub,
-                                    GooglePlusLink = "https://plus.google.com/" + weddingConfig.GooglePlus,
-                                    LinkedInLink = "https://www.linkedin.com/" + weddingConfig.LinkedIn,
-                                    TwitterLink = "https://twitter.com/" + weddingConfig.Twitter
-                                }
+                       Footer =
+                           new FooterViewModel
+                           {
+                               SocialCircles =
+                                   new[]
+                                   {
+                                       new SocialCircleViewModel(weddingConfig.Twitter, SocialCircleType.Twitter),
+                                       new SocialCircleViewModel(weddingConfig.Facebook, SocialCircleType.Facebook),
+                                       new SocialCircleViewModel(weddingConfig.GooglePlus, SocialCircleType.GooglePlus),
+                                       new SocialCircleViewModel(weddingConfig.GitHub, SocialCircleType.GitHub),
+                                       new SocialCircleViewModel(weddingConfig.LinkedIn, SocialCircleType.LinkedIn),
+                                       new SocialCircleViewModel(weddingConfig.Email, SocialCircleType.Email)
+                                   }
+                           }
                    };
         }
     }
