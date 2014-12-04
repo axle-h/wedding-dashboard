@@ -3,42 +3,38 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
-            
-            @using(Html.BeginForm(MVC.Rsvp.Index(), FormMethod.Post, new {  }))
-            {
-                <div class="row">
-                    <div class="form-group col-xs-12 floating-label-form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" id="name">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="form-group col-xs-12 floating-label-form-group">
-                        <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Email Address" id="email">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-xs-12 floating-label-form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Phone Number" id="phone">
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-xs-12 floating-label-form-group">
-                        <label>Message</label>
-                        <textarea rows="5" class="form-control" placeholder="Message" id="message"></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                </div>
-                <br>
+            <p>Please check details for all wedding guests in your party.</p>
 
-                <div id="success"></div>
+            @using (Html.BeginForm(MVC.Rsvp.Index(), FormMethod.Post, new { }))
+            {
+                <div data-bind="foreach: { data: Guests(), as: 'guest' }">
+                    
+                    <input type="hidden" data-bind="value: guest.GuestId, attr: { id: guest.HtmlId + '_Id', name: guest.HtmlName + '.Id' }" />
+                        
+                    <fieldset>
+                        <legend>Guest <span data-bind="text: (guest.Id + 1)"></span></legend>
+                        <div class="control-group">
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="controls">
+                                        <input type="text" class="form-control" placeholder="First name" data-bind="value: guest.FirstName, attr: { id: guest.HtmlId + '_FirstName', name: guest.HtmlName + '.FirstName' }" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="controls">
+                                        <input type="text" class="form-control" placeholder="Surname" data-bind="value: guest.Surname, attr: { id: guest.HtmlId + '_Surname', name: guest.HtmlName + '.Surname' }" />
+
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+
+                </div>
 
                 <div class="row">
                     <div class="form-group col-xs-12">

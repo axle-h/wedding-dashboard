@@ -30,16 +30,26 @@ jQuery(document).ready(function ($) {
 });
 
 // Init view models.
-$(function () {
-    if (document.getElementById("pg-info")) {
-        new InformationViewModel(model);
+$(document).ready(function () {
+
+    var pageClass = document.getElementById("pg-info");
+    if (pageClass) {
+        ko.applyBindings(new InformationViewModel(model), pageClass);
+        return;
     }
-    else if (document.getElementById("pg-rsvp")) {
-        new RsvpViewModel(model);
+
+    pageClass = document.getElementById("pg-rsvp");
+    if (pageClass) {
+        ko.applyBindings(new RsvpViewModel(model), pageClass);
+        return;
     }
-    else if (document.getElementById("pg-login")) {
-        new LoginViewModel(model);
+
+    pageClass = document.getElementById("pg-login");
+    if (pageClass) {
+        ko.applyBindings(new LoginViewModel(model), pageClass);
+        return;
     }
+
 });
 
 

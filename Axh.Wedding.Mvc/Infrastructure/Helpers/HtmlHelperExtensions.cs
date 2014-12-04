@@ -20,7 +20,7 @@
         {
             var model = helper.ViewData.Model;
 
-            var serializerSettings = new JsonSerializerSettings { ContractResolver = ContractResolver, Formatting = Formatting.None };
+            var serializerSettings = new JsonSerializerSettings { ContractResolver = new BindClientPropertyContractResolver(), Formatting = Formatting.None };
             var json = JsonConvert.SerializeObject(model, serializerSettings);
             var tagBuilder = new TagBuilder("script") { InnerHtml = string.Format("var model = {0};", json) };
 
@@ -62,10 +62,12 @@
                 {
                     property.ShouldSerialize = instance => false;
                 }
-                else
+                else if (!string.IsNullOrEmpty(bindAttribute.Name))
                 {
                     property.PropertyName = bindAttribute.Name;
                 }
+
+                property.NullValueHandling = NullValueHandling.Ignore;
 
                 return property;
             }

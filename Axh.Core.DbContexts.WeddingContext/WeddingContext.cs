@@ -28,6 +28,11 @@
         {
             modelBuilder.Configurations.Add(new UserMap());
             modelBuilder.Configurations.Add(new RoleMap());
+            
+            modelBuilder.Configurations.Add(new GuestMap());
+            modelBuilder.Configurations.Add(new RsvpMap());
+            modelBuilder.Configurations.Add(new RsvpStoryMap());
+
         }
     }
 }

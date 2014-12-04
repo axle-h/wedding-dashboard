@@ -9,8 +9,10 @@
     {
         public DateTime? RsvpDate { get; set; }
 
+        [BindClientProperty("Guests")]
         public IEnumerable<GuestViewModel> Guests { get; set; }
 
+        [BindClientProperty("Stories")]
         public IEnumerable<StoryViewModel> Stories { get; set; }
     }
 }

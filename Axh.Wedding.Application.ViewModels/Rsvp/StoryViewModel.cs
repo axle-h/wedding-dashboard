@@ -3,13 +3,17 @@
     using System;
 
     using Axh.Core.Common;
+    using Axh.Wedding.Application.ViewModels.Page;
 
     public class StoryViewModel
     {
+        [BindClientProperty("Id")]
         public Guid Id { get; set; }
 
+        [BindClientProperty("StorySubject")]
         public WeddingPartyMember StorySubject { get; set; }
 
+        [BindClientProperty("StoryBody")]
         public string StoryBody { get; set; }
     }
 }

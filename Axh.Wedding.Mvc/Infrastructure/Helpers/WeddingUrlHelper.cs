@@ -50,7 +50,7 @@
         {
             get
             {
-                return this.urlHelper.RouteUrl(MVC.Rsvp.Index());
+                return this.urlHelper.Action(MVC.Rsvp.Index());
             }
         }
 

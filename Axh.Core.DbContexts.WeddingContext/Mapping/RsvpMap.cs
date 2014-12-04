@@ -20,7 +20,7 @@
 
             this.HasRequired(x => x.User).WithOptional(x => x.Rsvp);
 
-            this.HasMany(x => x.Guests).WithRequired().HasForeignKey(x => x.UserId);
+            this.HasMany(x => x.Guests).WithOptional();
         }
     }
 }
