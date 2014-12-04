@@ -4,6 +4,8 @@ namespace Axh.Core.DomainModels.Accounts
     using System;
     using System.Collections.Generic;
 
+    using Axh.Core.DomainModels.Wedding;
+
     public class User
     {
 
@@ -24,6 +26,10 @@ namespace Axh.Core.DomainModels.Accounts
         public bool PhoneNumberConfirmed { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
+
+        public virtual ICollection<Guest> Guests { get; set; }
+
+        public virtual Rsvp Rsvp { get; set; }
 
     }
 }

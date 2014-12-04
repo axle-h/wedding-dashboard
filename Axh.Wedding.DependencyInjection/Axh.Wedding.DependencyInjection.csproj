@@ -94,6 +94,14 @@
       <Project>{F7561297-4871-4598-9BA1-43AFAFEF3811}</Project>
       <Name>Axh.Core.Services.Logging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.Rsvp.Contracts\Axh.Core.Services.Rsvp.Contracts.csproj">
+      <Project>{F8896B06-DC59-4605-8DA2-C880B2001659}</Project>
+      <Name>Axh.Core.Services.Rsvp.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.Rsvp\Axh.Core.Services.Rsvp.csproj">
+      <Project>{511D046B-DFF3-4C65-9934-37FD8867D767}</Project>
+      <Name>Axh.Core.Services.Rsvp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Core.Services.User.Contracts\Axh.Core.Services.User.Contracts.csproj">
       <Project>{6548B828-7239-4065-8EAC-7D5223F7801D}</Project>
       <Name>Axh.Core.Services.User.Contracts</Name>

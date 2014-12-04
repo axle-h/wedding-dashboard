@@ -4,6 +4,7 @@
 
     using Axh.Core.DbContexts.Common;
     using Axh.Core.DbContexts.WeddingContext.Mapping;
+    using Axh.Core.DomainModels.Wedding;
 
     using DomainModels.Accounts;
 
@@ -19,10 +20,14 @@
 
         public DbSet<Role> Roles { get; set; }
 
+        public DbSet<Rsvp> Rsvps { get; set; }
+
+        public DbSet<Guest> Guests { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserMap());
-            modelBuilder.Configurations.Add(new UserRoleMap());
+            modelBuilder.Configurations.Add(new RoleMap());
         }
     }
 }

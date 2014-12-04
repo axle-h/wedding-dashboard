@@ -10,7 +10,9 @@
         public override void Load()
         {
             this.Bind<IUserRepository>().To<UserRepository>();
-            this.Bind<IUserRoleRepository>().To<UserRoleRepository>();
+            this.Bind<IRoleRepository>().To<RoleRepository>();
+            this.Bind<IRsvpRepository>().To<RsvpRepository>();
+            this.Bind<IGuestRepository>().To<GuestRepository>();
         }
     }
 }

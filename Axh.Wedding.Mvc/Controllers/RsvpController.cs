@@ -1,8 +1,11 @@
 ﻿namespace Axh.Wedding.Mvc.Controllers
 {
+    using System;
+    using System.Threading.Tasks;
     using System.Web.Mvc;
 
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
+    using Axh.Wedding.Application.ViewModels.Rsvp;
 
     using Microsoft.AspNet.Identity;
 
@@ -16,11 +19,30 @@
             this.rsvpViewModelService = rsvpViewModelService;
         }
 
-        public virtual ActionResult Index()
+        public virtual async Task<ActionResult> Index()
         {
             var user = User.Identity.GetUserName();
-            var model = this.rsvpViewModelService.GetRsvpPageViewModel(user);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var model = await this.rsvpViewModelService.GetRsvpPageViewModel(user, userId);
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual async Task<ActionResult> Index(RsvpPageViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return this.View(viewModel);
+            }
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            if (await this.rsvpViewModelService.UpdateRsvp(userId, viewModel))
+            {
+                return RedirectToAction(MVC.Home.Information());
+            }
+
+            return this.View(viewModel);
         }
     }
 }

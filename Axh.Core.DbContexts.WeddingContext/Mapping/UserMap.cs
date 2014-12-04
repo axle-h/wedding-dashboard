@@ -23,6 +23,7 @@
             this.Property(t => t.SecurityStamp).HasColumnName("SecurityStamp").IsRequired();
             this.Property(t => t.UserName).HasColumnName("UserName");
 
+            this.HasOptional(x => x.Rsvp).WithOptionalDependent(x => x.User);
         }
     }
 }

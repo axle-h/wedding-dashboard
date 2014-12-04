@@ -10,9 +10,9 @@
     using Axh.Core.Repositories.Wedding.Contracts;
     using Axh.Core.Services.Logging.Contracts;
 
-    public class UserRoleRepository : RepositoryBase<WeddingContext>, IUserRoleRepository
+    public class RoleRepository : RepositoryBase<WeddingContext>, IRoleRepository
     {
-        public UserRoleRepository(IDbContextActivator<WeddingContext> dbContextActivator, ILoggingService loggingService)
+        public RoleRepository(IDbContextActivator<WeddingContext> dbContextActivator, ILoggingService loggingService)
             : base(dbContextActivator, loggingService)
         {
         }

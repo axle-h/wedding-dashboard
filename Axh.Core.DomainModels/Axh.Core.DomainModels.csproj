@@ -43,7 +43,15 @@
     <Compile Include="Accounts\Role.cs" />
     <Compile Include="Accounts\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wedding\Guest.cs" />
     <Compile Include="Wedding\Rsvp.cs" />
+    <Compile Include="Wedding\RsvpStory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.Common\Axh.Core.Common.csproj">
+      <Project>{859ADF85-F832-490F-90DF-3819A1A28FB7}</Project>
+      <Name>Axh.Core.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

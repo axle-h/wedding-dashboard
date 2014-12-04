@@ -64,6 +64,10 @@
     <Compile Include="ViewModelService\Rsvp\RsvpViewModelService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.Common\Axh.Core.Common.csproj">
+      <Project>{859ADF85-F832-490F-90DF-3819A1A28FB7}</Project>
+      <Name>Axh.Core.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Core.DbContexts.WeddingContext\Axh.Core.DbContexts.WeddingContext.csproj">
       <Project>{f09f9216-0b96-474a-afb0-221163dad55b}</Project>
       <Name>Axh.Core.DbContexts.WeddingContext</Name>
@@ -75,6 +79,10 @@
     <ProjectReference Include="..\Axh.Core.Services.Logging.Contracts\Axh.Core.Services.Logging.Contracts.csproj">
       <Project>{BDAD9055-8215-43C5-9238-FA6630C6EC46}</Project>
       <Name>Axh.Core.Services.Logging.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.Rsvp.Contracts\Axh.Core.Services.Rsvp.Contracts.csproj">
+      <Project>{f8896b06-dc59-4605-8da2-c880b2001659}</Project>
+      <Name>Axh.Core.Services.Rsvp.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Axh.Core.Services.User.Contracts\Axh.Core.Services.User.Contracts.csproj">
       <Project>{6548B828-7239-4065-8EAC-7D5223F7801D}</Project>

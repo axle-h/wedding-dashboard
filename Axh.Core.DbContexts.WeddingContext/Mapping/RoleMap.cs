@@ -5,9 +5,9 @@
 
     using Axh.Core.DomainModels.Accounts;
 
-    public class UserRoleMap : EntityTypeConfiguration<Role>
+    public class RoleMap : EntityTypeConfiguration<Role>
     {
-        public UserRoleMap()
+        public RoleMap()
         {
             // Primary Key
             this.HasKey(t => t.Id);

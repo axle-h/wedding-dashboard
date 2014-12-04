@@ -4,7 +4,7 @@ namespace Axh.Core.Repositories.Wedding.Contracts
 
     using Axh.Core.DomainModels.Accounts;
 
-    public interface IUserRoleRepository
+    public interface IRoleRepository
     {
         Task<Role> FindByNameAsync(string roleName);
     }
