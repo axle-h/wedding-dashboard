@@ -6,6 +6,6 @@ namespace Axh.Core.Repositories.Wedding.Contracts
 
     public interface IUserRoleRepository
     {
-        Task<UserRole> FindByNameAsync(string roleName);
+        Task<Role> FindByNameAsync(string roleName);
     }
 }

@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class WeddingUserRole
+    public class WeddingRole
     {
         public Guid Id { get; set; }
 

@@ -17,9 +17,9 @@
         {
         }
 
-        public async Task<UserRole> FindByNameAsync(string roleName)
+        public async Task<Role> FindByNameAsync(string roleName)
         {
-            return await this.DbContext.UserRoles.FirstOrDefaultAsync(x => x.RoleName == roleName);
+            return await this.DbContext.Roles.FirstOrDefaultAsync(x => x.RoleName == roleName);
         }
     }
 }

@@ -20,19 +20,19 @@
 
         protected override void Seed(WeddingContext context)
         {
-            var adminRole = new UserRole { RoleName = "admin" };
-            var guestRole = new UserRole { RoleName = "guest" };
-            var userRole = new UserRole { RoleName = "user" };
+            var adminRole = new Role { RoleName = "admin" };
+            var guestRole = new Role { RoleName = "guest" };
+            var role = new Role { RoleName = "user" };
 
-            context.UserRoles.Add(adminRole);
-            context.UserRoles.Add(guestRole);
-            context.UserRoles.Add(userRole);
+            context.Roles.Add(adminRole);
+            context.Roles.Add(guestRole);
+            context.Roles.Add(role);
             context.SaveChanges();
 
             var adminUser = new User
                             {
                                 UserName = "admin",
-                                UserRoles = new[] { adminRole },
+                                Roles = new[] { adminRole },
                                 PasswordHash = this.userManager.PasswordHasher.HashPassword("password"),
                                 SecurityStamp = Guid.NewGuid().ToString()
                             };

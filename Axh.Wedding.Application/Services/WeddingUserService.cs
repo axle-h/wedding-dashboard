@@ -85,16 +85,16 @@
                 return;
             }
 
-            user.UserRoles.Add(this.weddingUserFactory.GetWeddingUserRole(role));
+            user.Roles.Add(this.weddingUserFactory.GetWeddingRole(role));
         }
 
         public Task RemoveFromRoleAsync(WeddingUser user, string roleName)
         {
-            var role = user.UserRoles.FirstOrDefault(x => x.RoleName == roleName);
+            var role = user.Roles.FirstOrDefault(x => x.RoleName == roleName);
 
             if (role != null)
             {
-                user.UserRoles.Remove(role);
+                user.Roles.Remove(role);
             }
 
             return Task.FromResult(0);
@@ -102,12 +102,12 @@
 
         public Task<IList<string>> GetRolesAsync(WeddingUser user)
         {
-            return Task.FromResult(user.UserRoles.Select(x => x.RoleName).ToList() as IList<string>);
+            return Task.FromResult(user.Roles.Select(x => x.RoleName).ToList() as IList<string>);
         }
 
         public Task<bool> IsInRoleAsync(WeddingUser user, string roleName)
         {
-            return Task.FromResult(user.UserRoles.FirstOrDefault(x => x.RoleName == roleName) != null);
+            return Task.FromResult(user.Roles.FirstOrDefault(x => x.RoleName == roleName) != null);
         }
 
         public Task SetEmailAsync(WeddingUser user, string email)

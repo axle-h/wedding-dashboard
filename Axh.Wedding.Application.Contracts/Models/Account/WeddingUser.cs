@@ -23,6 +23,6 @@
 
         public bool PhoneNumberConfirmed { get; set; }
 
-        public ICollection<WeddingUserRole> UserRoles { get; set; }
+        public ICollection<WeddingRole> Roles { get; set; }
     }
 }

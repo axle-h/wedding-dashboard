@@ -17,7 +17,7 @@
 
         Task<User> FindByNameAsync(string userName);
 
-        Task<UserRole> FindRoleByNameAsync(string roleName);
+        Task<Role> FindRoleByNameAsync(string roleName);
 
         Task<User> FindByEmailAsync(string email);
     }

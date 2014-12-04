@@ -23,7 +23,7 @@ namespace Axh.Core.DomainModels.Accounts
 
         public bool PhoneNumberConfirmed { get; set; }
 
-        public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
 
     }
 }

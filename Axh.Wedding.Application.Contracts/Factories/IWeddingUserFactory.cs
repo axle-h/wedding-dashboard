@@ -9,8 +9,8 @@
 
         User GetUser(WeddingUser user);
 
-        WeddingUserRole GetWeddingUserRole(UserRole role);
+        WeddingRole GetWeddingRole(Role role);
 
-        UserRole GetUserRole(WeddingUserRole role);
+        Role GetRole(WeddingRole role);
     }
 }

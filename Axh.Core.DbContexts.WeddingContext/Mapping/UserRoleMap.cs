@@ -5,14 +5,14 @@
 
     using Axh.Core.DomainModels.Accounts;
 
-    public class UserRoleMap : EntityTypeConfiguration<UserRole>
+    public class UserRoleMap : EntityTypeConfiguration<Role>
     {
         public UserRoleMap()
         {
             // Primary Key
             this.HasKey(t => t.Id);
 
-            this.ToTable("UserRoles");
+            this.ToTable("Roles");
 
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             this.Property(t => t.RoleName).HasColumnName("RoleName");
