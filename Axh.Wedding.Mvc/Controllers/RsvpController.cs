@@ -31,8 +31,8 @@
         [ValidateAntiForgeryToken]
         public virtual async Task<ActionResult> Index(RsvpPageViewModel viewModel)
         {
-            Guid userId;
-            if (!ModelState.IsValid && Guid.TryParse(User.Identity.GetUserId(), out userId) && await this.rsvpViewModelService.UpdateRsvp(userId, viewModel))
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            if (ModelState.IsValid && await this.rsvpViewModelService.UpdateRsvp(userId, viewModel))
             {
                 return RedirectToAction(MVC.Home.Information());
             }

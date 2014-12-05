@@ -1,4 +1,5 @@
-﻿@using Axh.Wedding.Resources
+﻿@using Axh.Wedding.Application.ViewModels.Rsvp
+@using Axh.Wedding.Resources
 @model Axh.Wedding.Application.ViewModels.Rsvp.RsvpPageViewModel
 
 <div class="container">
@@ -46,15 +47,23 @@
 
                             <div class="row">
                                 <div class="col-xs-12 controls">
-                                    <select class="form-control" data-bind="value: IsAttending">
-                                        <option value="false">@Resources.RsvpPage_Negative</option>
-                                        <option value="true">@Resources.RsvpPage_Positive</option>
-                                    </select>
+                                    
+                                    
+                                    @Html.DropDownList("null", Model.RsvpResponseLabels.Select(x => new SelectListItem
+                                                                                                    {
+                                                                                                        Text = x.Value,
+                                                                                                        Value = ((int)x.Key).ToString()
+                                                                                                    }),
+                                                                                                    new
+                                                                                                    {
+                                                                                                        @class = "form-control",
+                                                                                                        data_bind = "value: guest.IsAttending, attr: { id: guest.HtmlId + '_IsAttending', name: guest.HtmlName + '.IsAttending' }"
+                                                                                                    })
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
 
-                            <div class="row" data-bind="if: guest.IsAttending() == 'true'">
+                            <div class="row" data-bind="if: guest.IsAttending() == @Html.Raw((int)RsvpResponse.Yes)">
                                 <div class="col-xs-12 controls">
                                     <input type="text" class="form-control" placeholder="@Resources.RsvpPage_DietaryRequirements"
                                            data-bind="value: guest.DietaryRequirements, attr: { id: guest.HtmlId + '_DietaryRequirements', name: guest.HtmlName + '.DietaryRequirements' }" />

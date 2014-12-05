@@ -53,6 +53,10 @@
     <Compile Include="RoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.Common\Axh.Core.Common.csproj">
+      <Project>{859ADF85-F832-490F-90DF-3819A1A28FB7}</Project>
+      <Name>Axh.Core.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Core.DbContexts.Contracts\Axh.Core.DbContexts.Contracts.csproj">
       <Project>{106458AD-4387-4401-8B24-F1C143F532E1}</Project>
       <Name>Axh.Core.DbContexts.Contracts</Name>

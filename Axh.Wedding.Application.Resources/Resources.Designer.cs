@@ -469,24 +469,6 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry can&apos;t make it :-(.
-        /// </summary>
-        public static string RsvpPage_Negative {
-            get {
-                return ResourceManager.GetString("RsvpPage_Negative", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yep, I&apos;m coming, can&apos;t wait!.
-        /// </summary>
-        public static string RsvpPage_Positive {
-            get {
-                return ResourceManager.GetString("RsvpPage_Positive", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to We can&apos;t wait to share our special day with you.
         /// </summary>
         public static string RsvpPage_SubTitle {
@@ -501,6 +483,24 @@ namespace Axh.Wedding.Resources {
         public static string RsvpPage_Title {
             get {
                 return ResourceManager.GetString("RsvpPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry can&apos;t make it :-(.
+        /// </summary>
+        public static string RsvpResponse_No {
+            get {
+                return ResourceManager.GetString("RsvpResponse_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yep, I&apos;m coming, can&apos;t wait!.
+        /// </summary>
+        public static string RsvpResponse_Yes {
+            get {
+                return ResourceManager.GetString("RsvpResponse_Yes", resourceCulture);
             }
         }
         

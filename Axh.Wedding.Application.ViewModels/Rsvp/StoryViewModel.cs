@@ -8,7 +8,7 @@
     public class StoryViewModel
     {
         [BindClientProperty("Id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         [BindClientProperty("StorySubject")]
         public WeddingPartyMember StorySubject { get; set; }

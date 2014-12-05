@@ -7,7 +7,7 @@
     public class GuestViewModel
     {
         [BindClientProperty("Id")]
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         [BindClientProperty("FirstName")]
         public string FirstName { get; set; }
@@ -16,7 +16,7 @@
         public string Surname { get; set; }
 
         [BindClientProperty("IsAttending")]
-        public bool IsAttending { get; set; }
+        public RsvpResponse IsAttending { get; set; }
 
         [BindClientProperty("DietaryRequirements")]
         public string DietaryRequirements { get; set; }

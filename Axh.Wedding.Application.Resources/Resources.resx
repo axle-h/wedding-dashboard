@@ -255,17 +255,17 @@ In our long winding journey, as new husband and wife!</value>
   <data name="RsvpPage_Link" xml:space="preserve">
     <value>Rsvp</value>
   </data>
-  <data name="RsvpPage_Negative" xml:space="preserve">
-    <value>Sorry can't make it :-(</value>
-  </data>
-  <data name="RsvpPage_Positive" xml:space="preserve">
-    <value>Yep, I'm coming, can't wait!</value>
-  </data>
   <data name="RsvpPage_SubTitle" xml:space="preserve">
     <value>We can't wait to share our special day with you</value>
   </data>
   <data name="RsvpPage_Title" xml:space="preserve">
     <value>Come Celebrate</value>
+  </data>
+  <data name="RsvpResponse_No" xml:space="preserve">
+    <value>Sorry can't make it :-(</value>
+  </data>
+  <data name="RsvpResponse_Yes" xml:space="preserve">
+    <value>Yep, I'm coming, can't wait!</value>
   </data>
   <data name="Rsvp_PleaseAddStory" xml:space="preserve">
     <value>To help with speeches and maybe even to make pre-wedding high-tech nice guest book, please add an interesting fact or story below. It can be anything about any member of the wedding party, the funnier/ruder the better!</value>

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Data.Entity;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Axh.Core.DbContexts.Contracts.Activators;
@@ -28,9 +29,48 @@
         public async Task<bool> UpdateAsync(Rsvp rsvp)
         {
             var context = this.DbContext;
-            context.Rsvps.Attach(rsvp);
-            context.Entry(rsvp).State = EntityState.Modified;
-            context.Configuration.ValidateOnSaveEnabled = false;
+
+            var attachedRsvp = context.Rsvps.FirstOrDefault(x => x.Id == rsvp.Id);
+
+            if (attachedRsvp == null)
+            {
+                return false;
+            }
+
+            attachedRsvp.RsvpDate = rsvp.RsvpDate;
+
+            // Added guests cab't be removed so we do this in one merge.
+            foreach (var match in rsvp.Guests.GroupJoin(attachedRsvp.Guests, n => n.Id, g => g.Id, (n, g) => new { UpdatedGuest = n, ExistingGuest = g.FirstOrDefault() }))
+            {
+                if (match.ExistingGuest == null)
+                {
+                    attachedRsvp.Guests.Add(match.UpdatedGuest);
+                }
+                else
+                {
+                    match.ExistingGuest.FirstName = match.UpdatedGuest.FirstName;
+                    match.ExistingGuest.Surname = match.UpdatedGuest.Surname;
+                    match.ExistingGuest.IsAttending = match.UpdatedGuest.IsAttending;
+                    match.ExistingGuest.DietaryRequirements = match.UpdatedGuest.DietaryRequirements;
+                }
+            }
+
+            // Added stories cab't be removed so we do this in one merge.
+            foreach (var match in rsvp.Stories.GroupJoin(attachedRsvp.Stories, n => n.Id, s => s.Id, (n, s) => new { UpdatedStory = n, ExistingStory = s.FirstOrDefault() }))
+            {
+                if (match.ExistingStory == null)
+                {
+                    attachedRsvp.Stories.Add(match.UpdatedStory);
+                }
+                else
+                {
+                    match.ExistingStory.StoryBody = match.UpdatedStory.StoryBody;
+                    match.ExistingStory.StorySubject = match.UpdatedStory.StorySubject;
+                    match.ExistingStory.StoryTitle = match.UpdatedStory.StoryTitle;
+                }
+            }
+
+            context.Entry(attachedRsvp).State = EntityState.Modified;
             return await this.SaveAsync(context);
         }
 
@@ -38,7 +78,6 @@
         {
             var context = this.DbContext;
             context.Rsvps.Add(rsvp);
-            context.Configuration.ValidateOnSaveEnabled = false;
             return await this.SaveAsync(context);
         }
     }

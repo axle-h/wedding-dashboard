@@ -16,6 +16,8 @@
         [BindClientProperty("Stories")]
         public IEnumerable<StoryViewModel> Stories { get; set; }
 
+        public IDictionary<RsvpResponse, string> RsvpResponseLabels { get; set; }
+
         public IDictionary<WeddingPartyMember, string> WeddingPartyMemberLabels { get; set; }
 
         public IEnumerable<string> StoryTitleLabels { get; set; }

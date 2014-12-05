@@ -4,7 +4,6 @@
     using System.Linq;
 
     using Axh.Core.Common;
-    using Axh.Core.DomainModels.Accounts;
     using Axh.Core.DomainModels.Wedding;
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
@@ -76,7 +75,9 @@
 
         private static RsvpPageViewModel PrepareRsvpPageViewModel(RsvpPageViewModel model)
         {
+            model.RsvpResponseLabels = Enum.GetValues(typeof(RsvpResponse)).Cast<RsvpResponse>().ToDictionary(x => x, GetRsvpResponseLabel);
             model.WeddingPartyMemberLabels = Enum.GetValues(typeof(WeddingPartyMember)).Cast<WeddingPartyMember>().ToDictionary(x => x, GetWeddingPartyMemberLabel);
+
             var random = new Random();
             model.StoryTitleLabels = new[]
                                            {
@@ -86,6 +87,19 @@
                                            .OrderBy(x => random.Next());
 
             return model;
+        }
+
+        private static string GetRsvpResponseLabel(RsvpResponse rsvpResponse)
+        {
+            switch (rsvpResponse)
+            {
+                case RsvpResponse.Yes:
+                    return Resources.RsvpResponse_Yes;
+                case RsvpResponse.No:
+                    return Resources.RsvpResponse_No;
+                default:
+                    throw new ArgumentOutOfRangeException("rsvpResponse");
+            }
         }
 
         private static string GetWeddingPartyMemberLabel(WeddingPartyMember weddingPartyMember)
@@ -120,14 +134,21 @@
                        Id = guest.Id,
                        FirstName = guest.FirstName,
                        Surname = guest.Surname,
-                       IsAttending = guest.IsAttending,
+                       IsAttending = guest.IsAttending ? RsvpResponse.Yes : RsvpResponse.No,
                        DietaryRequirements = guest.DietaryRequirements
                    };
         }
 
         private static RsvpGuest GetGuest(Guid userId, GuestViewModel guest)
         {
-            return new RsvpGuest { Id = guest.Id, FirstName = guest.FirstName, Surname = guest.Surname, IsAttending = guest.IsAttending, DietaryRequirements = guest.DietaryRequirements };
+            return new RsvpGuest
+                   {
+                       Id = guest.Id ?? Guid.NewGuid(),
+                       FirstName = guest.FirstName,
+                       Surname = guest.Surname,
+                       IsAttending = guest.IsAttending == RsvpResponse.Yes,
+                       DietaryRequirements = guest.DietaryRequirements
+                   };
         }
 
         private static StoryViewModel GetStoryViewModel(RsvpStory rsvpStory)
@@ -137,7 +158,7 @@
 
         private static RsvpStory GetStory(StoryViewModel rsvpStory)
         {
-            return new RsvpStory { Id = rsvpStory.Id, StoryTitle = rsvpStory.StoryTitle, StoryBody = rsvpStory.StoryBody, StorySubject = rsvpStory.StorySubject };
+            return new RsvpStory { Id = rsvpStory.Id ?? Guid.NewGuid(), StoryTitle = rsvpStory.StoryTitle, StoryBody = rsvpStory.StoryBody, StorySubject = rsvpStory.StorySubject };
         }
     }
 }
