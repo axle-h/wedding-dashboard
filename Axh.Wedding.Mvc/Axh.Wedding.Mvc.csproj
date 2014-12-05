@@ -199,7 +199,6 @@
     <Content Include="Scripts\knockout-3.2.0.debug.js" />
     <Content Include="Scripts\knockout-3.2.0.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="Scripts\ViewModels\FloatingFormViewModel.js" />
     <Content Include="Scripts\ViewModels\GoogleMapsViewModel.js" />
     <Content Include="Scripts\ViewModels\InformationViewModel.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -278,7 +277,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\StaticContent\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

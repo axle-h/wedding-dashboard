@@ -11,7 +11,7 @@
 
         public DateTime? RsvpDate { get; set; }
 
-        public virtual ICollection<Guest> Guests { get; set; }
+        public virtual ICollection<RsvpGuest> Guests { get; set; }
 
         public virtual ICollection<RsvpStory> Stories { get; set; }
         

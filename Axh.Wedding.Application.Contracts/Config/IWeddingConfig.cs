@@ -4,9 +4,7 @@
 
     public interface IWeddingConfig
     {
-        string Bride { get; }
-
-        string Groom { get; }
+        bool RunDatabaseInitializer { get; set; }
 
         string Venue { get; }
 

@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
 
+    using Axh.Core.Common;
     using Axh.Wedding.Application.ViewModels.Page;
 
     public class RsvpPageViewModel : PageViewModelBase
@@ -14,5 +15,9 @@
 
         [BindClientProperty("Stories")]
         public IEnumerable<StoryViewModel> Stories { get; set; }
+
+        public IDictionary<WeddingPartyMember, string> WeddingPartyMemberLabels { get; set; }
+
+        public IEnumerable<string> StoryTitleLabels { get; set; }
     }
 }

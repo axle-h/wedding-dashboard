@@ -1,44 +1,127 @@
-﻿@model Axh.Wedding.Application.ViewModels.Rsvp.RsvpPageViewModel
+﻿@using Axh.Wedding.Resources
+@model Axh.Wedding.Application.ViewModels.Rsvp.RsvpPageViewModel
 
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <p>Please check details for all wedding guests in your party.</p>
-
-            @using (Html.BeginForm(MVC.Rsvp.Index(), FormMethod.Post, new { }))
+            @using (Html.BeginForm(MVC.Rsvp.Index(), FormMethod.Post, new { @class = "form-rsvp" }))
             {
+                @Html.AntiForgeryToken()
+                
+                <p>@Resources.Rsvp_PleaseRsvp</p>
+                
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <span class="selectable subtle font-small" data-bind="click: addGuest">
+                            <i class="fa fa-plus margin-right-tiny"></i>
+                            @Resources.RsvpPage_AddGuest
+                        </span>
+                    </div>
+                </div>
+                
                 <div data-bind="foreach: { data: Guests(), as: 'guest' }">
-                    
-                    <input type="hidden" data-bind="value: guest.GuestId, attr: { id: guest.HtmlId + '_Id', name: guest.HtmlName + '.Id' }" />
+                    <fieldset class="margin-bottom">
+                        <legend>
+                            @Resources.Guest
+                            <span data-bind="text: (guest.Id + 1)"></span>
+                            <span class="selectable subtle font-small" data-bind="if: guest.CanBeRemoved, click: $parent.removeGuest">
+                                (@Resources.Remove)
+                            </span>
+                        </legend>
                         
-                    <fieldset>
-                        <legend>Guest <span data-bind="text: (guest.Id + 1)"></span></legend>
+                        <input type="hidden" data-bind="value: guest.GuestId, attr: { id: guest.HtmlId + '_Id', name: guest.HtmlName + '.Id' }" />
+                        <input type="hidden" data-bind="value: guest.IsAttending, attr: { id: guest.HtmlId + '_IsAttending', name: guest.HtmlName + '.IsAttending' }" />
+                        
                         <div class="control-group">
-                            
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="controls">
-                                        <input type="text" class="form-control" placeholder="First name" data-bind="value: guest.FirstName, attr: { id: guest.HtmlId + '_FirstName', name: guest.HtmlName + '.FirstName' }" />
-                                        <p class="help-block text-danger"></p>
-                                    </div>
+                                <div class="col-md-6 controls">
+                                    <input type="text" class="form-control" placeholder="@Resources.FirstName" data-bind="value: guest.FirstName, attr: { id: guest.HtmlId + '_FirstName', name: guest.HtmlName + '.FirstName' }" />
+                                    <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="controls">
-                                        <input type="text" class="form-control" placeholder="Surname" data-bind="value: guest.Surname, attr: { id: guest.HtmlId + '_Surname', name: guest.HtmlName + '.Surname' }" />
+                                <div class="col-md-6 controls">
+                                    <input type="text" class="form-control" placeholder="@Resources.Surname" data-bind="value: guest.Surname, attr: { id: guest.HtmlId + '_Surname', name: guest.HtmlName + '.Surname' }" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
 
-                                        <p class="help-block text-danger"></p>
-                                    </div>
+                            <div class="row">
+                                <div class="col-xs-12 controls">
+                                    <select class="form-control" data-bind="value: IsAttending">
+                                        <option value="false">@Resources.RsvpPage_Negative</option>
+                                        <option value="true">@Resources.RsvpPage_Positive</option>
+                                    </select>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+
+                            <div class="row" data-bind="if: guest.IsAttending() == 'true'">
+                                <div class="col-xs-12 controls">
+                                    <input type="text" class="form-control" placeholder="@Resources.RsvpPage_DietaryRequirements"
+                                           data-bind="value: guest.DietaryRequirements, attr: { id: guest.HtmlId + '_DietaryRequirements', name: guest.HtmlName + '.DietaryRequirements' }" />
+                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                         </div>
                     </fieldset>
-                    
-
                 </div>
+
+                <p>@Resources.Rsvp_PleaseAddStory</p>
+
+                <div class="row margin-bottom">
+                    <div class="col-xs-12">
+                        <span class="selectable subtle font-small" data-bind="click: addStory">
+                            <i class="fa fa-plus margin-right-tiny"></i>
+                            @Resources.RsvpPage_AddStory
+                        </span>
+                    </div>
+                </div>
+
+                <div data-bind="foreach: { data: Stories(), as: 'story' }">
+                    <fieldset class="margin-bottom">
+                        <legend class="form-inline">
+                            <span class="legend-block">
+                                @Html.DropDownList("null", Model.StoryTitleLabels.Select(x => new SelectListItem
+                                                                                                      {
+                                                                                                          Text = x,
+                                                                                                          Value = x
+                                                                                                      }),
+                                                                                                      new
+                                                                                                      {
+                                                                                                          @class = "form-control",
+                                                                                                          data_bind = "value: story.StoryTitle, attr: { id: story.HtmlId + '_StoryTitle', name: story.HtmlName + '.StoryTitle' }"
+                                                                                                      })
+                                @Html.DropDownList("null", Model.WeddingPartyMemberLabels.Select(x => new SelectListItem
+                                                                                                      {
+                                                                                                          Text = x.Value, Value = ((int)x.Key).ToString()
+                                                                                                      }),
+                                                                                                      new
+                                                                                                      {
+                                                                                                          @class = "form-control",
+                                                                                                          data_bind = "value: story.StorySubject, attr: { id: story.HtmlId + '_StorySubject', name: story.HtmlName + '.StorySubject' }"
+                                                                                                      })
+                                <span class="selectable subtle font-small" data-bind="if: story.CanBeRemoved, click: $parent.removeStory">
+                                    (@Resources.Remove)
+                                </span>
+                            </span>
+                            
+                        </legend>
+                        
+                        <input type="hidden" data-bind="value: story.StoryId, attr: { id: story.HtmlId + '_Id', name: story.HtmlName + '.Id' }" />
+                        <div class="control-group">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <textarea class="form-control full-width" data-bind="value: story.StoryBody, attr: { id: story.HtmlId + '_StoryBody', name: story.HtmlName + '.StoryBody' }"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                
 
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <div class="btn btn-default">Send</div>
+                        <button class="btn btn-default" type="submit">@Resources.Send</button>
                     </div>
                 </div>
             }

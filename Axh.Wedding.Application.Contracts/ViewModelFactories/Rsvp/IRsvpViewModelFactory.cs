@@ -9,6 +9,8 @@
     {
         RsvpPageViewModel GetRsvpPageViewModel(string user, Rsvp rsvp);
 
+        RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel rsvp);
+
         Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp);
     }
 }

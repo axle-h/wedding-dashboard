@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Factories\RsvpFactory.cs" />
     <Compile Include="RsvpService.cs" />
   </ItemGroup>
   <ItemGroup>

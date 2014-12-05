@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping\GuestMap.cs" />
+    <Compile Include="Mapping\RsvpGuestMap.cs" />
     <Compile Include="Mapping\RsvpMap.cs" />
     <Compile Include="Mapping\RsvpStoryMap.cs" />
     <Compile Include="Mapping\UserMap.cs" />

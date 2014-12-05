@@ -8,6 +8,7 @@
 
     using Axh.Core.DomainModels.Wedding;
     using Axh.Core.Services.Rsvp.Contracts;
+    using Axh.Core.Services.Rsvp.Contracts.Factories;
 
     public class RsvpService : IRsvpService
     {
@@ -15,10 +16,13 @@
 
         private readonly IGuestRepository guestRepository;
 
-        public RsvpService(IRsvpRepository rsvpRepository, IGuestRepository guestRepository)
+        private readonly IRsvpFactory rsvpFactory;
+
+        public RsvpService(IRsvpRepository rsvpRepository, IGuestRepository guestRepository, IRsvpFactory rsvpFactory)
         {
             this.rsvpRepository = rsvpRepository;
             this.guestRepository = guestRepository;
+            this.rsvpFactory = rsvpFactory;
         }
 
         public async Task<Rsvp> GetRsvpByUserIdAsync(Guid userId)
@@ -33,19 +37,26 @@
             var guests = await this.guestRepository.GetUserGuestsAsync(userId);
 
             // Create a blank one.
-            return new Rsvp { Id = userId, Guests = guests, Stories = Enumerable.Empty<RsvpStory>().ToList() };
+            return new Rsvp { Id = userId, Guests = guests.Select(this.rsvpFactory.GetRsvpGuest).ToList(), Stories = Enumerable.Empty<RsvpStory>().ToList() };
         }
 
         public async Task<bool> UpdateRsvp(Rsvp rsvp)
         {
-            var existingRsvp = await this.rsvpRepository.GetRsvpByIdAsync(rsvp.Id);
-
-            if (existingRsvp == null)
+            // Make sure that new guests have Id's These aren't auto generated in the db as I have a psudo 1:(1,0) on Guest
+            foreach (var guest in rsvp.Guests.Where(x => x.Id == Guid.Empty))
             {
-                return await this.rsvpRepository.CreateAsync(rsvp);
+                guest.Id = Guid.NewGuid();
             }
 
-            return await this.rsvpRepository.UpdateAsync(rsvp);
+            var existingRsvp = await this.rsvpRepository.GetRsvpByIdAsync(rsvp.Id);
+
+            if (existingRsvp != null)
+            {
+                return await this.rsvpRepository.UpdateAsync(rsvp);
+            }
+
+            rsvp.RsvpDate = DateTime.UtcNow;
+            return await this.rsvpRepository.CreateAsync(rsvp);
         }
     }
 }

@@ -88,6 +88,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Best Man.
+        /// </summary>
+        public static string BestMan {
+            get {
+                return ResourceManager.GetString("BestMan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string ContactPage_Link {
@@ -111,6 +120,33 @@ namespace Axh.Wedding.Resources {
         public static string ContactPage_Title {
             get {
                 return ResourceManager.GetString("ContactPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dad.
+        /// </summary>
+        public static string Dad {
+            get {
+                return ResourceManager.GetString("Dad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First name.
+        /// </summary>
+        public static string FirstName {
+            get {
+                return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guest.
+        /// </summary>
+        public static string Guest {
+            get {
+                return ResourceManager.GetString("Guest", resourceCulture);
             }
         }
         
@@ -208,7 +244,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £99. To guarantee a room, call quoting &lt;span class=&quot;subtle&quot;&gt;&apos;Kathryn &amp; Alex, Goosedale Wedding 14th March 2015&apos;&lt;/span&gt;..
+        ///   Looks up a localized string similar to The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £79. To guarantee a room, call quoting &lt;span class=&quot;subtle&quot;&gt;&apos;Kathryn &amp; Alex, Goosedale Wedding 14th March 2015&apos;&lt;/span&gt;..
         /// </summary>
         public static string InformationPage_Hotels_2 {
             get {
@@ -307,11 +343,146 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mum.
+        /// </summary>
+        public static string Mum {
+            get {
+                return ResourceManager.GetString("Mum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some jarb about.
+        /// </summary>
+        public static string RandomStoryTitleLabels_0 {
+            get {
+                return ResourceManager.GetString("RandomStoryTitleLabels_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All the scoop on.
+        /// </summary>
+        public static string RandomStoryTitleLabels_1 {
+            get {
+                return ResourceManager.GetString("RandomStoryTitleLabels_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confessions about.
+        /// </summary>
+        public static string RandomStoryTitleLabels_2 {
+            get {
+                return ResourceManager.GetString("RandomStoryTitleLabels_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More than we need to know about.
+        /// </summary>
+        public static string RandomStoryTitleLabels_3 {
+            get {
+                return ResourceManager.GetString("RandomStoryTitleLabels_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pure filth on.
+        /// </summary>
+        public static string RandomStoryTitleLabels_4 {
+            get {
+                return ResourceManager.GetString("RandomStoryTitleLabels_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Secrets from the front line on.
+        /// </summary>
+        public static string RandomStoryTitleLabels_5 {
+            get {
+                return ResourceManager.GetString("RandomStoryTitleLabels_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        public static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To help with speeches and maybe even to make pre-wedding high-tech nice guest book, please add an interesting fact or story below. It can be anything about any member of the wedding party, the funnier/ruder the better!.
+        /// </summary>
+        public static string Rsvp_PleaseAddStory {
+            get {
+                return ResourceManager.GetString("Rsvp_PleaseAddStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check details for all wedding guests in your party. If we&apos;ve made any mistakes or missed anyone off then please add them..
+        /// </summary>
+        public static string Rsvp_PleaseRsvp {
+            get {
+                return ResourceManager.GetString("Rsvp_PleaseRsvp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You missed someone off....
+        /// </summary>
+        public static string RsvpPage_AddGuest {
+            get {
+                return ResourceManager.GetString("RsvpPage_AddGuest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add story or interesting fact....
+        /// </summary>
+        public static string RsvpPage_AddStory {
+            get {
+                return ResourceManager.GetString("RsvpPage_AddStory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Any dietary requirements?.
+        /// </summary>
+        public static string RsvpPage_DietaryRequirements {
+            get {
+                return ResourceManager.GetString("RsvpPage_DietaryRequirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rsvp.
         /// </summary>
         public static string RsvpPage_Link {
             get {
                 return ResourceManager.GetString("RsvpPage_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry can&apos;t make it :-(.
+        /// </summary>
+        public static string RsvpPage_Negative {
+            get {
+                return ResourceManager.GetString("RsvpPage_Negative", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yep, I&apos;m coming, can&apos;t wait!.
+        /// </summary>
+        public static string RsvpPage_Positive {
+            get {
+                return ResourceManager.GetString("RsvpPage_Positive", resourceCulture);
             }
         }
         
@@ -334,11 +505,101 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surname.
+        /// </summary>
+        public static string Surname {
+            get {
+                return ResourceManager.GetString("Surname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Telephone Number.
         /// </summary>
         public static string TelephoneNumber {
             get {
                 return ResourceManager.GetString("TelephoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Will.
+        /// </summary>
+        public static string WeddingPartyMember_BestMan {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_BestMan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kathryn.
+        /// </summary>
+        public static string WeddingPartyMember_Bride {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_Bride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Bridesmaids.
+        /// </summary>
+        public static string WeddingPartyMember_Bridesmaids {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_Bridesmaids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paul.
+        /// </summary>
+        public static string WeddingPartyMember_FatherOfTheBride {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_FatherOfTheBride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ralph.
+        /// </summary>
+        public static string WeddingPartyMember_FatherOfTheGroom {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_FatherOfTheGroom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alex.
+        /// </summary>
+        public static string WeddingPartyMember_Groom {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_Groom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dawn.
+        /// </summary>
+        public static string WeddingPartyMember_MotherOfTheBride {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_MotherOfTheBride", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sheila.
+        /// </summary>
+        public static string WeddingPartyMember_MotherOfTheGroom {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_MotherOfTheGroom", resourceCulture);
             }
         }
     }

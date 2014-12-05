@@ -4,6 +4,8 @@
     using Axh.Core.Services.Logging.Contracts;
     using Axh.Core.Services.Rsvp;
     using Axh.Core.Services.Rsvp.Contracts;
+    using Axh.Core.Services.Rsvp.Contracts.Factories;
+    using Axh.Core.Services.Rsvp.Factories;
     using Axh.Core.Services.User;
     using Axh.Core.Services.User.Contracts;
 
@@ -16,6 +18,7 @@
             Bind<ILoggingService>().To<Log4NetLoggingService>().WithConstructorArgument("name", x => "Wedding");
             Bind<IUserService>().To<UserService>();
             Bind<IRsvpService>().To<RsvpService>();
+            Bind<IRsvpFactory>().To<RsvpFactory>();
         }
     }
 }

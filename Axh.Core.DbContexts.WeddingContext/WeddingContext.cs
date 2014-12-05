@@ -32,6 +32,7 @@
             modelBuilder.Configurations.Add(new GuestMap());
             modelBuilder.Configurations.Add(new RsvpMap());
             modelBuilder.Configurations.Add(new RsvpStoryMap());
+            modelBuilder.Configurations.Add(new RsvpGuestMap());
 
         }
     }

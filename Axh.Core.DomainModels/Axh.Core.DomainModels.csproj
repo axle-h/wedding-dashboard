@@ -43,8 +43,9 @@
     <Compile Include="Accounts\Role.cs" />
     <Compile Include="Accounts\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wedding\Guest.cs" />
+    <Compile Include="Accounts\Guest.cs" />
     <Compile Include="Wedding\Rsvp.cs" />
+    <Compile Include="Wedding\RsvpGuest.cs" />
     <Compile Include="Wedding\RsvpStory.cs" />
   </ItemGroup>
   <ItemGroup>

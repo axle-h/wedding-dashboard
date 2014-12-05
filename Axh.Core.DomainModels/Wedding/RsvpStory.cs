@@ -10,6 +10,8 @@
 
         public WeddingPartyMember StorySubject { get; set; }
 
+        public string StoryTitle { get; set; }
+
         public string StoryBody { get; set; }
 
         public virtual Rsvp Rsvp { get; set; }

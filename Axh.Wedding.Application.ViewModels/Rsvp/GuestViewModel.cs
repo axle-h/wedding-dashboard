@@ -17,5 +17,8 @@
 
         [BindClientProperty("IsAttending")]
         public bool IsAttending { get; set; }
+
+        [BindClientProperty("DietaryRequirements")]
+        public string DietaryRequirements { get; set; }
     }
 }

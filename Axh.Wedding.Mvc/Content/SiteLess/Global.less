@@ -305,70 +305,17 @@ footer {
 	}
 }
 
-// Floating Form Styles
-
-.floating-label-form-group
+.form-rsvp
 {
-	font-size: 1em;
-	position: relative;
-	margin-bottom: 0;
-	padding-bottom: 0.5em;
-	border-bottom: 1px solid @gray-light;
-	input,
-	textarea
+    legend.form-inline
     {
-		z-index: 1;
-		position: relative;
-		padding: 0;
-		border: none;
-		border-radius: 0;
-		font-size: 1.5em;
-		background: none;
-		box-shadow: none !important;
-		resize: none;
-	}
-	label
-    {
-		display: block;
-		z-index: 0;
-		position: relative;
-		top: 2em;
-		margin: 0;
-		font-size: 1em;
-		line-height: 1.764705882em;
-		vertical-align: middle;
-		vertical-align: baseline;
-		opacity: 0;
-		-webkit-transition: top 0.5s ease,opacity 0.5s ease;
-		-moz-transition: top 0.5s ease,opacity 0.5s ease;
-		-ms-transition: top 0.5s ease,opacity 0.5s ease;
-		transition: top 0.5s ease,opacity 0.5s ease;
-	}
-	&:not(:first-child) {
-		padding-left: 14px;
-		border-left: 1px solid @gray-light;
-	}
+        span.legend-block
+        {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
 }
-
-.floating-label-form-group-with-value {
-	label
-    {
-		top: 0;
-		opacity: 1;
-	}
-}
-
-.floating-label-form-group-with-focus {
-	label
-    {
-		color: @brand-primary-dark;
-	}
-}
-
-form .row:first-child .floating-label-form-group {
-	border-top: 1px solid @gray-light;
-}
-
 
 .form-signin
 {
@@ -495,9 +442,20 @@ body {
 	-webkit-tap-highlight-color: @brand-primary-dark;
 }
 
+
+.selectable
+{
+    cursor: pointer;
+}
+
 .margin-top
 {
     margin-top: @margin;
+}
+
+.margin-right-tiny
+{
+    margin-right: @margin-tiny;
 }
 
 .margin-bottom
@@ -513,6 +471,11 @@ body {
 .font-large
 {
     font-size: @font-large;
+}
+
+.font-small
+{
+    font-size: @font-small;
 }
 
 .padding-right
@@ -540,5 +503,10 @@ body {
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
+}
+
+.full-width
+{
+    width: 100%;
 }
 

@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using Axh.Core.DomainModels.Accounts;
     using Axh.Core.DomainModels.Wedding;
 
     public interface IGuestRepository

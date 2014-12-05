@@ -16,6 +16,7 @@
 
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
+            this.Property(x => x.StoryTitle).HasColumnName("StoryTitle").HasMaxLength(64);
             this.Property(x => x.StoryBody).HasColumnName("StoryBody").HasColumnType("text");
             this.Property(x => x.StorySubject).HasColumnName("StorySubject");
 

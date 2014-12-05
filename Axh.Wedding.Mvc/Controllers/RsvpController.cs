@@ -31,17 +31,14 @@
         [ValidateAntiForgeryToken]
         public virtual async Task<ActionResult> Index(RsvpPageViewModel viewModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return this.View(viewModel);
-            }
-
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            if (await this.rsvpViewModelService.UpdateRsvp(userId, viewModel))
+            Guid userId;
+            if (!ModelState.IsValid && Guid.TryParse(User.Identity.GetUserId(), out userId) && await this.rsvpViewModelService.UpdateRsvp(userId, viewModel))
             {
                 return RedirectToAction(MVC.Home.Information());
             }
 
+            var user = User.Identity.GetUserName();
+            viewModel = this.rsvpViewModelService.GetRsvpPageViewModel(user, viewModel);
             return this.View(viewModel);
         }
     }

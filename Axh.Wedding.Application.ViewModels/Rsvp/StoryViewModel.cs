@@ -13,6 +13,9 @@
         [BindClientProperty("StorySubject")]
         public WeddingPartyMember StorySubject { get; set; }
 
+        [BindClientProperty("StoryTitle")]
+        public string StoryTitle { get; set; }
+
         [BindClientProperty("StoryBody")]
         public string StoryBody { get; set; }
     }

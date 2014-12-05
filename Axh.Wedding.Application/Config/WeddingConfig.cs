@@ -9,8 +9,7 @@
     {
         public WeddingConfig()
         {
-            this.Bride = ConfigurationManager.AppSettings["Bride"];
-            this.Groom = ConfigurationManager.AppSettings["Groom"];
+            this.RunDatabaseInitializer = bool.Parse(ConfigurationManager.AppSettings["RunDatabaseInitializer"]);
             this.Date = DateTime.Parse(ConfigurationManager.AppSettings["Date"]);
             this.Venue = ConfigurationManager.AppSettings["Venue_Name"];
             this.VenueAddress = ConfigurationManager.AppSettings["Venue_Address"];
@@ -26,10 +25,7 @@
             this.Twitter = ConfigurationManager.AppSettings["Twitter"];
         }
 
-
-        public string Bride { get; private set; }
-
-        public string Groom { get; private set; }
+        public bool RunDatabaseInitializer { get; set; }
 
         public string Venue { get; private set; }
 

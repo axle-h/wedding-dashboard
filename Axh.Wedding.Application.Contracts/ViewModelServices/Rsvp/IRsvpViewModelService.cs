@@ -9,6 +9,8 @@
     {
         Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, Guid userId);
 
+        RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel model);
+
         Task<bool> UpdateRsvp(Guid userId, RsvpPageViewModel model);
     }
 }

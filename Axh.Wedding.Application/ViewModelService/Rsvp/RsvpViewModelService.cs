@@ -27,6 +27,11 @@
             return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, rsvp);
         }
 
+        public RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel model)
+        {
+            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, model);
+        }
+
         public async Task<bool> UpdateRsvp(Guid userId, RsvpPageViewModel model)
         {
             var rsvp = this.rsvpViewModelFactory.GetRsvp(userId, model);

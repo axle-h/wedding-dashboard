@@ -126,6 +126,9 @@
   <data name="Account_SignOut" xml:space="preserve">
     <value>Sign Out</value>
   </data>
+  <data name="BestMan" xml:space="preserve">
+    <value>Best Man</value>
+  </data>
   <data name="ContactPage_Link" xml:space="preserve">
     <value>Contact</value>
   </data>
@@ -134,6 +137,15 @@
   </data>
   <data name="ContactPage_Title" xml:space="preserve">
     <value>Contact Us</value>
+  </data>
+  <data name="Dad" xml:space="preserve">
+    <value>Dad</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Guest</value>
   </data>
   <data name="HomePage_Link" xml:space="preserve">
     <value>Wedding</value>
@@ -175,7 +187,7 @@ In our long winding journey, as new husband and wife!</value>
     <value>The closest hotel is Dakota Nottingham, a ten minute drive from Goosedale.</value>
   </data>
   <data name="InformationPage_Hotels_2" xml:space="preserve">
-    <value>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £99. To guarantee a room, call quoting &lt;span class="subtle"&gt;'Kathryn &amp; Alex, Goosedale Wedding 14th March 2015'&lt;/span&gt;.</value>
+    <value>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £79. To guarantee a room, call quoting &lt;span class="subtle"&gt;'Kathryn &amp; Alex, Goosedale Wedding 14th March 2015'&lt;/span&gt;.</value>
   </data>
   <data name="InformationPage_Hotels_3" xml:space="preserve">
     <value>We will be staying there and we couldn't wish for a better ending to our wedding than to share our first breakfast as husband and wife (as in proper bacon and eggs breakfast) with our closest friends and family.</value>
@@ -207,8 +219,47 @@ In our long winding journey, as new husband and wife!</value>
   <data name="LoginPage_Title" xml:space="preserve">
     <value>Hello.</value>
   </data>
+  <data name="Mum" xml:space="preserve">
+    <value>Mum</value>
+  </data>
+  <data name="RandomStoryTitleLabels_0" xml:space="preserve">
+    <value>Some jarb about</value>
+  </data>
+  <data name="RandomStoryTitleLabels_1" xml:space="preserve">
+    <value>All the scoop on</value>
+  </data>
+  <data name="RandomStoryTitleLabels_2" xml:space="preserve">
+    <value>Confessions about</value>
+  </data>
+  <data name="RandomStoryTitleLabels_3" xml:space="preserve">
+    <value>More than we need to know about</value>
+  </data>
+  <data name="RandomStoryTitleLabels_4" xml:space="preserve">
+    <value>Pure filth on</value>
+  </data>
+  <data name="RandomStoryTitleLabels_5" xml:space="preserve">
+    <value>Secrets from the front line on</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RsvpPage_AddGuest" xml:space="preserve">
+    <value>You missed someone off...</value>
+  </data>
+  <data name="RsvpPage_AddStory" xml:space="preserve">
+    <value>Add story or interesting fact...</value>
+  </data>
+  <data name="RsvpPage_DietaryRequirements" xml:space="preserve">
+    <value>Any dietary requirements?</value>
+  </data>
   <data name="RsvpPage_Link" xml:space="preserve">
     <value>Rsvp</value>
+  </data>
+  <data name="RsvpPage_Negative" xml:space="preserve">
+    <value>Sorry can't make it :-(</value>
+  </data>
+  <data name="RsvpPage_Positive" xml:space="preserve">
+    <value>Yep, I'm coming, can't wait!</value>
   </data>
   <data name="RsvpPage_SubTitle" xml:space="preserve">
     <value>We can't wait to share our special day with you</value>
@@ -216,7 +267,43 @@ In our long winding journey, as new husband and wife!</value>
   <data name="RsvpPage_Title" xml:space="preserve">
     <value>Come Celebrate</value>
   </data>
+  <data name="Rsvp_PleaseAddStory" xml:space="preserve">
+    <value>To help with speeches and maybe even to make pre-wedding high-tech nice guest book, please add an interesting fact or story below. It can be anything about any member of the wedding party, the funnier/ruder the better!</value>
+  </data>
+  <data name="Rsvp_PleaseRsvp" xml:space="preserve">
+    <value>Please check details for all wedding guests in your party. If we've made any mistakes or missed anyone off then please add them.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
   <data name="TelephoneNumber" xml:space="preserve">
     <value>Telephone Number</value>
+  </data>
+  <data name="WeddingPartyMember_BestMan" xml:space="preserve">
+    <value>Will</value>
+  </data>
+  <data name="WeddingPartyMember_Bride" xml:space="preserve">
+    <value>Kathryn</value>
+  </data>
+  <data name="WeddingPartyMember_Bridesmaids" xml:space="preserve">
+    <value>The Bridesmaids</value>
+  </data>
+  <data name="WeddingPartyMember_FatherOfTheBride" xml:space="preserve">
+    <value>Paul</value>
+  </data>
+  <data name="WeddingPartyMember_FatherOfTheGroom" xml:space="preserve">
+    <value>Ralph</value>
+  </data>
+  <data name="WeddingPartyMember_Groom" xml:space="preserve">
+    <value>Alex</value>
+  </data>
+  <data name="WeddingPartyMember_MotherOfTheBride" xml:space="preserve">
+    <value>Dawn</value>
+  </data>
+  <data name="WeddingPartyMember_MotherOfTheGroom" xml:space="preserve">
+    <value>Sheila</value>
   </data>
 </root>

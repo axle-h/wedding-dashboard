@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.ModelConfiguration;
 
-    using Axh.Core.DomainModels.Wedding;
+    using Axh.Core.DomainModels.Accounts;
 
     public class GuestMap : EntityTypeConfiguration<Guest>
     {
@@ -12,7 +12,7 @@
             // Primary Key
             this.HasKey(t => t.Id);
 
-            this.ToTable("Wedding_Guests");
+            this.ToTable("Guests");
 
             this.Property(t => t.Id).HasColumnName("Id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
@@ -20,7 +20,6 @@
 
             this.Property(x => x.FirstName).HasColumnName("FirstName").HasMaxLength(128);
             this.Property(x => x.Surname).HasColumnName("Surname").HasMaxLength(128);
-            this.Property(x => x.IsAttending).HasColumnName("IsAttending");
 
             this.HasRequired(x => x.User).WithMany(x => x.Guests);
         }

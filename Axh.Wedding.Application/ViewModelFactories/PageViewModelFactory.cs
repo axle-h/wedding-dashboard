@@ -5,6 +5,8 @@
     using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Page;
 
+    using Axh.Wedding.Resources;
+
     public class PageViewModelFactory : IPageViewModelFactory
     {
         private readonly IWeddingConfig weddingConfig;
@@ -23,7 +25,21 @@
             string buttonUrl = null,
             string buttonText = null) where TPageViewModel : PageViewModelBase, new()
         {
-            var applicationTitle = string.Format("{0} & {1}", weddingConfig.Bride, weddingConfig.Groom);
+            var model = new TPageViewModel();
+            return PreparePageViewModel(model, user, headerImage, pageLink, title, subtitle, buttonUrl, buttonText);
+        }
+
+        public TPageViewModel PreparePageViewModel<TPageViewModel>(
+            TPageViewModel model,
+            UserViewModel user,
+            HeaderImageViewModel headerImage,
+            string pageLink,
+            string title = null,
+            string subtitle = null,
+            string buttonUrl = null,
+            string buttonText = null) where TPageViewModel : PageViewModelBase, new()
+        {
+            var applicationTitle = string.Format("{0} & {1}", Resources.WeddingPartyMember_Bride, Resources.WeddingPartyMember_Groom);
             var applicationSubTitle = string.Format("{0} {1}", weddingConfig.Date.ToString("dddd d MMMM yyyy h tt"), weddingConfig.Venue);
 
             headerImage.Title = title ?? applicationTitle;
@@ -31,14 +47,11 @@
             headerImage.ButtonUrl = buttonUrl;
             headerImage.ButtonText = buttonText;
 
-            return new TPageViewModel
-                   {
-                       ApplicationTitle = applicationTitle,
-                       ApplicationSubTitle = applicationSubTitle,
-                       Header = new HeaderViewModel { PageLink = pageLink, HeaderImage = headerImage },
-                       User = user,
-                       Footer =
-                           new FooterViewModel
+            model.ApplicationTitle = applicationTitle;
+            model.ApplicationSubTitle = applicationSubTitle;
+            model.Header = new HeaderViewModel { PageLink = pageLink, HeaderImage = headerImage };
+            model.User = user;
+            model.Footer = new FooterViewModel
                            {
                                SocialCircles =
                                    new[]
@@ -50,8 +63,8 @@
                                        new SocialCircleViewModel(weddingConfig.LinkedIn, SocialCircleType.LinkedIn),
                                        new SocialCircleViewModel(weddingConfig.Email, SocialCircleType.Email)
                                    }
-                           }
-                   };
+                           };
+            return model;
         }
     }
 }

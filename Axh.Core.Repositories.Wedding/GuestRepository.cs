@@ -8,6 +8,7 @@
 
     using Axh.Core.DbContexts.Contracts.Activators;
     using Axh.Core.DbContexts.WeddingContext;
+    using Axh.Core.DomainModels.Accounts;
     using Axh.Core.DomainModels.Wedding;
     using Axh.Core.Repositories.Common;
     using Axh.Core.Repositories.Wedding.Contracts;
