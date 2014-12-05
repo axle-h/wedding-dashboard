@@ -4,6 +4,8 @@
 # User-specific files
 *.suo
 *.user
+!Axh.Core.Services.User
+
 *.sln.docstates
 
 # Build results
@@ -194,8 +196,7 @@ FakesAssemblies/
 .LSOverride
 
 # Icon must end with two \r
-Icon
-
+Icon
 # Thumbnails
 ._*
 
