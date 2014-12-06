@@ -29,7 +29,6 @@ public static partial class MVC
     public static Axh.Wedding.Mvc.Controllers.HomeController Home = new Axh.Wedding.Mvc.Controllers.T4MVC_HomeController();
     public static Axh.Wedding.Mvc.Controllers.RsvpController Rsvp = new Axh.Wedding.Mvc.Controllers.T4MVC_RsvpController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
-    public static T4MVC.StaticContentController StaticContent = new T4MVC.StaticContentController();
 }
 
 namespace T4MVC
@@ -87,7 +86,6 @@ namespace Links
             private const string URLPATH = "~/Scripts/ViewModels";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string FloatingFormViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/FloatingFormViewModel.min.js") ? Url("FloatingFormViewModel.min.js") : Url("FloatingFormViewModel.js");
             public static readonly string GoogleMapsViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/GoogleMapsViewModel.min.js") ? Url("GoogleMapsViewModel.min.js") : Url("GoogleMapsViewModel.js");
             public static readonly string InformationViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/InformationViewModel.min.js") ? Url("InformationViewModel.min.js") : Url("InformationViewModel.js");
             public static readonly string LoginViewModel_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/LoginViewModel.min.js") ? Url("LoginViewModel.min.js") : Url("LoginViewModel.js");
@@ -117,7 +115,10 @@ namespace Links
             private const string URLPATH = "~/Content/Images";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string bride_and_groom_jpg = Url("bride-and-groom.jpg");
+            public static readonly string bride_jpg = Url("bride.jpg");
             public static readonly string contact_bg_jpg = Url("contact_bg.jpg");
+            public static readonly string groom_jpg = Url("groom.jpg");
             public static readonly string home_bg_jpg = Url("home-bg.jpg");
             public static readonly string honeymoon_poem_1_jpg = Url("honeymoon-poem-1.jpg");
             public static readonly string honeymoon_poem_2_jpg = Url("honeymoon-poem-2.jpg");

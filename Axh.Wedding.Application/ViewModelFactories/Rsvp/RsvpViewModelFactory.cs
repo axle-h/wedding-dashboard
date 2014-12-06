@@ -5,6 +5,7 @@
 
     using Axh.Core.Common;
     using Axh.Core.DomainModels.Wedding;
+    using Axh.Wedding.Application.Contracts.Config;
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Account;
@@ -20,11 +21,14 @@
 
         private readonly IAccountViewModelFactory accountViewModelFactory;
 
-        public RsvpViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IAccountViewModelFactory accountViewModelFactory)
+        private readonly IWeddingConfig weddingConfig;
+
+        public RsvpViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IAccountViewModelFactory accountViewModelFactory, IWeddingConfig weddingConfig)
         {
             this.pageViewModelFactory = pageViewModelFactory;
             this.weddingUrlHelper = weddingUrlHelper;
             this.accountViewModelFactory = accountViewModelFactory;
+            this.weddingConfig = weddingConfig;
         }
 
         public RsvpPageViewModel GetRsvpPageViewModel(string user, Rsvp rsvp)
@@ -34,21 +38,33 @@
                 throw new ArgumentNullException("rsvp");
             }
             
-            var model = this.pageViewModelFactory.GetPageViewModel<RsvpPageViewModel>(
-                accountViewModelFactory.GetUserViewModel(user),
-                weddingUrlHelper.RsvpPageHeader,
-                Resources.RsvpPage_Link,
-                Resources.RsvpPage_Title,
-                Resources.RsvpPage_SubTitle);
+            var model = new RsvpPageViewModel
+            {
+                RsvpDate = rsvp.RsvpDate,
+                Guests = rsvp.Guests.Select(GetGuestViewModel),
+                Stories = rsvp.Stories.Select(GetStoryViewModel)
+            };
 
-            model.RsvpDate = rsvp.RsvpDate;
-            model.Guests = rsvp.Guests.Select(GetGuestViewModel);
-            model.Stories = rsvp.Stories.Select(GetStoryViewModel);
-
-            return PrepareRsvpPageViewModel(model);
+            return this.PrepareRsvpPageViewModel(user, model);
         }
 
         public RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel rsvp)
+        {
+            return this.PrepareRsvpPageViewModel(user, rsvp);
+        }
+
+        public Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp)
+        {
+            return new Rsvp
+                   {
+                       Id = userId,
+                       Guests = rsvp.Guests.Select(GetGuest).ToList(),
+                       Stories = rsvp.Stories.Select(GetStory).ToList(),
+                       RsvpDate = rsvp.RsvpDate
+                   };
+        }
+
+        private RsvpPageViewModel PrepareRsvpPageViewModel(string user, RsvpPageViewModel rsvp)
         {
             var model = this.pageViewModelFactory.PreparePageViewModel(
                 rsvp,
@@ -58,33 +74,18 @@
                 Resources.RsvpPage_Title,
                 Resources.RsvpPage_SubTitle);
 
-            return PrepareRsvpPageViewModel(model);
-        }
-
-
-        public Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp)
-        {
-            return new Rsvp
-                   {
-                       Id = userId,
-                       Guests = rsvp.Guests.Select(x => GetGuest(userId, x)).ToList(),
-                       Stories = rsvp.Stories.Select(GetStory).ToList(),
-                       RsvpDate = rsvp.RsvpDate
-                   };
-        }
-
-        private static RsvpPageViewModel PrepareRsvpPageViewModel(RsvpPageViewModel model)
-        {
+            model.AllowAddingGuests = this.weddingConfig.AllowAddingGuests;
             model.RsvpResponseLabels = Enum.GetValues(typeof(RsvpResponse)).Cast<RsvpResponse>().ToDictionary(x => x, GetRsvpResponseLabel);
             model.WeddingPartyMemberLabels = Enum.GetValues(typeof(WeddingPartyMember)).Cast<WeddingPartyMember>().ToDictionary(x => x, GetWeddingPartyMemberLabel);
 
             var random = new Random();
             model.StoryTitleLabels = new[]
-                                           {
-                                               Resources.RandomStoryTitleLabels_0, Resources.RandomStoryTitleLabels_1, Resources.RandomStoryTitleLabels_2, Resources.RandomStoryTitleLabels_3,
-                                               Resources.RandomStoryTitleLabels_4, Resources.RandomStoryTitleLabels_5
-                                           }
-                                           .OrderBy(x => random.Next());
+            {
+                Resources.RandomStoryTitleLabels_0, Resources.RandomStoryTitleLabels_1,
+                Resources.RandomStoryTitleLabels_2, Resources.RandomStoryTitleLabels_3,
+                Resources.RandomStoryTitleLabels_4, Resources.RandomStoryTitleLabels_5
+            }
+                .OrderBy(x => random.Next());
 
             return model;
         }
@@ -139,7 +140,7 @@
                    };
         }
 
-        private static RsvpGuest GetGuest(Guid userId, GuestViewModel guest)
+        private static RsvpGuest GetGuest(GuestViewModel guest)
         {
             return new RsvpGuest
                    {

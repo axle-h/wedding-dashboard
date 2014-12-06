@@ -267,11 +267,14 @@ In our long winding journey, as new husband and wife!</value>
   <data name="RsvpResponse_Yes" xml:space="preserve">
     <value>Yep, I'm coming, can't wait!</value>
   </data>
+  <data name="Rsvp_PleaseAddMissingGuests" xml:space="preserve">
+    <value>If we've missed anyone off please add them.</value>
+  </data>
   <data name="Rsvp_PleaseAddStory" xml:space="preserve">
     <value>To help with speeches and maybe even to make pre-wedding high-tech nice guest book, please add an interesting fact or story below. It can be anything about any member of the wedding party, the funnier/ruder the better!</value>
   </data>
   <data name="Rsvp_PleaseRsvp" xml:space="preserve">
-    <value>Please check details for all wedding guests in your party. If we've made any mistakes or missed anyone off then please add them.</value>
+    <value>Please check details for all wedding guests in your party. If we've made any mistakes then please correct them.</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>Send</value>

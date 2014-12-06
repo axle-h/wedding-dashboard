@@ -40,12 +40,27 @@
             return new Rsvp { Id = userId, Guests = guests.Select(this.rsvpFactory.GetRsvpGuest).ToList(), Stories = Enumerable.Empty<RsvpStory>().ToList() };
         }
 
-        public async Task<bool> UpdateRsvp(Rsvp rsvp)
+        public async Task<bool> UpdateRsvp(Rsvp rsvp, bool allowAddingGuests)
         {
-            // Make sure that new guests have Id's These aren't auto generated in the db as I have a psudo 1:(1,0) on Guest
-            foreach (var guest in rsvp.Guests.Where(x => x.Id == Guid.Empty))
+            var newGuests = rsvp.Guests.Where(x => x.Id == Guid.Empty).ToArray();
+
+            if (allowAddingGuests)
             {
-                guest.Id = Guid.NewGuid();
+                // Make sure that new guests have Id's These aren't auto generated in the db as I have a psudo 1:(1,0) on Guest
+                foreach (var guest in newGuests)
+                {
+                    guest.Id = Guid.NewGuid();
+                }
+            }
+            else
+            {
+                // Not allowing new guests. Somone has sent in a bad request.
+                // Hide our displeasure with their feeble hackery and just remove the new guests.
+                // It's also possible that someone loaded their page before the setting was turned off...
+                foreach (var guest in newGuests)
+                {
+                    rsvp.Guests.Remove(guest);
+                }
             }
 
             var existingRsvp = await this.rsvpRepository.GetRsvpByIdAsync(rsvp.Id);

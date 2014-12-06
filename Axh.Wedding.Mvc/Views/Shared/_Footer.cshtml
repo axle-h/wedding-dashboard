@@ -2,17 +2,22 @@
 
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
-                    @foreach (var socialCircle in Model.SocialCircles)
-                    {
-                        @Html.Partial(MVC.Shared.Views._SocialCircle, socialCircle)
-                    }
+        
+        @if (Model.SocialCircles.Any())
+        {
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
 
-                </ul>
+                        @foreach (var socialCircle in Model.SocialCircles)
+                        {
+                            @Html.Partial(MVC.Shared.Views._SocialCircle, socialCircle)
+                        }
+
+                    </ul>
+                </div>
             </div>
-        </div>
+        }
+        
     </div>
 </footer>

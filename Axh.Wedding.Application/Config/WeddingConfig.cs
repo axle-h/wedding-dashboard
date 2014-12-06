@@ -23,9 +23,16 @@
             this.GooglePlus = ConfigurationManager.AppSettings["GooglePlus"];
             this.LinkedIn = ConfigurationManager.AppSettings["LinkedIn"];
             this.Twitter = ConfigurationManager.AppSettings["Twitter"];
+
+            this.BrideEmail = ConfigurationManager.AppSettings["Bride_Email"];
+            this.BrideFacebook = ConfigurationManager.AppSettings["Bride_Facebook"];
+
+            this.AllowAddingGuests = bool.Parse(ConfigurationManager.AppSettings["AllowAddingGuests"]);
         }
 
-        public bool RunDatabaseInitializer { get; set; }
+        public bool RunDatabaseInitializer { get; private set; }
+
+        public bool AllowAddingGuests { get; private set; }
 
         public string Venue { get; private set; }
 
@@ -50,5 +57,9 @@
         public string LinkedIn { get; private set; }
 
         public string Twitter { get; private set; }
+
+        public string BrideEmail { get; private set; }
+
+        public string BrideFacebook { get; private set; }
     }
 }

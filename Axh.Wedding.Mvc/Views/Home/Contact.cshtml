@@ -1,1 +1,37 @@
 ﻿@model Axh.Wedding.Application.ViewModels.Home.ContactPageViewModel
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="circle-image center-block" style="background-image: url('@Links.Content.Images.bride_jpg');"></div>
+            </div>
+            
+            <div class="row">
+                <ul class="list-inline text-center center-block">
+                    @foreach (var socialCircle in Model.BrideSocialCircles)
+                    {
+                        @Html.Partial(MVC.Shared.Views._SocialCircle, socialCircle)
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="circle-image center-block" style="background-image: url('@Links.Content.Images.groom_jpg');"></div>
+            </div>
+            
+            <div class="row">
+                <ul class="list-inline text-center center-block">
+                   @foreach (var socialCircle in Model.GroomSocialCircles)
+                   {
+                    @Html.Partial(MVC.Shared.Views._SocialCircle, socialCircle)
+                   }
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

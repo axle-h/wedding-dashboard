@@ -1,6 +1,6 @@
 ﻿@using Axh.Wedding.Application.ViewModels.Rsvp
 @using Axh.Wedding.Resources
-@model Axh.Wedding.Application.ViewModels.Rsvp.RsvpPageViewModel
+@model RsvpPageViewModel
 
 <div class="container">
     <div class="row">
@@ -11,15 +11,21 @@
                 
                 <p>@Resources.Rsvp_PleaseRsvp</p>
                 
-                <div class="row margin-bottom">
-                    <div class="col-xs-12">
-                        <span class="selectable subtle font-small" data-bind="click: addGuest">
-                            <i class="fa fa-plus margin-right-tiny"></i>
-                            @Resources.RsvpPage_AddGuest
-                        </span>
-                    </div>
-                </div>
                 
+                if (Model.AllowAddingGuests)
+                {
+                    <p>@Resources.Rsvp_PleaseAddMissingGuests</p>
+                
+                    <div class="row margin-bottom">
+                        <div class="col-xs-12">
+                            <span class="selectable subtle font-small" data-bind="click: addGuest">
+                                <i class="fa fa-plus margin-right-tiny"></i>
+                                @Resources.RsvpPage_AddGuest
+                            </span>
+                        </div>
+                    </div>
+                }
+
                 <div data-bind="foreach: { data: Guests(), as: 'guest' }">
                     <fieldset class="margin-bottom">
                         <legend>

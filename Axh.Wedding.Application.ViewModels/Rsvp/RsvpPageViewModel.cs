@@ -21,5 +21,7 @@
         public IDictionary<WeddingPartyMember, string> WeddingPartyMemberLabels { get; set; }
 
         public IEnumerable<string> StoryTitleLabels { get; set; }
+
+        public bool AllowAddingGuests { get; set; }
     }
 }

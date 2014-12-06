@@ -4,7 +4,9 @@
 
     public interface IWeddingConfig
     {
-        bool RunDatabaseInitializer { get; set; }
+        bool RunDatabaseInitializer { get; }
+
+        bool AllowAddingGuests { get; }
 
         string Venue { get; }
 
@@ -29,5 +31,9 @@
         string LinkedIn { get; }
 
         string Twitter { get; }
+
+        string BrideEmail { get; }
+
+        string BrideFacebook { get; }
     }
 }

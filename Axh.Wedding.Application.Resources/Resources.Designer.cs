@@ -415,6 +415,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If we&apos;ve missed anyone off please add them..
+        /// </summary>
+        public static string Rsvp_PleaseAddMissingGuests {
+            get {
+                return ResourceManager.GetString("Rsvp_PleaseAddMissingGuests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To help with speeches and maybe even to make pre-wedding high-tech nice guest book, please add an interesting fact or story below. It can be anything about any member of the wedding party, the funnier/ruder the better!.
         /// </summary>
         public static string Rsvp_PleaseAddStory {
@@ -424,7 +433,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please check details for all wedding guests in your party. If we&apos;ve made any mistakes or missed anyone off then please add them..
+        ///   Looks up a localized string similar to Please check details for all wedding guests in your party. If we&apos;ve made any mistakes then please correct them..
         /// </summary>
         public static string Rsvp_PleaseRsvp {
             get {

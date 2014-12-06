@@ -1,11 +1,13 @@
 ﻿namespace Axh.Wedding.Application.ViewModelFactories.Home
 {
+    using System.Linq;
     using Axh.Wedding.Application.Contracts.Config;
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Account;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Home;
     using Axh.Wedding.Application.ViewModels.Home;
+    using Axh.Wedding.Application.ViewModels.Page;
     using Axh.Wedding.Resources;
 
     public class StaticContentViewModelFactory : IStaticContentViewModelFactory
@@ -58,12 +60,23 @@
 
         public ContactPageViewModel GetContactPageViewModel(string user)
         {
-            return this.pageViewModelFactory.GetPageViewModel<ContactPageViewModel>(
+            var model = this.pageViewModelFactory.GetPageViewModel<ContactPageViewModel>(
                 accountViewModelFactory.GetUserViewModel(user),
                 weddingUrlHelper.ContactPageHeader,
                 Resources.ContactPage_Link,
                 Resources.ContactPage_Title,
                 Resources.ContactPage_SubTitle);
+
+            model.GroomSocialCircles = model.Footer.SocialCircles;
+            model.Footer.SocialCircles = Enumerable.Empty<SocialCircleViewModel>();
+
+            model.BrideSocialCircles = new[]
+            {
+                new SocialCircleViewModel(this.weddingConfig.BrideFacebook, SocialCircleType.Facebook),
+                new SocialCircleViewModel(this.weddingConfig.BrideEmail, SocialCircleType.Email)
+            };
+
+            return model;
         }
     }
 }

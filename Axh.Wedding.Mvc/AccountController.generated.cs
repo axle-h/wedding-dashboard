@@ -95,7 +95,7 @@ namespace Axh.Wedding.Mvc.Controllers
         public class ActionParamsClass_Login
         {
             public readonly string returnUrl = "returnUrl";
-            public readonly string model = "model";
+            public readonly string loginPageViewModel = "loginPageViewModel";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -131,13 +131,13 @@ namespace Axh.Wedding.Mvc.Controllers
         }
 
         [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel model);
+        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel loginPageViewModel);
 
         [NonAction]
         public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Login(Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel loginPageViewModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", loginPageViewModel);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "loginPageViewModel", loginPageViewModel);
             LoginOverride(callInfo, loginPageViewModel);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
