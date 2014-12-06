@@ -39,32 +39,34 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual async Task<ActionResult> Login(LoginPageViewModel model)
+        public virtual async Task<ActionResult> Login(LoginPageViewModel loginPageViewModel)
         {
             if (!this.ModelState.IsValid)
             {
-                return this.View(model);
+                loginPageViewModel = this.accountViewModelService.GetLoginViewModel(loginPageViewModel);
+                return this.View(loginPageViewModel);
             }
 
-            var user = await this.userManager.FindAsync(model.UserName, model.Password);
+            var user = await this.userManager.FindAsync(loginPageViewModel.UserName, loginPageViewModel.Password);
             if (user != null)
             {
                 var authenticationManager = this.HttpContext.GetOwinContext().Authentication;
                 authenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
                 var identity = await userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
-                var props = new AuthenticationProperties { IsPersistent = model.RememberMe };
+                var props = new AuthenticationProperties { IsPersistent = loginPageViewModel.RememberMe };
                 authenticationManager.SignIn(props, identity);
 
-                if (Url.IsLocalUrl(model.ReturnUrl))
+                if (Url.IsLocalUrl(loginPageViewModel.ReturnUrl))
                 {
-                    return Redirect(model.ReturnUrl);
+                    return Redirect(loginPageViewModel.ReturnUrl);
                 }
 
                 return this.RedirectToAction(MVC.Home.Index());
             }
 
-            this.ModelState.AddModelError("", Resources.Account_InvalidUserNameOrPassword);
-            return View(model);
+            loginPageViewModel = this.accountViewModelService.GetLoginViewModel(loginPageViewModel);
+            this.ModelState.AddModelError("password", Resources.Account_InvalidUserNameOrPassword);
+            return View(loginPageViewModel);
         }
 
         [HttpGet]

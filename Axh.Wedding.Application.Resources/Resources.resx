@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Account_InvalidUserNameOrPassword" xml:space="preserve">
-    <value>Invalid username or password</value>
+    <value>Invalid user name or password</value>
   </data>
   <data name="Account_SignIn" xml:space="preserve">
     <value>Sign In</value>
@@ -211,7 +211,7 @@ In our long winding journey, as new husband and wife!</value>
     <value>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</value>
   </data>
   <data name="LoginPage_Link" xml:space="preserve">
-    <value>Hello</value>
+    <value>Login</value>
   </data>
   <data name="LoginPage_SubTitle" xml:space="preserve">
     <value>Who are you?</value>

@@ -17,5 +17,10 @@
         {
             return this.accountViewModelFactory.GetLoginViewModel(returnUrl);
         }
+
+        public LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel)
+        {
+            return this.accountViewModelFactory.GetLoginViewModel(loginPageViewModel);
+        }
     }
 }

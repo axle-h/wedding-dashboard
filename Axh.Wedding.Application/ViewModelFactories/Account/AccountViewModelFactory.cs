@@ -20,20 +20,29 @@
 
         public LoginPageViewModel GetLoginViewModel(string returnUrl)
         {
-            var model = this.pageViewModelFactory.GetPageViewModel<LoginPageViewModel>(
-                null,
-                weddingUrlHelper.LoginPageHeader,
-                Resources.LoginPage_Link,
-                Resources.LoginPage_Title,
-                Resources.LoginPage_SubTitle);
-
-            model.ReturnUrl = returnUrl;
-            return model;
+            var model = new LoginPageViewModel {ReturnUrl = returnUrl};
+            return PrepareLoginPageViewModel(model);
         }
 
         public UserViewModel GetUserViewModel(string userName)
         {
             return new UserViewModel { UserName = userName };
+        }
+
+        public LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel)
+        {
+            return PrepareLoginPageViewModel(loginPageViewModel);
+        }
+
+        private LoginPageViewModel PrepareLoginPageViewModel(LoginPageViewModel model)
+        {
+            return this.pageViewModelFactory.PreparePageViewModel(
+                model,
+                null,
+                weddingUrlHelper.LoginPageHeader,
+                Resources.LoginPage_Link,
+                Resources.LoginPage_Title,
+                Resources.LoginPage_SubTitle);
         }
     }
 }

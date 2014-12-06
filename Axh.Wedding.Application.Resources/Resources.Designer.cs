@@ -61,7 +61,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid username or password.
+        ///   Looks up a localized string similar to Invalid user name or password.
         /// </summary>
         public static string Account_InvalidUserNameOrPassword {
             get {
@@ -316,7 +316,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello.
+        ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string LoginPage_Link {
             get {

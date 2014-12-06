@@ -134,11 +134,11 @@ namespace Axh.Wedding.Mvc.Controllers
         partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel model);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Login(Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel model)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Login(Axh.Wedding.Application.ViewModels.Account.LoginPageViewModel loginPageViewModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            LoginOverride(callInfo, model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", loginPageViewModel);
+            LoginOverride(callInfo, loginPageViewModel);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

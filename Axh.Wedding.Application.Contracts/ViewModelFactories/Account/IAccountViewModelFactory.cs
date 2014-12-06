@@ -7,5 +7,7 @@ namespace Axh.Wedding.Application.Contracts.ViewModelFactories.Account
         LoginPageViewModel GetLoginViewModel(string returnUrl);
 
         UserViewModel GetUserViewModel(string userName);
+
+        LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel);
     }
 }

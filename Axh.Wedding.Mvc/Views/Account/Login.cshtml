@@ -26,11 +26,11 @@
                                 @Html.HiddenFor(m => m.ReturnUrl)
 
                                 @Html.LabelFor(m => m.UserName, new { @class = "sr-only" })
-                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "User name" })
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "User name", data_toggle = "popover", data_content = (Html.ValidationMessageFor(m => m.UserName) ?? new MvcHtmlString("")).ToString() })
 
                                 @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", data_toggle = "popover", data_content = (Html.ValidationMessageFor(m => m.Password) ?? new MvcHtmlString("")).ToString() })
+                                
                                 <button class="btn btn-lg btn-block" type="submit">@Resources.Account_SignIn</button>
                             }
                         </div>

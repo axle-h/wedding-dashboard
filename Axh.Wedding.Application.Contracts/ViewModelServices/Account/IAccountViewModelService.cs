@@ -5,5 +5,6 @@
     public interface IAccountViewModelService
     {
         LoginPageViewModel GetLoginViewModel(string returnUrl);
+        LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel);
     }
 }
