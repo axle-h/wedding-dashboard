@@ -34,21 +34,19 @@
                         <input type="hidden" data-bind="value: guest.IsAttending, attr: { id: guest.HtmlId + '_IsAttending', name: guest.HtmlName + '.IsAttending' }" />
                         
                         <div class="control-group">
-                            <div class="row">
+                            <div class="row margin-bottom-small">
                                 <div class="col-md-6 controls">
                                     <input type="text" class="form-control" placeholder="@Resources.FirstName" data-bind="value: guest.FirstName, attr: { id: guest.HtmlId + '_FirstName', name: guest.HtmlName + '.FirstName' }" />
-                                    <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-md-6 controls">
                                     <input type="text" class="form-control" placeholder="@Resources.Surname" data-bind="value: guest.Surname, attr: { id: guest.HtmlId + '_Surname', name: guest.HtmlName + '.Surname' }" />
-                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row margin-bottom-small">
                                 <div class="col-xs-12 controls">
-                                    
-                                    
+
+
                                     @Html.DropDownList("null", Model.RsvpResponseLabels.Select(x => new SelectListItem
                                                                                                     {
                                                                                                         Text = x.Value,
@@ -59,7 +57,6 @@
                                                                                                         @class = "form-control",
                                                                                                         data_bind = "value: guest.IsAttending, attr: { id: guest.HtmlId + '_IsAttending', name: guest.HtmlName + '.IsAttending' }"
                                                                                                     })
-                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
 
@@ -67,7 +64,6 @@
                                 <div class="col-xs-12 controls">
                                     <input type="text" class="form-control" placeholder="@Resources.RsvpPage_DietaryRequirements"
                                            data-bind="value: guest.DietaryRequirements, attr: { id: guest.HtmlId + '_DietaryRequirements', name: guest.HtmlName + '.DietaryRequirements' }" />
-                                    <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                         </div>
