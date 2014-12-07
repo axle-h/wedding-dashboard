@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Services.User.Contracts
 {
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using Axh.Core.DomainModels.Accounts;
@@ -20,5 +21,7 @@
         Task<Role> FindRoleByNameAsync(string roleName);
 
         Task<User> FindByEmailAsync(string email);
+
+        Task<IList<User>> GetAllUsersAsync();
     }
 }

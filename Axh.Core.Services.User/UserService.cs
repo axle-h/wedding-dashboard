@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Services.User
 {
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using Axh.Core.DomainModels.Accounts;
     using Axh.Core.Repositories.Wedding.Contracts;
@@ -51,6 +52,11 @@
         public async Task<User> FindByEmailAsync(string email)
         {
             return await this.userRepository.FindByEmailAsync(email);
+        }
+
+        public async Task<IList<User>> GetAllUsersAsync()
+        {
+            return await this.userRepository.GetAllAsync();
         }
     }
 }

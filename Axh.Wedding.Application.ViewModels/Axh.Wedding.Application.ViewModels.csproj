@@ -64,6 +64,10 @@
       <Project>{859ADF85-F832-490F-90DF-3819A1A28FB7}</Project>
       <Name>Axh.Core.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Axh.Wedding.Application.Resources\Axh.Wedding.Application.Resources.csproj">
+      <Project>{6E6E922A-2FA6-45E1-8C51-DBF6C7B86D67}</Project>
+      <Name>Axh.Wedding.Application.Resources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

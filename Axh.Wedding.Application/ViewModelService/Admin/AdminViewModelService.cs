@@ -1,5 +1,7 @@
 ﻿namespace Axh.Wedding.Application.ViewModelService.Admin
 {
+    using System.Threading.Tasks;
+    using Axh.Wedding.Application.Contracts.Services;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Admin;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Admin;
     using Axh.Wedding.Application.ViewModels.Account;
@@ -9,14 +11,19 @@
     {
         private readonly IAdminViewModelFactory adminViewModelFactory;
 
-        public AdminViewModelService(IAdminViewModelFactory adminViewModelFactory)
+        private readonly IWeddingUserService weddingUserService;
+
+        public AdminViewModelService(IAdminViewModelFactory adminViewModelFactory, IWeddingUserService weddingUserService)
         {
             this.adminViewModelFactory = adminViewModelFactory;
+            this.weddingUserService = weddingUserService;
         }
 
-        public AdminPageViewModel GetAdminPageViewModel(UserViewModel user)
+        public async Task<AdminPageViewModel> GetAdminPageViewModel(UserViewModel user)
         {
-            return this.adminViewModelFactory.GetAdminPageViewModel(user);
+            var users = await this.weddingUserService.GetAllWeddingUsersAsync();
+
+            return this.adminViewModelFactory.GetAdminPageViewModel(user, users);
         }
     }
 }

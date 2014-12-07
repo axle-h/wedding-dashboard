@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Repositories.Wedding
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Threading.Tasks;
 
@@ -55,6 +56,11 @@
         public async Task<User> FindByEmailAsync(string email)
         {
             return await this.DbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+        }
+
+        public async Task<IList<User>> GetAllAsync()
+        {
+            return await this.DbContext.Users.ToListAsync();
         }
     }
 }

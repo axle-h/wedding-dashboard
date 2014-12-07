@@ -1,7 +1,11 @@
 ﻿namespace Axh.Wedding.Application.ViewModelFactories.Admin
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Axh.Wedding.Application.Contracts.Helpers;
+    using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
+    using Axh.Wedding.Application.Contracts.ViewModelFactories.Account;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Admin;
     using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Admin;
@@ -13,15 +17,20 @@
 
         private readonly IWeddingUrlHelper weddingUrlHelper;
 
-        public AdminViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper)
+        private readonly IAccountViewModelFactory accountViewModelFactory;
+
+        public AdminViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IAccountViewModelFactory accountViewModelFactory)
         {
             this.pageViewModelFactory = pageViewModelFactory;
             this.weddingUrlHelper = weddingUrlHelper;
+            this.accountViewModelFactory = accountViewModelFactory;
         }
 
-        public AdminPageViewModel GetAdminPageViewModel(UserViewModel user)
+        public AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users)
         {
             var model = new AdminPageViewModel();
+
+            model.Users = users.Select(this.accountViewModelFactory.GetUserViewModel);
 
             return PrepareAdminPageViewModel(user, model);
         }

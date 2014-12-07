@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Repositories.Wedding.Contracts
 {
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using Axh.Core.DomainModels.Accounts;
@@ -18,5 +19,7 @@
         Task<User> FindByNameAsync(string userName);
 
         Task<User> FindByEmailAsync(string email);
+
+        Task<IList<User>> GetAllAsync();
     }
 }

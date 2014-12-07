@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks;
 
     using Axh.Core.Services.User.Contracts;
@@ -158,6 +159,12 @@
         {
             user.PhoneNumberConfirmed = confirmed;
             return Task.FromResult(0);
+        }
+
+        public async Task<IEnumerable<WeddingUser>> GetAllWeddingUsersAsync()
+        {
+            var users = await this.userService.GetAllUsersAsync();
+            return users.Select(this.weddingUserFactory.GetWeddingUser);
         }
 
         public void Dispose()

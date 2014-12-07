@@ -559,6 +559,24 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrator.
+        /// </summary>
+        public static string User_IsAdmin {
+            get {
+                return ResourceManager.GetString("User_IsAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name.
+        /// </summary>
+        public static string User_UserName {
+            get {
+                return ResourceManager.GetString("User_UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Will.
         /// </summary>
         public static string WeddingPartyMember_BestMan {

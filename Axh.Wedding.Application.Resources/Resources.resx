@@ -291,6 +291,12 @@ In our long winding journey, as new husband and wife!</value>
   <data name="TelephoneNumber" xml:space="preserve">
     <value>Telephone Number</value>
   </data>
+  <data name="User_IsAdmin" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="User_UserName" xml:space="preserve">
+    <value>User name</value>
+  </data>
   <data name="WeddingPartyMember_BestMan" xml:space="preserve">
     <value>Will</value>
   </data>

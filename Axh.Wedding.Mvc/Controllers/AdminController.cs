@@ -1,5 +1,6 @@
 ﻿namespace Axh.Wedding.Mvc.Controllers
 {
+    using System.Threading.Tasks;
     using System.Web.Mvc;
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Admin;
@@ -15,10 +16,10 @@
             this.adminViewModelService = adminViewModelService;
         }
 
-        public virtual ActionResult Index()
+        public virtual async Task<ActionResult> Index()
         {
             var user = this.GetCurrentUser();
-            var model = this.adminViewModelService.GetAdminPageViewModel(user);
+            var model = await this.adminViewModelService.GetAdminPageViewModel(user);
             return View(model);
         }
     }
