@@ -1,16 +1,15 @@
 ﻿namespace Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp
 {
-    using System;
     using System.Threading.Tasks;
-
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Rsvp;
 
     public interface IRsvpViewModelService
     {
-        Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, bool isAdmin, Guid userId);
+        Task<RsvpPageViewModel> GetRsvpPageViewModel(UserViewModel user);
 
-        RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel model);
+        RsvpPageViewModel GetRsvpPageViewModel(UserViewModel user, RsvpPageViewModel model);
 
-        Task<bool> UpdateRsvp(Guid userId, RsvpPageViewModel model);
+        Task<bool> UpdateRsvp(UserViewModel user, RsvpPageViewModel model);
     }
 }

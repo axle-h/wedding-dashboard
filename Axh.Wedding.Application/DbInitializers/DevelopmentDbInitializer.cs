@@ -5,7 +5,6 @@
 
     using Axh.Core.DbContexts.WeddingContext;
     using Axh.Core.DomainModels.Accounts;
-    using Axh.Core.DomainModels.Wedding;
     using Axh.Wedding.Application.Contracts.Models.Account;
 
     using Microsoft.AspNet.Identity;
@@ -21,8 +20,8 @@
 
         protected override void Seed(WeddingContext context)
         {
-            var adminRole = new Role { RoleName = "admin" };
-            var rsvpRole = new Role { RoleName = "rsvp" };
+            var adminRole = new Role { RoleName = WeddingRoleNames.Admin };
+            var rsvpRole = new Role { RoleName = WeddingRoleNames.Rsvp };
 
             context.Roles.Add(adminRole);
             context.Roles.Add(rsvpRole);

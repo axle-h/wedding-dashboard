@@ -24,11 +24,6 @@
             return PrepareLoginPageViewModel(model);
         }
 
-        public UserViewModel GetUserViewModel(string userName, bool isAdmin)
-        {
-            return new UserViewModel { UserName = userName, IsAdmin = isAdmin };
-        }
-
         public LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel)
         {
             return PrepareLoginPageViewModel(loginPageViewModel);

@@ -1,13 +1,11 @@
 ﻿namespace Axh.Wedding.Mvc.Controllers
 {
-    using System;
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
     using Axh.Wedding.Application.ViewModels.Rsvp;
-
-    using Microsoft.AspNet.Identity;
+    using Axh.Wedding.Mvc.Infrastructure.Helpers;
 
     [Authorize]
     public partial class RsvpController : Controller
@@ -21,10 +19,8 @@
 
         public virtual async Task<ActionResult> Index()
         {
-            var user = User.Identity.GetUserName();
-            var isAdmin = User.IsInRole("admin");
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var model = await this.rsvpViewModelService.GetRsvpPageViewModel(user, isAdmin, userId);
+            var user = this.GetCurrentUser();
+            var model = await this.rsvpViewModelService.GetRsvpPageViewModel(user);
             return View(model);
         }
 
@@ -32,15 +28,14 @@
         [ValidateAntiForgeryToken]
         public virtual async Task<ActionResult> Index(RsvpPageViewModel viewModel)
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            if (ModelState.IsValid && await this.rsvpViewModelService.UpdateRsvp(userId, viewModel))
+            var user = this.GetCurrentUser();
+
+            if (ModelState.IsValid && await this.rsvpViewModelService.UpdateRsvp(user, viewModel))
             {
                 return RedirectToAction(MVC.Home.Information());
             }
 
-            var user = User.Identity.GetUserName();
-            var isAdmin = User.IsInRole("admin");
-            viewModel = this.rsvpViewModelService.GetRsvpPageViewModel(user, isAdmin, viewModel);
+            viewModel = this.rsvpViewModelService.GetRsvpPageViewModel(user, viewModel);
             return this.View(viewModel);
         }
     }

@@ -1,12 +1,12 @@
 ﻿namespace Axh.Wedding.Application.ViewModelService.Rsvp
 {
-    using System;
     using System.Threading.Tasks;
 
     using Axh.Core.Services.Rsvp.Contracts;
     using Axh.Wedding.Application.Contracts.Config;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Rsvp;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Rsvp;
 
     public class RsvpViewModelService : IRsvpViewModelService
@@ -24,21 +24,21 @@
             this.weddingConfig = weddingConfig;
         }
 
-        public async Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, bool isAdmin, Guid userId)
+        public async Task<RsvpPageViewModel> GetRsvpPageViewModel(UserViewModel user)
         {
-            var rsvp = await this.rsvpService.GetRsvpByUserIdAsync(userId);
+            var rsvp = await this.rsvpService.GetRsvpByUserIdAsync(user.UserId);
 
-            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, isAdmin, rsvp);
+            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, rsvp);
         }
 
-        public RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel model)
+        public RsvpPageViewModel GetRsvpPageViewModel(UserViewModel user, RsvpPageViewModel model)
         {
-            return this.rsvpViewModelFactory.PrepareRsvpPageViewModel(user, isAdmin, model);
+            return this.rsvpViewModelFactory.PrepareRsvpPageViewModel(user, model);
         }
 
-        public async Task<bool> UpdateRsvp(Guid userId, RsvpPageViewModel model)
+        public async Task<bool> UpdateRsvp(UserViewModel user, RsvpPageViewModel model)
         {
-            var rsvp = this.rsvpViewModelFactory.GetRsvp(userId, model);
+            var rsvp = this.rsvpViewModelFactory.GetRsvp(user.UserId, model);
             return await this.rsvpService.UpdateRsvp(rsvp, this.weddingConfig.AllowAddingGuests);
         }
     }

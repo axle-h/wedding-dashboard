@@ -233,6 +233,7 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Helpers\ControllerExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\UrlHelperFactory.cs" />
     <Compile Include="Infrastructure\Helpers\WeddingUrlHelper.cs" />

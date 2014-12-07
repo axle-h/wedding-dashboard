@@ -3,13 +3,14 @@
     using System;
 
     using Axh.Core.DomainModels.Wedding;
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Rsvp;
 
     public interface IRsvpViewModelFactory
     {
-        RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, Rsvp rsvp);
+        RsvpPageViewModel GetRsvpPageViewModel(UserViewModel user, Rsvp rsvp);
 
-        RsvpPageViewModel PrepareRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel rsvp);
+        RsvpPageViewModel PrepareRsvpPageViewModel(UserViewModel user, RsvpPageViewModel rsvp);
 
         Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp);
     }

@@ -3,8 +3,7 @@
     using System.Web.Mvc;
 
     using Axh.Wedding.Application.Contracts.ViewModelServices.Home;
-
-    using Microsoft.AspNet.Identity;
+    using Axh.Wedding.Mvc.Infrastructure.Helpers;
 
     [Authorize]
     public partial class HomeController : Controller
@@ -18,25 +17,22 @@
 
         public virtual ActionResult Index()
         {
-            var user = User.Identity.GetUserName();
-            var isAdmin = User.IsInRole("admin");
-            var model = homePageViewModelService.GetHomePageViewModel(user, isAdmin);
+            var user = this.GetCurrentUser();
+            var model = homePageViewModelService.GetHomePageViewModel(user);
             return View(model);
         }
 
         public virtual ActionResult Information()
         {
-            var user = User.Identity.GetUserName();
-            var isAdmin = User.IsInRole("admin");
-            var model = homePageViewModelService.GetInformationPageViewModel(user, isAdmin);
+            var user = this.GetCurrentUser();
+            var model = homePageViewModelService.GetInformationPageViewModel(user);
             return View(model);
         }
 
         public virtual ActionResult Contact()
         {
-            var user = User.Identity.GetUserName();
-            var isAdmin = User.IsInRole("admin");
-            var model = homePageViewModelService.GetContactPageViewModel(user, isAdmin);
+            var user = this.GetCurrentUser();
+            var model = homePageViewModelService.GetContactPageViewModel(user);
             return View(model);
         }
     }

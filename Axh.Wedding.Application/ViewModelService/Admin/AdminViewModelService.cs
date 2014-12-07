@@ -2,6 +2,7 @@
 {
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Admin;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Admin;
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Admin;
 
     public class AdminViewModelService : IAdminViewModelService
@@ -13,7 +14,7 @@
             this.adminViewModelFactory = adminViewModelFactory;
         }
 
-        public AdminPageViewModel GetAdminPageViewModel(string user)
+        public AdminPageViewModel GetAdminPageViewModel(UserViewModel user)
         {
             return this.adminViewModelFactory.GetAdminPageViewModel(user);
         }

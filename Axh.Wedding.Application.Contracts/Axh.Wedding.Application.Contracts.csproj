@@ -45,6 +45,7 @@
     <Compile Include="Config\IWeddingConfig.cs" />
     <Compile Include="Factories\IWeddingUserFactory.cs" />
     <Compile Include="Helpers\IWeddingUrlHelper.cs" />
+    <Compile Include="Models\Account\WeddingRoleNames.cs" />
     <Compile Include="Models\Account\WeddingUser.cs" />
     <Compile Include="Models\Account\WeddingRole.cs" />
     <Compile Include="Services\IWeddingUserService.cs" />

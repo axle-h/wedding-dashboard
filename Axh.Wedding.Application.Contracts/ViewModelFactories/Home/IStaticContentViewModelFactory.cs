@@ -1,13 +1,14 @@
 namespace Axh.Wedding.Application.Contracts.ViewModelFactories.Home
 {
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Home;
 
     public interface IStaticContentViewModelFactory
     {
-        HomePageViewModel GetHomePageViewModel(string user, bool isAdmin);
+        HomePageViewModel GetHomePageViewModel(UserViewModel user);
 
-        InformationPageViewModel GetInformationPageViewModel(string user, bool isAdmin);
+        InformationPageViewModel GetInformationPageViewModel(UserViewModel user);
 
-        ContactPageViewModel GetContactPageViewModel(string user, bool isAdmin);
+        ContactPageViewModel GetContactPageViewModel(UserViewModel user);
     }
 }

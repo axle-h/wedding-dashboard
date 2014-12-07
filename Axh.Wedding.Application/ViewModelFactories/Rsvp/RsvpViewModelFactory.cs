@@ -8,8 +8,8 @@
     using Axh.Wedding.Application.Contracts.Config;
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
-    using Axh.Wedding.Application.Contracts.ViewModelFactories.Account;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Rsvp;
+    using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Rsvp;
     using Axh.Wedding.Resources;
 
@@ -19,19 +19,16 @@
 
         private readonly IWeddingUrlHelper weddingUrlHelper;
 
-        private readonly IAccountViewModelFactory accountViewModelFactory;
-
         private readonly IWeddingConfig weddingConfig;
 
-        public RsvpViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IAccountViewModelFactory accountViewModelFactory, IWeddingConfig weddingConfig)
+        public RsvpViewModelFactory(IPageViewModelFactory pageViewModelFactory, IWeddingUrlHelper weddingUrlHelper, IWeddingConfig weddingConfig)
         {
             this.pageViewModelFactory = pageViewModelFactory;
             this.weddingUrlHelper = weddingUrlHelper;
-            this.accountViewModelFactory = accountViewModelFactory;
             this.weddingConfig = weddingConfig;
         }
 
-        public RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, Rsvp rsvp)
+        public RsvpPageViewModel GetRsvpPageViewModel(UserViewModel user, Rsvp rsvp)
         {
             if (rsvp == null)
             {
@@ -45,7 +42,7 @@
                 Stories = rsvp.Stories.Select(GetStoryViewModel)
             };
 
-            return this.PrepareRsvpPageViewModel(user, isAdmin, model);
+            return this.PrepareRsvpPageViewModel(user, model);
         }
 
         public Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp)
@@ -59,11 +56,11 @@
                    };
         }
 
-        public RsvpPageViewModel PrepareRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel rsvp)
+        public RsvpPageViewModel PrepareRsvpPageViewModel(UserViewModel user, RsvpPageViewModel rsvp)
         {
             var model = this.pageViewModelFactory.PreparePageViewModel(
                 rsvp,
-                accountViewModelFactory.GetUserViewModel(user, isAdmin),
+                user,
                 weddingUrlHelper.RsvpPageHeader,
                 Resources.RsvpPage_Link,
                 Resources.RsvpPage_Title,
