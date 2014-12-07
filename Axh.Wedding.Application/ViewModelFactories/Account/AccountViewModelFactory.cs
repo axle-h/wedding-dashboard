@@ -24,9 +24,9 @@
             return PrepareLoginPageViewModel(model);
         }
 
-        public UserViewModel GetUserViewModel(string userName)
+        public UserViewModel GetUserViewModel(string userName, bool isAdmin)
         {
-            return new UserViewModel { UserName = userName };
+            return new UserViewModel { UserName = userName, IsAdmin = isAdmin };
         }
 
         public LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel)

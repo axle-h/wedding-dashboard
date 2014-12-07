@@ -56,10 +56,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\WeddingUserService.cs" />
     <Compile Include="ViewModelFactories\Account\AccountViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Admin\AdminViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Home\StaticContentViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\PageViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Rsvp\RsvpViewModelFactory.cs" />
     <Compile Include="ViewModelService\Account\AccountViewModelService.cs" />
+    <Compile Include="ViewModelService\Admin\AdminViewModelService.cs" />
     <Compile Include="ViewModelService\Home\HomePageViewModelService.cs" />
     <Compile Include="ViewModelService\Rsvp\RsvpViewModelService.cs" />
   </ItemGroup>

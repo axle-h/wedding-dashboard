@@ -88,6 +88,24 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to admin.
+        /// </summary>
+        public static string AdminPage_Link {
+            get {
+                return ResourceManager.GetString("AdminPage_Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administration.
+        /// </summary>
+        public static string AdminPage_Title {
+            get {
+                return ResourceManager.GetString("AdminPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Best Man.
         /// </summary>
         public static string BestMan {

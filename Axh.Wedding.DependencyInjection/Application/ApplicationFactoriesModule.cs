@@ -3,11 +3,13 @@
     using Axh.Wedding.Application.Contracts.Factories;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Account;
+    using Axh.Wedding.Application.Contracts.ViewModelFactories.Admin;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Home;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Rsvp;
     using Axh.Wedding.Application.Factories;
     using Axh.Wedding.Application.ViewModelFactories;
     using Axh.Wedding.Application.ViewModelFactories.Account;
+    using Axh.Wedding.Application.ViewModelFactories.Admin;
     using Axh.Wedding.Application.ViewModelFactories.Home;
     using Axh.Wedding.Application.ViewModelFactories.Rsvp;
 
@@ -35,6 +37,7 @@
             Bind<IPageViewModelFactory>().To<PageViewModelFactory>();
             Bind<IStaticContentViewModelFactory>().To<StaticContentViewModelFactory>();
             Bind<IRsvpViewModelFactory>().To<RsvpViewModelFactory>();
+            Bind<IAdminViewModelFactory>().To<AdminViewModelFactory>();
         }
     }
 }

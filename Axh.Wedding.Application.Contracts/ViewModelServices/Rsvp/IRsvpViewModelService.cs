@@ -7,9 +7,9 @@
 
     public interface IRsvpViewModelService
     {
-        Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, Guid userId);
+        Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, bool isAdmin, Guid userId);
 
-        RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel model);
+        RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel model);
 
         Task<bool> UpdateRsvp(Guid userId, RsvpPageViewModel model);
     }

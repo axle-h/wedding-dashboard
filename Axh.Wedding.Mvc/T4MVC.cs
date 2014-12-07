@@ -26,6 +26,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static Axh.Wedding.Mvc.Controllers.AccountController Account = new Axh.Wedding.Mvc.Controllers.T4MVC_AccountController();
+    public static Axh.Wedding.Mvc.Controllers.AdminController Admin = new Axh.Wedding.Mvc.Controllers.T4MVC_AdminController();
     public static Axh.Wedding.Mvc.Controllers.HomeController Home = new Axh.Wedding.Mvc.Controllers.T4MVC_HomeController();
     public static Axh.Wedding.Mvc.Controllers.RsvpController Rsvp = new Axh.Wedding.Mvc.Controllers.T4MVC_RsvpController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();

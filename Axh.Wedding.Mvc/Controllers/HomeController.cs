@@ -19,21 +19,24 @@
         public virtual ActionResult Index()
         {
             var user = User.Identity.GetUserName();
-            var model = homePageViewModelService.GetHomePageViewModel(user);
+            var isAdmin = User.IsInRole("admin");
+            var model = homePageViewModelService.GetHomePageViewModel(user, isAdmin);
             return View(model);
         }
 
         public virtual ActionResult Information()
         {
             var user = User.Identity.GetUserName();
-            var model = homePageViewModelService.GetInformationPageViewModel(user);
+            var isAdmin = User.IsInRole("admin");
+            var model = homePageViewModelService.GetInformationPageViewModel(user, isAdmin);
             return View(model);
         }
 
         public virtual ActionResult Contact()
         {
             var user = User.Identity.GetUserName();
-            var model = homePageViewModelService.GetContactPageViewModel(user);
+            var isAdmin = User.IsInRole("admin");
+            var model = homePageViewModelService.GetContactPageViewModel(user, isAdmin);
             return View(model);
         }
     }

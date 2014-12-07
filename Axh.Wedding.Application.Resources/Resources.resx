@@ -126,6 +126,12 @@
   <data name="Account_SignOut" xml:space="preserve">
     <value>Sign Out</value>
   </data>
+  <data name="AdminPage_Link" xml:space="preserve">
+    <value>admin</value>
+  </data>
+  <data name="AdminPage_Title" xml:space="preserve">
+    <value>Administration</value>
+  </data>
   <data name="BestMan" xml:space="preserve">
     <value>Best Man</value>
   </data>

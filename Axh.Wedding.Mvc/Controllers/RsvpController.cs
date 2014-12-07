@@ -22,8 +22,9 @@
         public virtual async Task<ActionResult> Index()
         {
             var user = User.Identity.GetUserName();
+            var isAdmin = User.IsInRole("admin");
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var model = await this.rsvpViewModelService.GetRsvpPageViewModel(user, userId);
+            var model = await this.rsvpViewModelService.GetRsvpPageViewModel(user, isAdmin, userId);
             return View(model);
         }
 
@@ -38,7 +39,8 @@
             }
 
             var user = User.Identity.GetUserName();
-            viewModel = this.rsvpViewModelService.GetRsvpPageViewModel(user, viewModel);
+            var isAdmin = User.IsInRole("admin");
+            viewModel = this.rsvpViewModelService.GetRsvpPageViewModel(user, isAdmin, viewModel);
             return this.View(viewModel);
         }
     }

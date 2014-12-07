@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Account\LoginPageViewModel.cs" />
     <Compile Include="Account\UserViewModel.cs" />
+    <Compile Include="Admin\AdminPageViewModel.cs" />
     <Compile Include="Home\ContactPageViewModel.cs" />
     <Compile Include="Home\HomePageViewModel.cs" />
     <Compile Include="Home\InformationPageViewModel.cs" />

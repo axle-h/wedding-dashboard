@@ -31,7 +31,7 @@
             this.weddingConfig = weddingConfig;
         }
 
-        public RsvpPageViewModel GetRsvpPageViewModel(string user, Rsvp rsvp)
+        public RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, Rsvp rsvp)
         {
             if (rsvp == null)
             {
@@ -45,12 +45,7 @@
                 Stories = rsvp.Stories.Select(GetStoryViewModel)
             };
 
-            return this.PrepareRsvpPageViewModel(user, model);
-        }
-
-        public RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel rsvp)
-        {
-            return this.PrepareRsvpPageViewModel(user, rsvp);
+            return this.PrepareRsvpPageViewModel(user, isAdmin, model);
         }
 
         public Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp)
@@ -64,11 +59,11 @@
                    };
         }
 
-        private RsvpPageViewModel PrepareRsvpPageViewModel(string user, RsvpPageViewModel rsvp)
+        public RsvpPageViewModel PrepareRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel rsvp)
         {
             var model = this.pageViewModelFactory.PreparePageViewModel(
                 rsvp,
-                accountViewModelFactory.GetUserViewModel(user),
+                accountViewModelFactory.GetUserViewModel(user, isAdmin),
                 weddingUrlHelper.RsvpPageHeader,
                 Resources.RsvpPage_Link,
                 Resources.RsvpPage_Title,

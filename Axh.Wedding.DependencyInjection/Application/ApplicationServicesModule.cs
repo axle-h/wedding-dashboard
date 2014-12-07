@@ -7,11 +7,13 @@
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.Services;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Account;
+    using Axh.Wedding.Application.Contracts.ViewModelServices.Admin;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Home;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
     using Axh.Wedding.Application.DbInitializers;
     using Axh.Wedding.Application.Services;
     using Axh.Wedding.Application.ViewModelService.Account;
+    using Axh.Wedding.Application.ViewModelService.Admin;
     using Axh.Wedding.Application.ViewModelService.Home;
     using Axh.Wedding.Application.ViewModelService.Rsvp;
 
@@ -45,6 +47,7 @@
             Bind<IAccountViewModelService>().To<AccountViewModelService>();
             Bind<IHomePageViewModelService>().To<HomePageViewModelService>();
             Bind<IRsvpViewModelService>().To<RsvpViewModelService>();
+            Bind<IAdminViewModelService>().To<AdminViewModelService>();
         }
     }
 }

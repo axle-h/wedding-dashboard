@@ -32,6 +32,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
+                        @if (Model.User.IsAdmin)
+                        {
+                            <li>
+                                @Html.ActionLink(Resources.AdminPage_Link.ToUpper(), MVC.Admin.Index())
+                            </li>
+                        }
                         <li>
                             @Html.ActionLink(Resources.RsvpPage_Link.ToUpper(), MVC.Rsvp.Index())
                         </li>

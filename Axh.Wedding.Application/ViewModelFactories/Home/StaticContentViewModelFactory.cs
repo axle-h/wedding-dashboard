@@ -28,10 +28,10 @@
             this.accountViewModelFactory = accountViewModelFactory;
         }
 
-        public HomePageViewModel GetHomePageViewModel(string user)
+        public HomePageViewModel GetHomePageViewModel(string user, bool isAdmin)
         {
             return this.pageViewModelFactory.GetPageViewModel<HomePageViewModel>(
-                accountViewModelFactory.GetUserViewModel(user),
+                accountViewModelFactory.GetUserViewModel(user, isAdmin),
                 weddingUrlHelper.HomePageHeader,
                 Resources.HomePage_Link,
                 Resources.HomePage_Title,
@@ -40,10 +40,10 @@
                 Resources.RsvpPage_Link);
         }
 
-        public InformationPageViewModel GetInformationPageViewModel(string user)
+        public InformationPageViewModel GetInformationPageViewModel(string user, bool isAdmin)
         {
             var viewModel = this.pageViewModelFactory.GetPageViewModel<InformationPageViewModel>(
-                accountViewModelFactory.GetUserViewModel(user),
+                accountViewModelFactory.GetUserViewModel(user, isAdmin),
                 weddingUrlHelper.InfoPageHeader,
                 Resources.InformationPage_Link,
                 Resources.InformationPage_Title,
@@ -58,10 +58,10 @@
             return viewModel;
         }
 
-        public ContactPageViewModel GetContactPageViewModel(string user)
+        public ContactPageViewModel GetContactPageViewModel(string user, bool isAdmin)
         {
             var model = this.pageViewModelFactory.GetPageViewModel<ContactPageViewModel>(
-                accountViewModelFactory.GetUserViewModel(user),
+                accountViewModelFactory.GetUserViewModel(user, isAdmin),
                 weddingUrlHelper.ContactPageHeader,
                 Resources.ContactPage_Link,
                 Resources.ContactPage_Title,

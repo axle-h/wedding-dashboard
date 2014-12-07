@@ -22,26 +22,41 @@
         protected override void Seed(WeddingContext context)
         {
             var adminRole = new Role { RoleName = "admin" };
-            var guestRole = new Role { RoleName = "guest" };
+            var rsvpRole = new Role { RoleName = "rsvp" };
 
             context.Roles.Add(adminRole);
-            context.Roles.Add(guestRole);
+            context.Roles.Add(rsvpRole);
             context.SaveChanges();
 
             var adminUser = new User
                             {
                                 UserName = "admin",
-                                Roles = new[] { adminRole },
+                                Roles = new[] { adminRole, rsvpRole },
+                                PasswordHash = this.userManager.PasswordHasher.HashPassword("password"),
+                                SecurityStamp = Guid.NewGuid().ToString()
+                            };
+
+            var guestUser = new User
+                            {
+                                UserName = "guest",
+                                Roles = new[] { rsvpRole },
                                 PasswordHash = this.userManager.PasswordHasher.HashPassword("password"),
                                 SecurityStamp = Guid.NewGuid().ToString()
                             };
 
             context.Users.Add(adminUser);
+            context.Users.Add(guestUser);
             context.SaveChanges();
 
 
             var groomGuest = new Guest { FirstName = "Groom", Surname = "Danger", User = adminUser };
             var brideGuest = new Guest { FirstName = "Bride", Surname = "Safe", User = adminUser };
+
+            var fakeGuest1 = new Guest { FirstName = "Fake", Surname = "Guest1", User = guestUser };
+            var fakeGuest2 = new Guest { FirstName = "Fake", Surname = "Guest2", User = guestUser };
+
+            context.Guests.Add(fakeGuest1);
+            context.Guests.Add(fakeGuest2);
             context.Guests.Add(groomGuest);
             context.Guests.Add(brideGuest);
             context.SaveChanges();

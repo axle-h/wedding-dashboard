@@ -49,11 +49,13 @@
     <Compile Include="Models\Account\WeddingRole.cs" />
     <Compile Include="Services\IWeddingUserService.cs" />
     <Compile Include="ViewModelFactories\Account\IAccountViewModelFactory.cs" />
+    <Compile Include="ViewModelFactories\Admin\IAdminViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\IPageViewModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelFactories\Home\IStaticContentViewModelFactory.cs" />
     <Compile Include="ViewModelFactories\Rsvp\IRsvpViewModelFactory.cs" />
     <Compile Include="ViewModelServices\Account\IAccountViewModelService.cs" />
+    <Compile Include="ViewModelServices\Admin\IAdminViewModelService.cs" />
     <Compile Include="ViewModelServices\Home\IHomePageViewModelService.cs" />
     <Compile Include="ViewModelServices\Rsvp\IRsvpViewModelService.cs" />
   </ItemGroup>

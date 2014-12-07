@@ -24,16 +24,16 @@
             this.weddingConfig = weddingConfig;
         }
 
-        public async Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, Guid userId)
+        public async Task<RsvpPageViewModel> GetRsvpPageViewModel(string user, bool isAdmin, Guid userId)
         {
             var rsvp = await this.rsvpService.GetRsvpByUserIdAsync(userId);
 
-            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, rsvp);
+            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, isAdmin, rsvp);
         }
 
-        public RsvpPageViewModel GetRsvpPageViewModel(string user, RsvpPageViewModel model)
+        public RsvpPageViewModel GetRsvpPageViewModel(string user, bool isAdmin, RsvpPageViewModel model)
         {
-            return this.rsvpViewModelFactory.GetRsvpPageViewModel(user, model);
+            return this.rsvpViewModelFactory.PrepareRsvpPageViewModel(user, isAdmin, model);
         }
 
         public async Task<bool> UpdateRsvp(Guid userId, RsvpPageViewModel model)
