@@ -54,6 +54,13 @@ namespace Axh.Wedding.Mvc.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditUser()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditUser);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AdminController Actions { get { return MVC.Admin; } }
@@ -71,15 +78,25 @@ namespace Axh.Wedding.Mvc.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string EditUser = "EditUser";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string EditUser = "EditUser";
         }
 
 
+        static readonly ActionParamsClass_EditUser s_params_EditUser = new ActionParamsClass_EditUser();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_EditUser EditUserParams { get { return s_params_EditUser; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_EditUser
+        {
+            public readonly string model = "model";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -109,6 +126,18 @@ namespace Axh.Wedding.Mvc.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void EditUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Axh.Wedding.Application.ViewModels.Admin.EditUserViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditUser(Axh.Wedding.Application.ViewModels.Admin.EditUserViewModel model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditUser);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            EditUserOverride(callInfo, model);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

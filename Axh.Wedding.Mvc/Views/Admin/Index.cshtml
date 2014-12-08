@@ -1,27 +1,28 @@
 ﻿@using Axh.Wedding.Application.ViewModels.Admin
+@using Axh.Wedding.Resources
 @model AdminPageViewModel
 
 
 <div class="container">
-    @for (var i = 0; i < Model.Users.Count(); i++)
+    @foreach (var user in Model.Users)
     {
-        var index = i;
-        var user = Model.Users.ElementAt(i);
-
         <div class="row">
             @using (Html.BeginForm(MVC.Admin.Index(), FormMethod.Post, new { @class= "form-horizontal" }))
             {
 
-                @Html.HiddenFor(m => m.Users.ElementAt(index).UserId)
+                @Html.Hidden("UserId", user.UserId)
                 <fieldset>
                     <legend>
                         @Html.Raw(user.UserName)
                     </legend>
                     
-                    <div class="control-group">
-                        
-                        @Html.LabelFor(m => m.Users.ElementAt(index).IsAdmin, new { @class = "checkbox" })
-                        @Html.CheckBoxFor(m => m.Users.ElementAt(index).IsAdmin, new { @class = "checkbox" })
+                    <div class="form-group">
+                        @Html.TextBox("UserName", user.UserName, new { @class = "form-control" })
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBox("IsAdmin", user.IsAdmin, new { @class = "checkbox" }) @Resources.User_IsAdmin
+                        </label>
                     </div>
                     
                 </fieldset>

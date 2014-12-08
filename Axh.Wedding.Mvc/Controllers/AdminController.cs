@@ -1,9 +1,11 @@
 ﻿namespace Axh.Wedding.Mvc.Controllers
 {
+    using System;
     using System.Threading.Tasks;
     using System.Web.Mvc;
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Admin;
+    using Axh.Wedding.Application.ViewModels.Admin;
     using Axh.Wedding.Mvc.Infrastructure.Helpers;
 
     [Authorize(Roles = WeddingRoleNames.Admin)]
@@ -21,6 +23,11 @@
             var user = this.GetCurrentUser();
             var model = await this.adminViewModelService.GetAdminPageViewModel(user);
             return View(model);
+        }
+
+        public virtual async Task<ActionResult> EditUser(EditUserViewModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
