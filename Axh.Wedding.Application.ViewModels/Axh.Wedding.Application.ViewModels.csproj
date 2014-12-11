@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\LoginPageViewModel.cs" />
+    <Compile Include="Account\RsvpType.cs" />
     <Compile Include="Account\UserViewModel.cs" />
     <Compile Include="Admin\AdminPageViewModel.cs" />
     <Compile Include="Admin\EditUserViewModel.cs" />

@@ -1,6 +1,7 @@
 ﻿@model Axh.Wedding.Application.ViewModels.Page.PageViewModelBase
 
 @using System.Web.Optimization
+@using Axh.Wedding.Application.ViewModels.Account
 @using Axh.Wedding.Mvc.Infrastructure.Helpers
 @using Axh.Wedding.Resources
 <!DOCTYPE html>
@@ -14,6 +15,8 @@
     
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css' />
+    <link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" type="text/css">
 
 </head>
     <body>
@@ -38,9 +41,12 @@
                                 @Html.ActionLink(Resources.AdminPage_Link.ToUpper(), MVC.Admin.Index())
                             </li>
                         }
-                        <li>
-                            @Html.ActionLink(Resources.RsvpPage_Link.ToUpper(), MVC.Rsvp.Index())
-                        </li>
+                        @if (Model.User.RsvpType == RsvpType.Day || Model.User.RsvpType == RsvpType.Evening)
+                        {
+                            <li>
+                                @Html.ActionLink(Resources.RsvpPage_Link.ToUpper(), MVC.Rsvp.Index())
+                            </li>
+                        }
                         <li>
                             @Html.ActionLink(Resources.InformationPage_Link.ToUpper(), MVC.Home.Information())
                         </li>

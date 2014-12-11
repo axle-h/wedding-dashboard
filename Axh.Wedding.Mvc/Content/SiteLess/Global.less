@@ -51,9 +51,30 @@ a img {
 	}
 }
 
-blockquote {
+blockquote
+{
 	color: @gray;
 	font-style: italic;
+}
+
+.formal
+{
+    .font-oleo;
+    font-size: 1.2em;
+
+    blockquote
+    {
+        .font-leckerli;
+        font-size: 1.3em;
+        margin-top: @margin-small;
+        margin-bottom: @margin-small;
+        color: @gray-dark;
+    }
+
+    &.alt
+    {
+        .font-leckerli;
+    }
 }
 
 
@@ -289,6 +310,11 @@ blockquote {
     width: 100%;
     min-width:100%;
     height: 400px;
+
+    @media only screen and (max-width: 500px)
+    {
+        height: 300px;
+    }
 }
 
 

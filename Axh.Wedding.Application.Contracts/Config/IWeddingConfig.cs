@@ -1,16 +1,10 @@
 ﻿namespace Axh.Wedding.Application.Contracts.Config
 {
-    using System;
-
     public interface IWeddingConfig
     {
         bool RunDatabaseInitializer { get; }
 
         bool AllowAddingGuests { get; }
-
-        string Venue { get; }
-
-        DateTime Date { get; }
 
         string VenueAddress { get; }
 

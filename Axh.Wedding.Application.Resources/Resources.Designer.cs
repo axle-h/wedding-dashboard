@@ -262,7 +262,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £79. To guarantee a room, call quoting &lt;span class=&quot;subtle&quot;&gt;&apos;Kathryn &amp; Alex, Goosedale Wedding 14th March 2015&apos;&lt;/span&gt;..
+        ///   Looks up a localized string similar to The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £79 including breakfast and a single is £70 including breakfast. To guarantee a room, call quoting &lt;span class=&quot;subtle&quot;&gt;&apos;Kathryn &amp; Alex, Goosedale Wedding 14th March 2015&apos;&lt;/span&gt;..
         /// </summary>
         public static string InformationPage_Hotels_2 {
             get {
@@ -285,6 +285,33 @@ namespace Axh.Wedding.Resources {
         public static string InformationPage_Hotels_Title {
             get {
                 return ResourceManager.GetString("InformationPage_Hotels_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Will be exchanging their wedding vows.
+        /// </summary>
+        public static string InformationPage_Introduction_1 {
+            get {
+                return ResourceManager.GetString("InformationPage_Introduction_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please join us to celebrate our special day from 12:30 PM..
+        /// </summary>
+        public static string InformationPage_Introduction_Day {
+            get {
+                return ResourceManager.GetString("InformationPage_Introduction_Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please join us for drinks, dancing and live music at our evening reception from 7:30 PM..
+        /// </summary>
+        public static string InformationPage_Introduction_Evening {
+            get {
+                return ResourceManager.GetString("InformationPage_Introduction_Evening", resourceCulture);
             }
         }
         
@@ -321,15 +348,6 @@ namespace Axh.Wedding.Resources {
         public static string InformationPage_Venue_1 {
             get {
                 return ResourceManager.GetString("InformationPage_Venue_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to We&apos;ll be getting married at a lovely little place called Goosedale. It&apos;s in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1..
-        /// </summary>
-        public static string InformationPage_Venue_2 {
-            get {
-                return ResourceManager.GetString("InformationPage_Venue_2", resourceCulture);
             }
         }
         
@@ -433,6 +451,24 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saturday 14th March 2015.
+        /// </summary>
+        public static string Rsvp_Date_Long {
+            get {
+                return ResourceManager.GetString("Rsvp_Date_Long", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On Saturday, the fourteenth of March two thousand fifteen.
+        /// </summary>
+        public static string Rsvp_Date_Wordy {
+            get {
+                return ResourceManager.GetString("Rsvp_Date_Wordy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If we&apos;ve missed anyone off please add them..
         /// </summary>
         public static string Rsvp_PleaseAddMissingGuests {
@@ -456,6 +492,33 @@ namespace Axh.Wedding.Resources {
         public static string Rsvp_PleaseRsvp {
             get {
                 return ResourceManager.GetString("Rsvp_PleaseRsvp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to at one o&apos;clock in the afternoon.
+        /// </summary>
+        public static string Rsvp_Time_Wordy {
+            get {
+                return ResourceManager.GetString("Rsvp_Time_Wordy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Goosedale.
+        /// </summary>
+        public static string Rsvp_Venue {
+            get {
+                return ResourceManager.GetString("Rsvp_Venue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Papplewick.
+        /// </summary>
+        public static string Rsvp_Venue_Location {
+            get {
+                return ResourceManager.GetString("Rsvp_Venue_Location", resourceCulture);
             }
         }
         
@@ -595,6 +658,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Molloy.
+        /// </summary>
+        public static string WeddingPartyMember_Bride_Surname {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_Bride_Surname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Bridesmaids.
         /// </summary>
         public static string WeddingPartyMember_Bridesmaids {
@@ -631,6 +703,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Haslehurst.
+        /// </summary>
+        public static string WeddingPartyMember_Groom_Surname {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_Groom_Surname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dawn.
         /// </summary>
         public static string WeddingPartyMember_MotherOfTheBride {
@@ -645,6 +726,15 @@ namespace Axh.Wedding.Resources {
         public static string WeddingPartyMember_MotherOfTheGroom {
             get {
                 return ResourceManager.GetString("WeddingPartyMember_MotherOfTheGroom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Ushers.
+        /// </summary>
+        public static string WeddingPartyMember_Ushers {
+            get {
+                return ResourceManager.GetString("WeddingPartyMember_Ushers", resourceCulture);
             }
         }
     }

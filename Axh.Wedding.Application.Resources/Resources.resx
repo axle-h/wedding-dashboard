@@ -193,13 +193,19 @@ In our long winding journey, as new husband and wife!</value>
     <value>The closest hotel is Dakota Nottingham, a ten minute drive from Goosedale.</value>
   </data>
   <data name="InformationPage_Hotels_2" xml:space="preserve">
-    <value>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £79. To guarantee a room, call quoting &lt;span class="subtle"&gt;'Kathryn &amp; Alex, Goosedale Wedding 14th March 2015'&lt;/span&gt;.</value>
+    <value>The manager has kindly arranged a special discounted room rate for any of our guests that would like to stay at the hotel. A double room is £79 including breakfast and a single is £70 including breakfast. To guarantee a room, call quoting &lt;span class="subtle"&gt;'Kathryn &amp; Alex, Goosedale Wedding 14th March 2015'&lt;/span&gt;.</value>
   </data>
   <data name="InformationPage_Hotels_3" xml:space="preserve">
     <value>We will be staying there and we couldn't wish for a better ending to our wedding than to share our first breakfast as husband and wife (as in proper bacon and eggs breakfast) with our closest friends and family.</value>
   </data>
   <data name="InformationPage_Hotels_Title" xml:space="preserve">
     <value>Somewhere to Stay</value>
+  </data>
+  <data name="InformationPage_Introduction_1" xml:space="preserve">
+    <value>Will be exchanging their wedding vows</value>
+  </data>
+  <data name="InformationPage_Introduction_Evening" xml:space="preserve">
+    <value>Please join us for drinks, dancing and live music at our evening reception from 7:30 PM.</value>
   </data>
   <data name="InformationPage_Link" xml:space="preserve">
     <value>Info</value>
@@ -212,9 +218,6 @@ In our long winding journey, as new husband and wife!</value>
   </data>
   <data name="InformationPage_Venue_1" xml:space="preserve">
     <value>That's right, we changed the venue...</value>
-  </data>
-  <data name="InformationPage_Venue_2" xml:space="preserve">
-    <value>We'll be getting married at a lovely little place called Goosedale. It's in Papplewick, which is about a 30 minute drive from Chesterfield. Just off of Junction 27 on the M1.</value>
   </data>
   <data name="LoginPage_Link" xml:space="preserve">
     <value>Login</value>
@@ -273,6 +276,12 @@ In our long winding journey, as new husband and wife!</value>
   <data name="RsvpResponse_Yes" xml:space="preserve">
     <value>Yep, I'm coming, can't wait!</value>
   </data>
+  <data name="Rsvp_Date_Long" xml:space="preserve">
+    <value>Saturday 14th March 2015</value>
+  </data>
+  <data name="Rsvp_Date_Wordy" xml:space="preserve">
+    <value>On Saturday, the fourteenth of March two thousand fifteen</value>
+  </data>
   <data name="Rsvp_PleaseAddMissingGuests" xml:space="preserve">
     <value>If we've missed anyone off please add them.</value>
   </data>
@@ -281,6 +290,12 @@ In our long winding journey, as new husband and wife!</value>
   </data>
   <data name="Rsvp_PleaseRsvp" xml:space="preserve">
     <value>Please check details for all wedding guests in your party. If we've made any mistakes then please correct them.</value>
+  </data>
+  <data name="Rsvp_Venue" xml:space="preserve">
+    <value>Goosedale</value>
+  </data>
+  <data name="Rsvp_Venue_Location" xml:space="preserve">
+    <value>Papplewick</value>
   </data>
   <data name="Send" xml:space="preserve">
     <value>Send</value>
@@ -306,6 +321,9 @@ In our long winding journey, as new husband and wife!</value>
   <data name="WeddingPartyMember_Bridesmaids" xml:space="preserve">
     <value>The Bridesmaids</value>
   </data>
+  <data name="WeddingPartyMember_Bride_Surname" xml:space="preserve">
+    <value>Molloy</value>
+  </data>
   <data name="WeddingPartyMember_FatherOfTheBride" xml:space="preserve">
     <value>Paul</value>
   </data>
@@ -315,10 +333,22 @@ In our long winding journey, as new husband and wife!</value>
   <data name="WeddingPartyMember_Groom" xml:space="preserve">
     <value>Alex</value>
   </data>
+  <data name="WeddingPartyMember_Groom_Surname" xml:space="preserve">
+    <value>Haslehurst</value>
+  </data>
   <data name="WeddingPartyMember_MotherOfTheBride" xml:space="preserve">
     <value>Dawn</value>
   </data>
   <data name="WeddingPartyMember_MotherOfTheGroom" xml:space="preserve">
     <value>Sheila</value>
+  </data>
+  <data name="WeddingPartyMember_Ushers" xml:space="preserve">
+    <value>The Ushers</value>
+  </data>
+  <data name="InformationPage_Introduction_Day" xml:space="preserve">
+    <value>Please join us to celebrate our special day from 12:30 PM.</value>
+  </data>
+  <data name="Rsvp_Time_Wordy" xml:space="preserve">
+    <value>at one o'clock in the afternoon</value>
   </data>
 </root>

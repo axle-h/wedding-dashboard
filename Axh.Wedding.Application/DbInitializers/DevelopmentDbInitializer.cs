@@ -3,6 +3,7 @@
     using System;
     using System.Data.Entity;
 
+    using Axh.Core.Common;
     using Axh.Core.DbContexts.WeddingContext;
     using Axh.Core.DomainModels.Accounts;
     using Axh.Wedding.Application.Contracts.Models.Account;
@@ -21,16 +22,18 @@
         protected override void Seed(WeddingContext context)
         {
             var adminRole = new Role { RoleName = WeddingRoleNames.Admin };
-            var rsvpRole = new Role { RoleName = WeddingRoleNames.Rsvp };
+            var rsvpDayRole = new Role { RoleName = WeddingRoleNames.RsvpDay };
+            var rsvpEveningRole = new Role { RoleName = WeddingRoleNames.RsvpEvening };
 
             context.Roles.Add(adminRole);
-            context.Roles.Add(rsvpRole);
+            context.Roles.Add(rsvpDayRole);
+            context.Roles.Add(rsvpEveningRole);
             context.SaveChanges();
 
             var adminUser = new User
                             {
                                 UserName = "admin",
-                                Roles = new[] { adminRole, rsvpRole },
+                                Roles = new[] { adminRole, rsvpDayRole },
                                 PasswordHash = this.userManager.PasswordHasher.HashPassword("password"),
                                 SecurityStamp = Guid.NewGuid().ToString()
                             };
@@ -38,7 +41,7 @@
             var guestUser = new User
                             {
                                 UserName = "guest",
-                                Roles = new[] { rsvpRole },
+                                Roles = new[] { rsvpEveningRole },
                                 PasswordHash = this.userManager.PasswordHasher.HashPassword("password"),
                                 SecurityStamp = Guid.NewGuid().ToString()
                             };
@@ -48,11 +51,11 @@
             context.SaveChanges();
 
 
-            var groomGuest = new Guest { FirstName = "Groom", Surname = "Danger", User = adminUser };
-            var brideGuest = new Guest { FirstName = "Bride", Surname = "Safe", User = adminUser };
+            var groomGuest = new Guest { FirstName = "Groom", Surname = "Danger", User = adminUser, GuestType = GuestType.Adult };
+            var brideGuest = new Guest { FirstName = "Bride", Surname = "Safe", User = adminUser, GuestType = GuestType.Adult };
 
-            var fakeGuest1 = new Guest { FirstName = "Fake", Surname = "Guest1", User = guestUser };
-            var fakeGuest2 = new Guest { FirstName = "Fake", Surname = "Guest2", User = guestUser };
+            var fakeGuest1 = new Guest { FirstName = "Fake", Surname = "Guest1", User = guestUser, GuestType = GuestType.Adult };
+            var fakeGuest2 = new Guest { FirstName = "Fake", Surname = "Guest2", User = guestUser, GuestType = GuestType.Child };
 
             context.Guests.Add(fakeGuest1);
             context.Guests.Add(fakeGuest2);

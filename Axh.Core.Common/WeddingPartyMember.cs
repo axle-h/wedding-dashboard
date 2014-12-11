@@ -6,6 +6,7 @@
         Groom,
         BestMan,
         Bridesmaids,
+        Ushers,
         FatherOfTheBride,
         MotherOfTheBride,
         FatherOfTheGroom,

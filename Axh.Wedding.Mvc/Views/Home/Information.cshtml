@@ -1,4 +1,5 @@
-﻿@using Axh.Wedding.Application.ViewModels.Page
+﻿@using Axh.Wedding.Application.ViewModels.Account
+@using Axh.Wedding.Application.ViewModels.Page
 @using Axh.Wedding.Mvc.Infrastructure.Helpers
 @using Axh.Wedding.Resources
 @model Axh.Wedding.Application.ViewModels.Home.InformationPageViewModel
@@ -7,8 +8,27 @@
 <div class="container margin-bottom">
     <div class="row">
         <div class="col-md-12">
-            <p class="subtle">@Html.Raw(Resources.InformationPage_Venue_1)</p>
-            <p>@Html.Raw(Resources.InformationPage_Venue_2)</p>
+            <div class="formal">
+                <p>@Html.Raw(Resources.Rsvp_Date_Wordy), @Html.Raw(Resources.Rsvp_Time_Wordy)</p>
+                
+                <blockquote>
+                    @Html.Raw(Resources.WeddingPartyMember_Bride) @Html.Raw(Resources.WeddingPartyMember_Bride_Surname) & @Html.Raw(Resources.WeddingPartyMember_Groom) @Html.Raw(Resources.WeddingPartyMember_Groom_Surname)
+                </blockquote>
+
+                <p>@Html.Raw(Resources.InformationPage_Introduction_1) at @Html.Raw(Resources.Rsvp_Venue), @Html.Raw(Resources.Rsvp_Venue_Location)</p>
+                
+                <p>
+                    @if (Model.User.RsvpType == RsvpType.Evening)
+                    {
+                        @Html.Raw(Resources.InformationPage_Introduction_Evening)
+                    }
+                    else
+                    {
+                        @Html.Raw(Resources.InformationPage_Introduction_Day)
+                    }
+                </p>
+
+            </div>
         </div>
     </div>
 </div>
@@ -68,7 +88,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 formal">
             <p>
                 @Html.Raw(Resources.InformationPage_Honeymoon_Poem_1)
             </p>
@@ -79,7 +99,7 @@
 <div class="bg-light col-md-12">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 formal alt">
                 <p class="padding-bottom">
                     @Html.Raw(Resources.InformationPage_Honeymoon_Poem_2)
                 </p>
@@ -94,7 +114,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 formal">
             <p>
                 @Html.Raw(Resources.InformationPage_Honeymoon_Poem_3)
             </p>
@@ -105,7 +125,7 @@
 <div class="bg-light col-md-12">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 formal alt">
                 <p class="padding-bottom">
                     @Html.Raw(Resources.InformationPage_Honeymoon_Poem_4)
                 </p>

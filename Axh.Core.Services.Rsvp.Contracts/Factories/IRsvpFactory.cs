@@ -5,6 +5,6 @@
 
     public interface IRsvpFactory
     {
-        RsvpGuest GetRsvpGuest(Guest guest);
+        RsvpGuest CreateRsvpGuestFromGuest(Guest guest);
     }
 }

@@ -1,6 +1,5 @@
 ﻿namespace Axh.Wedding.Application.Config
 {
-    using System;
     using System.Configuration;
 
     using Axh.Wedding.Application.Contracts.Config;
@@ -10,8 +9,6 @@
         public WeddingConfig()
         {
             this.RunDatabaseInitializer = bool.Parse(ConfigurationManager.AppSettings["RunDatabaseInitializer"]);
-            this.Date = DateTime.Parse(ConfigurationManager.AppSettings["Date"]);
-            this.Venue = ConfigurationManager.AppSettings["Venue_Name"];
             this.VenueAddress = ConfigurationManager.AppSettings["Venue_Address"];
             this.VenuePhone = ConfigurationManager.AppSettings["Venue_Phone"];
             this.HotelAddress = ConfigurationManager.AppSettings["Hotel_Address"];
@@ -33,10 +30,6 @@
         public bool RunDatabaseInitializer { get; private set; }
 
         public bool AllowAddingGuests { get; private set; }
-
-        public string Venue { get; private set; }
-
-        public DateTime Date { get; private set; }
 
         public string VenueAddress { get; private set; }
 

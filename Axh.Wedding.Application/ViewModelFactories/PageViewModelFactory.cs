@@ -40,7 +40,7 @@
             string buttonText = null) where TPageViewModel : PageViewModelBase, new()
         {
             var applicationTitle = string.Format("{0} & {1}", Resources.WeddingPartyMember_Bride, Resources.WeddingPartyMember_Groom);
-            var applicationSubTitle = string.Format("{0} {1}", weddingConfig.Date.ToString("dddd d MMMM yyyy h tt"), weddingConfig.Venue);
+            var applicationSubTitle = string.Format("{0} {1}", Resources.Rsvp_Date_Long, Resources.Rsvp_Venue);
 
             headerImage.Title = title ?? applicationTitle;
             headerImage.SubTitle = subtitle ?? applicationSubTitle;

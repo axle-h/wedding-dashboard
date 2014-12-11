@@ -20,6 +20,7 @@
 
             this.Property(x => x.FirstName).HasColumnName("FirstName").HasMaxLength(128);
             this.Property(x => x.Surname).HasColumnName("Surname").HasMaxLength(128);
+            this.Property(x => x.GuestType).HasColumnName("GuestType");
 
             this.HasRequired(x => x.User).WithMany(x => x.Guests);
         }

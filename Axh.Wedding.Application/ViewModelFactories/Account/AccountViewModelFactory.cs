@@ -34,11 +34,15 @@
         public UserViewModel GetUserViewModel(WeddingUser weddingUser)
         {
             return new UserViewModel
-            {
-                UserId = weddingUser.Id,
-                IsAdmin = weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.Admin),
-                UserName = weddingUser.UserName
-            };
+                   {
+                       UserId = weddingUser.Id,
+                       IsAdmin = weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.Admin),
+                       UserName = weddingUser.UserName,
+                       RsvpType =
+                           weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpDay)
+                               ? RsvpType.Day
+                               : weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpEvening) ? RsvpType.Evening : RsvpType.None,
+                   };
         }
 
         private LoginPageViewModel PrepareLoginPageViewModel(LoginPageViewModel model)

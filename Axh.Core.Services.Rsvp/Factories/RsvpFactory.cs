@@ -6,9 +6,9 @@
 
     public class RsvpFactory : IRsvpFactory
     {
-        public RsvpGuest GetRsvpGuest(Guest guest)
+        public RsvpGuest CreateRsvpGuestFromGuest(Guest guest)
         {
-            return new RsvpGuest { Id = guest.Id, FirstName = guest.FirstName, Surname = guest.Surname, IsAttending = false };
+            return new RsvpGuest { FirstName = guest.FirstName, Surname = guest.Surname, GuestType = guest.GuestType, IsAttending = false };
         }
     }
 }

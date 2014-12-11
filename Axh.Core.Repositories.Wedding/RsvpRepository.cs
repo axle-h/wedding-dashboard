@@ -52,6 +52,7 @@
                     match.ExistingGuest.Surname = match.UpdatedGuest.Surname;
                     match.ExistingGuest.IsAttending = match.UpdatedGuest.IsAttending;
                     match.ExistingGuest.DietaryRequirements = match.UpdatedGuest.DietaryRequirements;
+                    match.ExistingGuest.GuestType = match.UpdatedGuest.GuestType;
                 }
             }
 

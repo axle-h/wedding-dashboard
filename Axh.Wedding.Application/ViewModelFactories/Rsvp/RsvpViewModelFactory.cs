@@ -107,6 +107,8 @@
                     return string.Format("{0} ({1})", Resources.WeddingPartyMember_BestMan, Resources.BestMan);
                 case WeddingPartyMember.Bridesmaids:
                     return Resources.WeddingPartyMember_Bridesmaids;
+                case WeddingPartyMember.Ushers:
+                    return Resources.WeddingPartyMember_Ushers;
                 case WeddingPartyMember.FatherOfTheBride:
                     return string.Format("{0} ({1}'s {2})", Resources.WeddingPartyMember_FatherOfTheBride, Resources.WeddingPartyMember_Bride, Resources.Dad);
                 case WeddingPartyMember.MotherOfTheBride:
@@ -128,7 +130,8 @@
                        FirstName = guest.FirstName,
                        Surname = guest.Surname,
                        IsAttending = guest.IsAttending ? RsvpResponse.Yes : RsvpResponse.No,
-                       DietaryRequirements = guest.DietaryRequirements
+                       DietaryRequirements = guest.DietaryRequirements,
+                       GuestType = guest.GuestType
                    };
         }
 
@@ -140,7 +143,8 @@
                        FirstName = guest.FirstName,
                        Surname = guest.Surname,
                        IsAttending = guest.IsAttending == RsvpResponse.Yes,
-                       DietaryRequirements = guest.DietaryRequirements
+                       DietaryRequirements = guest.DietaryRequirements,
+                       GuestType = guest.GuestType
                    };
         }
 

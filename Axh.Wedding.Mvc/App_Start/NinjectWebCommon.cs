@@ -79,10 +79,7 @@ namespace Axh.Wedding.Mvc.App_Start
             {
                 this.Bind<IUrlHelperFactory>().To<UrlHelperFactory>();
                 this.Bind<IWeddingUrlHelper>().To<WeddingUrlHelper>();
-
-#if DEBUG
                 this.Bind<IHttpModule>().To<DatabaseInitializerHttpModule>().InSingletonScope();
-#endif
             }
         }
     }

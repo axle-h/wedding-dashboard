@@ -3,11 +3,13 @@
     using System.Threading.Tasks;
     using System.Web.Mvc;
 
+    using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.ViewModelServices.Rsvp;
     using Axh.Wedding.Application.ViewModels.Rsvp;
+    using Axh.Wedding.Mvc.Infrastructure.Attributes;
     using Axh.Wedding.Mvc.Infrastructure.Helpers;
 
-    [Authorize]
+    [AuthorizeRoles(WeddingRoleNames.RsvpDay, WeddingRoleNames.RsvpEvening)]
     public partial class RsvpController : Controller
     {
         private readonly IRsvpViewModelService rsvpViewModelService;

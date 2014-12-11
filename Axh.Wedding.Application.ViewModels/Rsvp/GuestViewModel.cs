@@ -2,6 +2,7 @@
 {
     using System;
 
+    using Axh.Core.Common;
     using Axh.Wedding.Application.ViewModels.Page;
 
     public class GuestViewModel
@@ -20,5 +21,8 @@
 
         [BindClientProperty("DietaryRequirements")]
         public string DietaryRequirements { get; set; }
+
+        [BindClientProperty("GuestType")]
+        public GuestType GuestType { get; set; }
     }
 }
