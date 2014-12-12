@@ -6,6 +6,6 @@
 
         public const string RsvpEvening = "rsvp-evening";
 
-        public const string RsvpDay = "rsvp-evening";
+        public const string RsvpDay = "rsvp-day";
     }
 }
