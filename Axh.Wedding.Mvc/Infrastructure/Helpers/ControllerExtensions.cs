@@ -15,11 +15,13 @@
             var userId = Guid.Parse(controller.User.Identity.GetUserId());
 
             return new UserViewModel
-            {
-                IsAdmin = isAdmin,
-                UserName = user,
-                UserId = userId
-            };
+                   {
+                       IsAdmin = isAdmin,
+                       UserName = user,
+                       UserId = userId,
+                       RsvpType =
+                           controller.User.IsInRole(WeddingRoleNames.RsvpDay) ? RsvpType.Day : controller.User.IsInRole(WeddingRoleNames.RsvpEvening) ? RsvpType.Evening : RsvpType.None
+                   };
         }
     }
 }
