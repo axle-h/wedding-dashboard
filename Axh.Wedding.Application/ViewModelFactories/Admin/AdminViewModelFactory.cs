@@ -9,6 +9,7 @@
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Admin;
     using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Admin;
+    using Axh.Wedding.Application.ViewModels.Page;
     using Axh.Wedding.Resources;
 
     public class AdminViewModelFactory : IAdminViewModelFactory
@@ -28,14 +29,21 @@
 
         public AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users)
         {
-            var model = new AdminPageViewModel();
-
-            model.Users = users.Select(this.accountViewModelFactory.GetUserViewModel);
+            var model = new AdminPageViewModel { Users = users.Select(this.accountViewModelFactory.GetUserViewModel) };
 
             return PrepareAdminPageViewModel(user, model);
         }
 
-        public AdminPageViewModel PrepareAdminPageViewModel(UserViewModel user, AdminPageViewModel viewModel)
+        public EditUserPageViewModel GetEditUserPageViewModel(UserViewModel user, WeddingUser weddingUser)
+        {
+            var editUser = this.accountViewModelFactory.GetUserViewModel(weddingUser);
+            var model = new EditUserPageViewModel { UserId = editUser.UserId, UserName = editUser.UserName, IsAdmin = editUser.IsAdmin };
+
+            return PrepareAdminPageViewModel(user, model);
+        }
+
+        private TPageViewModel PrepareAdminPageViewModel<TPageViewModel>(UserViewModel user, TPageViewModel viewModel)
+            where TPageViewModel : PageViewModelBase, new()
         {
             var model = this.pageViewModelFactory.PreparePageViewModel(viewModel,
                 user,

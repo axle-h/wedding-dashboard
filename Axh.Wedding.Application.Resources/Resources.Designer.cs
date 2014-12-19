@@ -88,6 +88,33 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string AdminPage_Actions {
+            get {
+                return ResourceManager.GetString("AdminPage_Actions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string AdminPage_Delete {
+            get {
+                return ResourceManager.GetString("AdminPage_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string AdminPage_Edit {
+            get {
+                return ResourceManager.GetString("AdminPage_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to admin.
         /// </summary>
         public static string AdminPage_Link {
@@ -627,6 +654,51 @@ namespace Axh.Wedding.Resources {
         public static string User_IsAdmin {
             get {
                 return ResourceManager.GetString("User_IsAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string User_Password {
+            get {
+                return ResourceManager.GetString("User_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rsvp Type.
+        /// </summary>
+        public static string User_RsvpType {
+            get {
+                return ResourceManager.GetString("User_RsvpType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string User_RsvpType_Day {
+            get {
+                return ResourceManager.GetString("User_RsvpType_Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evening.
+        /// </summary>
+        public static string User_RsvpType_Evening {
+            get {
+                return ResourceManager.GetString("User_RsvpType_Evening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string User_RsvpType_None {
+            get {
+                return ResourceManager.GetString("User_RsvpType_None", resourceCulture);
             }
         }
         

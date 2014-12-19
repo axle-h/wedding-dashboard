@@ -1,6 +1,7 @@
 ﻿namespace Axh.Wedding.Mvc.Infrastructure.Helpers
 {
     using System;
+    using System.ComponentModel;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
@@ -20,7 +21,7 @@
         {
             var model = helper.ViewData.Model;
 
-            var serializerSettings = new JsonSerializerSettings { ContractResolver = new BindClientPropertyContractResolver(), Formatting = Formatting.None };
+            var serializerSettings = new JsonSerializerSettings { ContractResolver = ContractResolver, Formatting = Formatting.None };
             var json = JsonConvert.SerializeObject(model, serializerSettings);
             var tagBuilder = new TagBuilder("script") { InnerHtml = string.Format("var model = {0};", json) };
 
@@ -48,6 +49,28 @@
 
             var addressTag = new TagBuilder("address") { InnerHtml = addressHtml };
             return new MvcHtmlString(addressTag.ToString());
+        }
+
+        public static MvcHtmlString GetDisplayValue<TModel, TEnum>(this HtmlHelper<TModel> helper, TEnum value)
+        {
+            var field = value.GetType().GetField(value.ToString());
+            var attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
+            return new MvcHtmlString(attribute == null ? value.ToString() : attribute.Description);
+        }
+
+        public static MvcHtmlString GetDisplayValue<TModel, TEnum>(this HtmlHelper<TModel> helper, Expression<Func<TModel, TEnum>> enumExpr)
+        {
+            var model = helper.ViewData.Model;
+            var value = enumExpr.Compile()(model);
+            
+            return GetDisplayValue(helper, value);
+        }
+
+        private static string GetDescription<TEnum>(this TEnum value)
+        {
+            var field = value.GetType().GetField(value.ToString());
+            var attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute)) as DescriptionAttribute;
+            return attribute == null ? value.ToString() : attribute.Description;
         }
 
         private class BindClientPropertyContractResolver : DefaultContractResolver

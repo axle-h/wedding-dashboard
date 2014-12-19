@@ -25,9 +25,25 @@
             return View(model);
         }
 
-        public virtual async Task<ActionResult> EditUser(EditUserViewModel model)
+        public virtual async Task<ActionResult> EditUser(Guid userId)
         {
-            throw new NotImplementedException();
+            var user = this.GetCurrentUser();
+            var model = await this.adminViewModelService.GetEditUserPageViewModel(user, userId);
+            return View(model);
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> EditUser(EditUserPageViewModel model)
+        {
+            await this.adminViewModelService.EditUser(model);
+            return RedirectToAction(MVC.Admin.Index());
+        }
+
+        [HttpPost]
+        public virtual async Task<ActionResult> DeleteUser(Guid userId)
+        {
+            await this.adminViewModelService.DeleteUser(userId);
+            return RedirectToAction(MVC.Admin.Index());
         }
     }
 }

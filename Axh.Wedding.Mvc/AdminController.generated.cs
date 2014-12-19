@@ -61,6 +61,13 @@ namespace Axh.Wedding.Mvc.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditUser);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DeleteUser()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteUser);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AdminController Actions { get { return MVC.Admin; } }
@@ -79,6 +86,7 @@ namespace Axh.Wedding.Mvc.Controllers
         {
             public readonly string Index = "Index";
             public readonly string EditUser = "EditUser";
+            public readonly string DeleteUser = "DeleteUser";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -86,6 +94,7 @@ namespace Axh.Wedding.Mvc.Controllers
         {
             public const string Index = "Index";
             public const string EditUser = "EditUser";
+            public const string DeleteUser = "DeleteUser";
         }
 
 
@@ -95,7 +104,16 @@ namespace Axh.Wedding.Mvc.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_EditUser
         {
+            public readonly string userId = "userId";
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_DeleteUser s_params_DeleteUser = new ActionParamsClass_DeleteUser();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DeleteUser DeleteUserParams { get { return s_params_DeleteUser; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DeleteUser
+        {
+            public readonly string userId = "userId";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -107,8 +125,10 @@ namespace Axh.Wedding.Mvc.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string EditUser = "EditUser";
                 public readonly string Index = "Index";
             }
+            public readonly string EditUser = "~/Views/Admin/EditUser.cshtml";
             public readonly string Index = "~/Views/Admin/Index.cshtml";
         }
     }
@@ -130,14 +150,38 @@ namespace Axh.Wedding.Mvc.Controllers
         }
 
         [NonAction]
-        partial void EditUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Axh.Wedding.Application.ViewModels.Admin.EditUserViewModel model);
+        partial void EditUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid userId);
 
         [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditUser(Axh.Wedding.Application.ViewModels.Admin.EditUserViewModel model)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditUser(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditUser);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            EditUserOverride(callInfo, userId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void EditUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Axh.Wedding.Application.ViewModels.Admin.EditUserPageViewModel model);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> EditUser(Axh.Wedding.Application.ViewModels.Admin.EditUserPageViewModel model)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.EditUser);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             EditUserOverride(callInfo, model);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void DeleteUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid userId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> DeleteUser(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteUser);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            DeleteUserOverride(callInfo, userId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

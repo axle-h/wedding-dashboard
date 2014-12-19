@@ -351,4 +351,28 @@ In our long winding journey, as new husband and wife!</value>
   <data name="Rsvp_Time_Wordy" xml:space="preserve">
     <value>at one o'clock in the afternoon</value>
   </data>
+  <data name="AdminPage_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="AdminPage_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="AdminPage_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="User_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="User_RsvpType" xml:space="preserve">
+    <value>Rsvp Type</value>
+  </data>
+  <data name="User_RsvpType_Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="User_RsvpType_Evening" xml:space="preserve">
+    <value>Evening</value>
+  </data>
+  <data name="User_RsvpType_None" xml:space="preserve">
+    <value>None</value>
+  </data>
 </root>

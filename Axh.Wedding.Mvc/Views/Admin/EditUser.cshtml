@@ -1,0 +1,33 @@
+﻿@using Axh.Wedding.Resources
+@model Axh.Wedding.Application.ViewModels.Admin.EditUserPageViewModel
+
+<div class="container">
+    @using (Html.BeginForm(MVC.Admin.EditUser(), FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.UserId)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.RsvpType, new { @class = "control-label" })
+            @Html.EnumDropDownListFor(m => m.RsvpType, new { @class = "form-control" })
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(m => m.IsAdmin, new { @class = "control-label" })
+            @Html.CheckBoxFor(m => m.IsAdmin, new { @class = "checkbox" })
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">@Resources.AdminPage_Edit</button>
+        </div>
+    }
+</div>

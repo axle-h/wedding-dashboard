@@ -4,10 +4,12 @@
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.ViewModels.Account;
     using Axh.Wedding.Application.ViewModels.Admin;
+    using Axh.Wedding.Application.ViewModels.Page;
 
     public interface IAdminViewModelFactory
     {
         AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users);
-        AdminPageViewModel PrepareAdminPageViewModel(UserViewModel user, AdminPageViewModel viewModel);
+
+        EditUserPageViewModel GetEditUserPageViewModel(UserViewModel user, WeddingUser weddingUser);
     }
 }

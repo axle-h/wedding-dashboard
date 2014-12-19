@@ -396,6 +396,13 @@ footer {
     }
 }
 
+.display-inline
+{
+    display: inline;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .form-signin-bg
 {
     color: white;
@@ -425,6 +432,19 @@ footer {
 	letter-spacing: 1px;
 	border-radius: 0;
 	padding: 15px 25px;
+}
+
+.btn-anchor
+{
+    background: none;
+    border: none;
+    color: @gray-dark;
+	&:hover,
+	&:focus {
+		color: @brand-primary-dark;
+	}
+    cursor: pointer;
+    display: inline;
 }
 
 .btn-hi {
