@@ -15,13 +15,10 @@
 
         private readonly IRsvpService rsvpService;
 
-        private readonly IWeddingConfig weddingConfig;
-
-        public RsvpViewModelService(IRsvpViewModelFactory rsvpViewModelFactory, IRsvpService rsvpService, IWeddingConfig weddingConfig)
+        public RsvpViewModelService(IRsvpViewModelFactory rsvpViewModelFactory, IRsvpService rsvpService)
         {
             this.rsvpViewModelFactory = rsvpViewModelFactory;
             this.rsvpService = rsvpService;
-            this.weddingConfig = weddingConfig;
         }
 
         public async Task<RsvpPageViewModel> GetRsvpPageViewModel(UserViewModel user)
@@ -39,7 +36,7 @@
         public async Task<bool> UpdateRsvp(UserViewModel user, RsvpPageViewModel model)
         {
             var rsvp = this.rsvpViewModelFactory.GetRsvp(user.UserId, model);
-            return await this.rsvpService.UpdateRsvp(rsvp, this.weddingConfig.AllowAddingGuests);
+            return await this.rsvpService.UpdateRsvp(rsvp);
         }
     }
 }

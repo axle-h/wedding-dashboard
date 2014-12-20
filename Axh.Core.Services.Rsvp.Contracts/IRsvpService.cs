@@ -9,6 +9,6 @@
     {
         Task<Rsvp> GetRsvpByUserIdAsync(Guid userId);
 
-        Task<bool> UpdateRsvp(Rsvp rsvp, bool allowAddingGuests);
+        Task<bool> UpdateRsvp(Rsvp rsvp);
     }
 }

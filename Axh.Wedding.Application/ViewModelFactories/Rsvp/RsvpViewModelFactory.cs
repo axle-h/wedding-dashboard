@@ -47,11 +47,14 @@
 
         public Rsvp GetRsvp(Guid userId, RsvpPageViewModel rsvp)
         {
+            var guests = rsvp.Guests ?? Enumerable.Empty<GuestViewModel>();
+            var stories = rsvp.Stories ?? Enumerable.Empty<StoryViewModel>();
+
             return new Rsvp
                    {
                        Id = userId,
-                       Guests = rsvp.Guests.Select(GetGuest).ToList(),
-                       Stories = rsvp.Stories.Select(GetStory).ToList(),
+                       Guests = guests.Select(GetGuest).ToList(),
+                       Stories = stories.Select(GetStory).ToList(),
                        RsvpDate = rsvp.RsvpDate
                    };
         }
