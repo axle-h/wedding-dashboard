@@ -45,6 +45,12 @@
     <Reference Include="dotless.Core">
       <HintPath>..\packages\dotless.1.4.1.0\lib\dotless.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -293,6 +299,10 @@
     <ProjectReference Include="..\Axh.Core.DbContexts.WeddingContext\Axh.Core.DbContexts.WeddingContext.csproj">
       <Project>{F09F9216-0B96-474A-AFB0-221163DAD55B}</Project>
       <Name>Axh.Core.DbContexts.WeddingContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Core.Services.Logging.Contracts\Axh.Core.Services.Logging.Contracts.csproj">
+      <Project>{BDAD9055-8215-43C5-9238-FA6630C6EC46}</Project>
+      <Name>Axh.Core.Services.Logging.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\Axh.Wedding.Application.Contracts\Axh.Wedding.Application.Contracts.csproj">
       <Project>{aad1c83a-9371-40c7-808a-5e53fe3db584}</Project>
