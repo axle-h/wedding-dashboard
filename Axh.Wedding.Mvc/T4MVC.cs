@@ -134,8 +134,12 @@ namespace Links
             private const string URLPATH = "~/Content/SiteLess";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string Account_less = Url("Account.less");
+            public static readonly string Admin_less = Url("Admin.less");
             public static readonly string Global_less = Url("Global.less");
+            public static readonly string Home_less = Url("Home.less");
             public static readonly string mixins_less = Url("mixins.less");
+            public static readonly string Rsvp_less = Url("Rsvp.less");
             public static readonly string variables_less = Url("variables.less");
         }
     

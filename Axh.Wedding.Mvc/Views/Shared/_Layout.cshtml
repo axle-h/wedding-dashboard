@@ -9,14 +9,7 @@
 <head>
     @Html.Partial(MVC.Shared.Views._Meta, Model)
     
-    @Styles.Render(BundleConfig.SiteCssBundleVirtualPath)
-
-    @Scripts.Render(BundleConfig.HeadJsBundleVirtualPath)
-    
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
-    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css' />
-    <link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet" type="text/css">
+    @Html.Partial(MVC.Shared.Views._HeadLinks)
 
 </head>
     <body>

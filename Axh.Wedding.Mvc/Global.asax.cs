@@ -1,5 +1,6 @@
 ﻿namespace Axh.Wedding.Mvc
 {
+    using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
@@ -9,8 +10,7 @@
 
     public class MvcApplication : HttpApplication
     {
-        //internal static string Version = Assembly.GetAssembly(typeof(MvcApplication)).GetName().Version.ToString();
-        internal static string Version = "1.0.0.0";
+        internal static string Version = Assembly.GetAssembly(typeof(MvcApplication)).GetName().Version.ToString();
 
         protected void Application_Start()
         {

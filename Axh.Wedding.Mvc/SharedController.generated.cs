@@ -37,6 +37,7 @@ namespace T4MVC
             public class _ViewNamesClass
             {
                 public readonly string _Footer = "_Footer";
+                public readonly string _HeadLinks = "_HeadLinks";
                 public readonly string _Layout = "_Layout";
                 public readonly string _LayoutMinimal = "_LayoutMinimal";
                 public readonly string _Meta = "_Meta";
@@ -44,6 +45,7 @@ namespace T4MVC
                 public readonly string _SocialCircle = "_SocialCircle";
             }
             public readonly string _Footer = "~/Views/Shared/_Footer.cshtml";
+            public readonly string _HeadLinks = "~/Views/Shared/_HeadLinks.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _LayoutMinimal = "~/Views/Shared/_LayoutMinimal.cshtml";
             public readonly string _Meta = "~/Views/Shared/_Meta.cshtml";

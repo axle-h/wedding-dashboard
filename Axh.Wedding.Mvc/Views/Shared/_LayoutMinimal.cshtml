@@ -8,9 +8,7 @@
 <head>
     @Html.Partial(MVC.Shared.Views._Meta, Model)
 
-    @Styles.Render(BundleConfig.SiteCssBundleVirtualPath)
-
-    @Scripts.Render(BundleConfig.HeadJsBundleVirtualPath)
+    @Html.Partial(MVC.Shared.Views._HeadLinks)
 
 </head>
 <body>

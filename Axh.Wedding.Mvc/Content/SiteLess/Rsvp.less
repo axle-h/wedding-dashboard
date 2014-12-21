@@ -1,0 +1,29 @@
+﻿@import "variables.less";
+@import "mixins.less";
+
+#pg-rsvp
+{
+    .form-rsvp
+    {
+        legend.form-inline
+        {
+            display: block;
+            padding-bottom: @margin-small;
+
+            select, span
+            {
+                margin-bottom: @margin-small;         
+            }
+
+            @media only screen and (min-width: 768px)
+            {
+                padding-bottom: @margin-tiny;
+                select, span
+                {
+                    margin-bottom: @margin-tiny;
+                }
+            }
+        
+        }
+    }
+}

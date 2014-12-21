@@ -1,6 +1,5 @@
 ﻿namespace Axh.Wedding.Application.ViewModelService.Rsvp
 {
-    using System.Linq;
     using System.Threading.Tasks;
     using Axh.Core.Services.Logging.Contracts;
     using Axh.Core.Services.Rsvp.Contracts;
