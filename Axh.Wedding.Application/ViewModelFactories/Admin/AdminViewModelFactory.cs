@@ -37,7 +37,7 @@
         public EditUserPageViewModel GetEditUserPageViewModel(UserViewModel user, WeddingUser weddingUser)
         {
             var editUser = this.accountViewModelFactory.GetUserViewModel(weddingUser);
-            var model = new EditUserPageViewModel { UserId = editUser.UserId, UserName = editUser.UserName, IsAdmin = editUser.IsAdmin };
+            var model = new EditUserPageViewModel { UserId = editUser.UserId, UserName = editUser.UserName, IsAdmin = editUser.IsAdmin, RsvpType = editUser.RsvpType };
 
             return PrepareAdminPageViewModel(user, model);
         }

@@ -694,6 +694,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rsvp.
+        /// </summary>
+        public static string User_RsvpDate {
+            get {
+                return ResourceManager.GetString("User_RsvpDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rsvp Type.
         /// </summary>
         public static string User_RsvpType {

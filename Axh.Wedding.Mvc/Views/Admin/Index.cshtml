@@ -6,48 +6,52 @@
 
 
 <div class="container">
-
-    <table class="table table-responsive">
-        <thead>
-        <tr>
-            <th>
-                @Resources.User_UserName
-            </th>
-            <th>
-                @Resources.User_RsvpType
-            </th>
-            <th>
-                @Resources.User_IsAdmin
-            </th>
-            <th>
-                @Resources.AdminPage_Actions
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        
-        </tbody>
-        @foreach (var user in Model.Users)
-        {
-            <tr>
-                <td>
-                    @user.UserName
-                </td>
-                <td>
-                    @Html.GetDisplayValue(user.RsvpType)
-                </td>
-                <td>
-                    @user.IsAdmin
-                </td>
-                <td>
-                    @Html.ActionLink(Resources.AdminPage_Edit, MVC.Admin.EditUser(user.UserId)) | 
-                    @using (Html.BeginForm(MVC.Admin.DeleteUser(user.UserId), FormMethod.Post, new { @class = "display-inline" }))
-                    {
-                        <button type="submit" class="btn-anchor">@Resources.AdminPage_Delete</button>
-                    }
-                </td>
-            </tr>
-        }
-    </table>
-    
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Resources.User_UserName
+                    </th>
+                    <th>
+                        @Resources.User_RsvpType
+                    </th>
+                    <th>
+                        @Resources.User_IsAdmin
+                    </th>
+                    <th>
+                        @Resources.User_RsvpDate
+                    </th>
+                    <th>
+                        @Resources.AdminPage_Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>
+                        @user.UserName
+                    </td>
+                    <td>
+                        @Html.GetDisplayValue(user.RsvpType)
+                    </td>
+                    <td>
+                        @user.IsAdmin
+                    </td>
+                    <td>
+                        @(user.RsvpDate == null ? "N/A" : user.RsvpDate.ToString())
+                    </td>
+                    <td>
+                        @Html.ActionLink(Resources.AdminPage_Edit, MVC.Admin.EditUser(user.UserId)) |
+                        @using (Html.BeginForm(MVC.Admin.DeleteUser(user.UserId), FormMethod.Post, new { @class = "display-inline" }))
+                        {
+                            <button type="submit" class="btn-anchor">@Resources.AdminPage_Delete</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
 </div>

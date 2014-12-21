@@ -24,5 +24,7 @@
         public bool PhoneNumberConfirmed { get; set; }
 
         public ICollection<WeddingRole> Roles { get; set; }
+
+        public DateTime? RsvpDate { get; set; }
     }
 }

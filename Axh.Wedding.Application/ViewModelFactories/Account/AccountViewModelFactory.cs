@@ -42,6 +42,7 @@
                            weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpDay)
                                ? RsvpType.Day
                                : weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpEvening) ? RsvpType.Evening : RsvpType.None,
+                        RsvpDate = weddingUser.RsvpDate
                    };
         }
 

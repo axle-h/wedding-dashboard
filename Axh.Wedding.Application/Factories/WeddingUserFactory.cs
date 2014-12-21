@@ -25,7 +25,8 @@
                        PhoneNumberConfirmed = user.PhoneNumberConfirmed,
                        SecurityStamp = user.SecurityStamp,
                        UserName = user.UserName,
-                       Roles = user.Roles.Select(this.GetWeddingRole).ToList()
+                       Roles = user.Roles.Select(this.GetWeddingRole).ToList(),
+                       RsvpDate = user.Rsvp == null ? null : user.Rsvp.RsvpDate
                    };
         }
 

@@ -384,4 +384,7 @@ In our long winding journey, as new husband and wife!</value>
   <data name="Thanks" xml:space="preserve">
     <value>Thanks</value>
   </data>
+  <data name="User_RsvpDate" xml:space="preserve">
+    <value>Rsvp</value>
+  </data>
 </root>
