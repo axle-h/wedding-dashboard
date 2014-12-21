@@ -375,4 +375,13 @@ In our long winding journey, as new husband and wife!</value>
   <data name="User_RsvpType_None" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="RsvpPage_Alert_Success" xml:space="preserve">
+    <value>We received your RSVP on</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>Thanks</value>
+  </data>
 </root>

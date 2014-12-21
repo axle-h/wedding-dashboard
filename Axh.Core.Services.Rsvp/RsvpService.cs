@@ -44,12 +44,13 @@
         {
             var existingRsvp = await this.rsvpRepository.GetRsvpByIdAsync(rsvp.Id);
 
+            rsvp.RsvpDate = DateTime.UtcNow;
+
             if (existingRsvp != null)
             {
                 return await this.rsvpRepository.UpdateAsync(rsvp);
             }
 
-            rsvp.RsvpDate = DateTime.UtcNow;
             return await this.rsvpRepository.CreateAsync(rsvp);
         }
     }

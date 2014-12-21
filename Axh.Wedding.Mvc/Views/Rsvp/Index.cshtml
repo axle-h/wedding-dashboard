@@ -3,8 +3,22 @@
 @model RsvpPageViewModel
 
 <div class="container">
+    
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @if (Model.RsvpDate.HasValue)
+            {
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">@Resources.Close</span>
+                    </button>
+
+                    <strong>@Resources.Thanks!</strong>
+                    @Resources.RsvpPage_Alert_Success @Model.RsvpDate.Value.ToString("dd MMMM yyyy")
+                </div>
+            }
+            
             @using (Html.BeginForm(MVC.Rsvp.Index(), FormMethod.Post, new { @class = "form-rsvp" }))
             {
                 @Html.AntiForgeryToken()
@@ -54,15 +68,15 @@
 
 
                                     @Html.DropDownList("null", Model.RsvpResponseLabels.Select(x => new SelectListItem
-                                                                                                    {
-                                                                                                        Text = x.Value,
-                                                                                                        Value = ((int)x.Key).ToString()
-                                                                                                    }),
-                                                                                                    new
-                                                                                                    {
-                                                                                                        @class = "form-control",
-                                                                                                        data_bind = "value: guest.IsAttending, attr: { id: guest.HtmlId + '_IsAttending', name: guest.HtmlName + '.IsAttending' }"
-                                                                                                    })
+                                    {
+                                        Text = x.Value,
+                                        Value = ((int)x.Key).ToString()
+                                    }),
+                                        new
+                                        {
+                                            @class = "form-control",
+                                            data_bind = "value: guest.IsAttending, attr: { id: guest.HtmlId + '_IsAttending', name: guest.HtmlName + '.IsAttending' }"
+                                        })
                                 </div>
                             </div>
 
