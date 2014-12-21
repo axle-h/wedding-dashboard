@@ -14,11 +14,7 @@ namespace Axh.Wedding.Mvc
             var siteStyleBundle = new LessBundle(SiteCssBundleVirtualPath);
             siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.bootstrap_css));
             siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.font_awesome_css));
-            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Global_less));
-            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Account_less));
-            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Rsvp_less));
-            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Admin_less));
-            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.Home_less));
+            siteStyleBundle.Include(VirtualPathUtility.ToAppRelative(Links.Content.SiteLess.WeddingDashboard_less));
             bundles.Add(siteStyleBundle);
 
             var headJsBundle = new ScriptBundle(HeadJsBundleVirtualPath);

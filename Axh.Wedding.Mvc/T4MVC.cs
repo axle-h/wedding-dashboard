@@ -141,6 +141,7 @@ namespace Links
             public static readonly string mixins_less = Url("mixins.less");
             public static readonly string Rsvp_less = Url("Rsvp.less");
             public static readonly string variables_less = Url("variables.less");
+            public static readonly string WeddingDashboard_less = Url("WeddingDashboard.less");
         }
     
     }
