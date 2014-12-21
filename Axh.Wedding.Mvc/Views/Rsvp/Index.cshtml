@@ -90,31 +90,30 @@
                 <div data-bind="foreach: { data: Stories(), as: 'story' }">
                     <fieldset class="margin-bottom">
                         <legend class="form-inline">
-                            <span class="legend-block">
-                                @Html.DropDownList("null", Model.StoryTitleLabels.Select(x => new SelectListItem
-                                                                                                      {
-                                                                                                          Text = x,
-                                                                                                          Value = x
-                                                                                                      }),
-                                                                                                      new
-                                                                                                      {
-                                                                                                          @class = "form-control",
-                                                                                                          data_bind = "value: story.StoryTitle, attr: { id: story.HtmlId + '_StoryTitle', name: story.HtmlName + '.StoryTitle' }"
-                                                                                                      })
-                                @Html.DropDownList("null", Model.WeddingPartyMemberLabels.Select(x => new SelectListItem
-                                                                                                      {
-                                                                                                          Text = x.Value, Value = ((int)x.Key).ToString()
-                                                                                                      }),
-                                                                                                      new
-                                                                                                      {
-                                                                                                          @class = "form-control",
-                                                                                                          data_bind = "value: story.StorySubject, attr: { id: story.HtmlId + '_StorySubject', name: story.HtmlName + '.StorySubject' }"
-                                                                                                      })
-                                <span class="selectable subtle font-small" data-bind="if: story.CanBeRemoved, click: $parent.removeStory">
-                                    (@Resources.Remove)
-                                </span>
-                            </span>
                             
+                            @Html.DropDownList("null", Model.StoryTitleLabels.Select(x => new SelectListItem
+                            {
+                                Text = x,
+                                Value = x
+                            }),
+                                new
+                                {
+                                    @class = "form-control",
+                                    data_bind = "value: story.StoryTitle, attr: { id: story.HtmlId + '_StoryTitle', name: story.HtmlName + '.StoryTitle' }"
+                                })
+                            @Html.DropDownList("null", Model.WeddingPartyMemberLabels.Select(x => new SelectListItem
+                            {
+                                Text = x.Value,
+                                Value = ((int)x.Key).ToString()
+                            }),
+                                new
+                                {
+                                    @class = "form-control",
+                                    data_bind = "value: story.StorySubject, attr: { id: story.HtmlId + '_StorySubject', name: story.HtmlName + '.StorySubject' }"
+                                })
+                            <span class="selectable subtle font-small" data-bind="if: story.CanBeRemoved, click: $parent.removeStory">
+                                (@Resources.Remove)
+                            </span>
                         </legend>
                         
                         <input type="hidden" data-bind="value: story.StoryId, attr: { id: story.HtmlId + '_Id', name: story.HtmlName + '.Id' }" />

@@ -335,11 +335,23 @@ footer {
 {
     legend.form-inline
     {
-        span.legend-block
+        display: block;
+        padding-bottom: @margin-small;
+
+        select, span
         {
-            display: block;
-            margin-bottom: 5px;
+            margin-bottom: @margin-small;         
         }
+
+        @media only screen and (min-width: 768px)
+        {
+            padding-bottom: @margin-tiny;
+            select, span
+            {
+                margin-bottom: @margin-tiny;
+            }
+        }
+        
     }
 }
 
@@ -396,19 +408,19 @@ footer {
     }
 }
 
-.display-inline
-{
-    display: inline;
-    padding-left: 0;
-    padding-right: 0;
-}
-
 .form-signin-bg
 {
     color: white;
     background-color: @black-transparent-40;
     max-width: 330px;
     margin: 0 auto;
+}
+
+.display-inline
+{
+    display: inline;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .circle-image
