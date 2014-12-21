@@ -119,6 +119,8 @@ namespace Links
             public static readonly string bride_and_groom_jpg = Url("bride-and-groom.jpg");
             public static readonly string bride_jpg = Url("bride.jpg");
             public static readonly string contact_bg_jpg = Url("contact_bg.jpg");
+            public static readonly string favicon_ico = Url("favicon.ico");
+            public static readonly string favicon_png = Url("favicon.png");
             public static readonly string groom_jpg = Url("groom.jpg");
             public static readonly string home_bg_jpg = Url("home-bg.jpg");
             public static readonly string honeymoon_poem_1_jpg = Url("honeymoon-poem-1.jpg");

@@ -177,6 +177,8 @@
     <Content Include="Content\Images\bride-and-groom.jpg" />
     <Content Include="Content\Images\bride.jpg" />
     <Content Include="Content\Images\contact_bg.jpg" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\favicon.png" />
     <Content Include="Content\Images\groom.jpg" />
     <Content Include="Content\Images\home-bg.jpg" />
     <Content Include="Content\Images\honeymoon-poem-1.jpg" />
