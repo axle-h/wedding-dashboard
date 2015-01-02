@@ -514,7 +514,7 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you’ve got 2 minutes and some interesting or funny stories about anyone in the wedding party then we’d love for you to sign our guestbook. Why not eh? I’ll probably pass on some stuff to Will for his speech, otherwise we might make a digital guestbook..
+        ///   Looks up a localized string similar to If you’ve got 2 minutes and some interesting or funny stories about anyone in the wedding party then we’d love for you to sign our guestbook. Why not eh?.
         /// </summary>
         public static string Rsvp_PleaseAddStory {
             get {
