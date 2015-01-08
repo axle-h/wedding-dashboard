@@ -66,8 +66,11 @@
 
             weddingUser.UserName = model.UserName;
 
-            var passwordHash = this.passwordHasher.HashPassword(model.Password);
-            await this.weddingUserService.SetPasswordHashAsync(weddingUser, passwordHash);
+            if (!string.IsNullOrEmpty(model.Password))
+            {
+                var passwordHash = this.passwordHasher.HashPassword(model.Password);
+                await this.weddingUserService.SetPasswordHashAsync(weddingUser, passwordHash);
+            }
 
             await this.EditRole(model.IsAdmin, weddingUser, WeddingRoleNames.Admin);
             await this.EditRole(model.RsvpType == RsvpType.Day, weddingUser, WeddingRoleNames.RsvpDay);
@@ -79,18 +82,18 @@
 
         private async Task<bool> EditRole(bool isInRole, WeddingUser weddingUser, string roleName)
         {
-            if (isInRole == await this.weddingUserService.IsInRoleAsync(weddingUser, WeddingRoleNames.Admin))
+            if (isInRole == await this.weddingUserService.IsInRoleAsync(weddingUser, roleName))
             {
                 return true;
             }
 
             if (isInRole)
             {
-                await this.weddingUserService.AddToRoleAsync(weddingUser, WeddingRoleNames.Admin);
+                await this.weddingUserService.AddToRoleAsync(weddingUser, roleName);
             }
             else
             {
-                await this.weddingUserService.RemoveFromRoleAsync(weddingUser, WeddingRoleNames.Admin);
+                await this.weddingUserService.RemoveFromRoleAsync(weddingUser, roleName);
             }
 
             return true;

@@ -12,5 +12,9 @@
         WeddingRole GetWeddingRole(Role role);
 
         Role GetRole(WeddingRole role);
+
+        WeddingGuest GetWeddingGuest(Guest guest);
+
+        Guest GetGuest(WeddingGuest guest);
     }
 }

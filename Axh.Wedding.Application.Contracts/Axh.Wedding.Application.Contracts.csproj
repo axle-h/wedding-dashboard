@@ -45,6 +45,7 @@
     <Compile Include="Config\IWeddingConfig.cs" />
     <Compile Include="Factories\IWeddingUserFactory.cs" />
     <Compile Include="Helpers\IWeddingUrlHelper.cs" />
+    <Compile Include="Models\Account\WeddingGuest.cs" />
     <Compile Include="Models\Account\WeddingRoleNames.cs" />
     <Compile Include="Models\Account\WeddingUser.cs" />
     <Compile Include="Models\Account\WeddingRole.cs" />
@@ -61,6 +62,10 @@
     <Compile Include="ViewModelServices\Rsvp\IRsvpViewModelService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Axh.Core.Common\Axh.Core.Common.csproj">
+      <Project>{859ADF85-F832-490F-90DF-3819A1A28FB7}</Project>
+      <Name>Axh.Core.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Axh.Core.DomainModels\Axh.Core.DomainModels.csproj">
       <Project>{83cd54fb-3eb0-4631-810d-7064905034eb}</Project>
       <Name>Axh.Core.DomainModels</Name>

@@ -26,7 +26,8 @@
                        SecurityStamp = user.SecurityStamp,
                        UserName = user.UserName,
                        Roles = user.Roles.Select(this.GetWeddingRole).ToList(),
-                       RsvpDate = user.Rsvp == null ? null : user.Rsvp.RsvpDate
+                       RsvpDate = user.Rsvp == null ? null : user.Rsvp.RsvpDate,
+                       Guests = user.Guests.Select(this.GetWeddingGuest).ToList()
                    };
         }
 
@@ -47,7 +48,8 @@
                        PhoneNumberConfirmed = user.PhoneNumberConfirmed,
                        SecurityStamp = user.SecurityStamp,
                        UserName = user.UserName,
-                       Roles = user.Roles.Select(this.GetRole).ToList()
+                       Roles = user.Roles.Select(this.GetRole).ToList(),
+                       Guests = user.Guests.Select(this.GetGuest).ToList()
                    };
         }
 
@@ -59,6 +61,16 @@
         public Role GetRole(WeddingRole role)
         {
             return role == null ? null : new Role { Id = role.Id, RoleName = role.RoleName };
+        }
+
+        public WeddingGuest GetWeddingGuest(Guest guest)
+        {
+            return guest == null ? null : new WeddingGuest { Id = guest.Id, FirstName = guest.FirstName, Surname = guest.Surname, GuestType = guest.GuestType };
+        }
+
+        public Guest GetGuest(WeddingGuest guest)
+        {
+            return guest == null ? null : new Guest { Id = guest.Id, FirstName = guest.FirstName, Surname = guest.Surname, GuestType = guest.GuestType };
         }
     }
 }

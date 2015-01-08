@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Axh.Core.DbContexts.Contracts.Activators;
@@ -26,12 +27,56 @@
             return await this.SaveAsync(context);
         }
 
-        public async Task<bool> UpdateAsync(User user)
+        public async Task<bool> UpdateAsync(User request)
         {
             var context = this.DbContext;
-            context.Users.Attach(user);
+
+            var user = context.Users.FirstOrDefault(x => x.Id == request.Id);
+
+            if (user == null)
+            {
+                return false;
+            }
+
+            if (request.UserName != null)
+            {
+                user.UserName = request.UserName;
+            }
+
+            if (request.PasswordHash != null)
+            {
+                user.PasswordHash = request.PasswordHash;
+            }
+
+            if (request.SecurityStamp != null)
+            {
+                user.SecurityStamp = request.SecurityStamp;
+            }
+
+            if (request.Email != null)
+            {
+                user.Email = request.Email;
+            }
+
+            user.EmailConfirmed = request.EmailConfirmed;
+
+            if (request.PhoneNumber != null)
+            {
+                user.PhoneNumber = request.PhoneNumber;
+            }
+
+            user.PhoneNumberConfirmed = request.PhoneNumberConfirmed;
+
+            Crud(user.Roles, request.Roles, r => r.Id, (r, rr) => { });
+            Crud(user.Guests, request.Guests, r => r.Id,
+                (g, gg) =>
+                {
+                    g.FirstName = gg.FirstName;
+                    g.Surname = gg.Surname;
+                    g.GuestType = gg.GuestType;
+                });
+            
             context.Entry(user).State = EntityState.Modified;
-            context.Configuration.ValidateOnSaveEnabled = false;
             return await this.SaveAsync(context);
         }
 

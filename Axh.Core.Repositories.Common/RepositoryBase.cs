@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Repositories.Common
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Validation;
     using System.Linq;
@@ -60,6 +61,31 @@
 
                 // Throw a new DbEntityValidationException with the improved exception message.
                 throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors, ex);
+            }
+        }
+
+        protected void Crud<TEntity, TKey>(ICollection<TEntity> dbEntities, ICollection<TEntity> requestEntities, Func<TEntity, TKey> keySelector, Action<TEntity, TEntity> updateAction)
+        {
+            var merge = dbEntities.GroupJoin(requestEntities, keySelector, keySelector, (r, rr) => new { DbEntity = r, RequestEntity = rr.FirstOrDefault() }).ToArray();
+            var reverseMerge = requestEntities.GroupJoin(dbEntities, keySelector, keySelector, (rr, r) => new { DbEntity = r.FirstOrDefault(), RequestEntity = rr }).ToArray();
+
+            // Add and update
+            foreach (var match in reverseMerge)
+            {
+                if (match.DbEntity == null)
+                {
+                    dbEntities.Add(match.RequestEntity);
+                }
+                else
+                {
+                    updateAction(match.DbEntity, match.RequestEntity);
+                }
+            }
+            
+            // Remove
+            foreach (var match in merge.Where(x => x.RequestEntity == null))
+            {
+                dbEntities.Remove(match.DbEntity);
             }
         }
 

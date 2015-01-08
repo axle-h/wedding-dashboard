@@ -39,38 +39,30 @@
 
             attachedRsvp.RsvpDate = rsvp.RsvpDate;
 
-            // Added guests cab't be removed so we do this in one merge.
-            foreach (var match in rsvp.Guests.GroupJoin(attachedRsvp.Guests, n => n.Id, g => g.Id, (n, g) => new { UpdatedGuest = n, ExistingGuest = g.FirstOrDefault() }))
-            {
-                if (match.ExistingGuest == null)
+            Crud(
+                attachedRsvp.Guests,
+                rsvp.Guests,
+                g => g.Id,
+                (g, gg) =>
                 {
-                    attachedRsvp.Guests.Add(match.UpdatedGuest);
-                }
-                else
-                {
-                    match.ExistingGuest.FirstName = match.UpdatedGuest.FirstName;
-                    match.ExistingGuest.Surname = match.UpdatedGuest.Surname;
-                    match.ExistingGuest.IsAttending = match.UpdatedGuest.IsAttending;
-                    match.ExistingGuest.DietaryRequirements = match.UpdatedGuest.DietaryRequirements;
-                    match.ExistingGuest.GuestType = match.UpdatedGuest.GuestType;
-                }
-            }
+                    g.FirstName = gg.FirstName;
+                    g.Surname = gg.Surname;
+                    g.IsAttending = gg.IsAttending;
+                    g.DietaryRequirements = gg.DietaryRequirements;
+                    g.GuestType = gg.GuestType;
+                });
 
-            // Added stories cab't be removed so we do this in one merge.
-            foreach (var match in rsvp.Stories.GroupJoin(attachedRsvp.Stories, n => n.Id, s => s.Id, (n, s) => new { UpdatedStory = n, ExistingStory = s.FirstOrDefault() }))
-            {
-                if (match.ExistingStory == null)
+            Crud(
+                attachedRsvp.Stories,
+                rsvp.Stories,
+                s => s.Id,
+                (s, ss) =>
                 {
-                    attachedRsvp.Stories.Add(match.UpdatedStory);
-                }
-                else
-                {
-                    match.ExistingStory.StoryBody = match.UpdatedStory.StoryBody;
-                    match.ExistingStory.StorySubject = match.UpdatedStory.StorySubject;
-                    match.ExistingStory.StoryTitle = match.UpdatedStory.StoryTitle;
-                }
-            }
-
+                    s.StoryBody = ss.StoryBody;
+                    s.StorySubject = ss.StorySubject;
+                    s.StoryTitle = ss.StoryTitle;
+                });
+            
             context.Entry(attachedRsvp).State = EntityState.Modified;
             return await this.SaveAsync(context);
         }

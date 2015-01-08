@@ -25,6 +25,8 @@
 
         public ICollection<WeddingRole> Roles { get; set; }
 
+        public ICollection<WeddingGuest> Guests { get; set; }
+
         public DateTime? RsvpDate { get; set; }
     }
 }
