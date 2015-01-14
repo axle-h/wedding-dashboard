@@ -1,6 +1,8 @@
 ﻿namespace Axh.Wedding.Application.ViewModelFactories.Account
 {
     using System.Linq;
+
+    using Axh.Core.DomainModels.Accounts;
     using Axh.Wedding.Application.Contracts.Helpers;
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.ViewModelFactories;
@@ -44,6 +46,21 @@
                                : weddingUser.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpEvening) ? RsvpType.Evening : RsvpType.None,
                         RsvpDate = weddingUser.RsvpDate
                    };
+        }
+
+        public UserViewModel GetUserViewModel(User user)
+        {
+            return new UserViewModel
+            {
+                UserId = user.Id,
+                IsAdmin = user.Roles.Any(x => x.RoleName == WeddingRoleNames.Admin),
+                UserName = user.UserName,
+                RsvpType =
+                    user.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpDay)
+                        ? RsvpType.Day
+                        : user.Roles.Any(x => x.RoleName == WeddingRoleNames.RsvpEvening) ? RsvpType.Evening : RsvpType.None,
+                RsvpDate = user.Rsvp == null ? null : user.Rsvp.RsvpDate
+            };
         }
 
         private LoginPageViewModel PrepareLoginPageViewModel(LoginPageViewModel model)

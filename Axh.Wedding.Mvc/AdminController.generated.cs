@@ -68,6 +68,13 @@ namespace Axh.Wedding.Mvc.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteUser);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Rsvp()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Rsvp);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AdminController Actions { get { return MVC.Admin; } }
@@ -87,6 +94,7 @@ namespace Axh.Wedding.Mvc.Controllers
             public readonly string Index = "Index";
             public readonly string EditUser = "EditUser";
             public readonly string DeleteUser = "DeleteUser";
+            public readonly string Rsvp = "Rsvp";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -95,6 +103,7 @@ namespace Axh.Wedding.Mvc.Controllers
             public const string Index = "Index";
             public const string EditUser = "EditUser";
             public const string DeleteUser = "DeleteUser";
+            public const string Rsvp = "Rsvp";
         }
 
 
@@ -115,6 +124,14 @@ namespace Axh.Wedding.Mvc.Controllers
         {
             public readonly string userId = "userId";
         }
+        static readonly ActionParamsClass_Rsvp s_params_Rsvp = new ActionParamsClass_Rsvp();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Rsvp RsvpParams { get { return s_params_Rsvp; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Rsvp
+        {
+            public readonly string userId = "userId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -127,9 +144,11 @@ namespace Axh.Wedding.Mvc.Controllers
             {
                 public readonly string EditUser = "EditUser";
                 public readonly string Index = "Index";
+                public readonly string Rsvp = "Rsvp";
             }
             public readonly string EditUser = "~/Views/Admin/EditUser.cshtml";
             public readonly string Index = "~/Views/Admin/Index.cshtml";
+            public readonly string Rsvp = "~/Views/Admin/Rsvp.cshtml";
         }
     }
 
@@ -182,6 +201,18 @@ namespace Axh.Wedding.Mvc.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteUser);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             DeleteUserOverride(callInfo, userId);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void RsvpOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, System.Guid userId);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Rsvp(System.Guid userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Rsvp);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            RsvpOverride(callInfo, userId);
             return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 

@@ -387,4 +387,13 @@ In our long winding journey, as new husband and wife!</value>
   <data name="User_RsvpDate" xml:space="preserve">
     <value>Rsvp</value>
   </data>
+  <data name="RsvpResponse" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="GuestType" xml:space="preserve">
+    <value>Guest Type</value>
+  </data>
+  <data name="DietaryRequirements" xml:space="preserve">
+    <value>Dietary Requirements</value>
+  </data>
 </root>

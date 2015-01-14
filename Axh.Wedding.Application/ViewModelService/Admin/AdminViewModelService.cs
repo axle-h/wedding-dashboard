@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    using Axh.Core.Services.Rsvp.Contracts;
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.Contracts.Services;
     using Axh.Wedding.Application.Contracts.ViewModelFactories.Admin;
@@ -21,10 +22,13 @@
 
         private readonly IPasswordHasher passwordHasher;
 
-        public AdminViewModelService(IAdminViewModelFactory adminViewModelFactory, IWeddingUserService weddingUserService, UserManager<WeddingUser, Guid> userManager)
+        private readonly IRsvpService rsvpService;
+
+        public AdminViewModelService(IAdminViewModelFactory adminViewModelFactory, IWeddingUserService weddingUserService, UserManager<WeddingUser, Guid> userManager, IRsvpService rsvpService)
         {
             this.adminViewModelFactory = adminViewModelFactory;
             this.weddingUserService = weddingUserService;
+            this.rsvpService = rsvpService;
             this.passwordHasher = userManager.PasswordHasher;
         }
 
@@ -78,6 +82,13 @@
 
             await this.weddingUserService.UpdateAsync(weddingUser);
             return true;
+        }
+
+        public async Task<AdminRsvpPageViewModel> GetAdminRsvpPageViewModel(UserViewModel user, Guid userId)
+        {
+            var rsvp = await this.rsvpService.GetRsvpByUserIdAsync(userId);
+
+            return this.adminViewModelFactory.GetAdminRsvpPageViewModel(user, rsvp);
         }
 
         private async Task<bool> EditRole(bool isInRole, WeddingUser weddingUser, string roleName)

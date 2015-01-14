@@ -127,6 +127,11 @@
 
         private static GuestViewModel GetGuestViewModel(RsvpGuest guest)
         {
+            if (guest == null)
+            {
+                return null;
+            }
+
             return new GuestViewModel
                    {
                        Id = guest.Id,
@@ -138,22 +143,22 @@
                    };
         }
 
+        private static StoryViewModel GetStoryViewModel(RsvpStory rsvpStory)
+        {
+            return rsvpStory == null ? null : new StoryViewModel { Id = rsvpStory.Id, StoryTitle = rsvpStory.StoryTitle, StoryBody = rsvpStory.StoryBody, StorySubject = rsvpStory.StorySubject };
+        }
+
         private static RsvpGuest GetGuest(GuestViewModel guest)
         {
             return new RsvpGuest
-                   {
-                       Id = guest.Id ?? Guid.NewGuid(),
-                       FirstName = guest.FirstName,
-                       Surname = guest.Surname,
-                       IsAttending = guest.IsAttending == RsvpResponse.Yes,
-                       DietaryRequirements = guest.DietaryRequirements,
-                       GuestType = guest.GuestType
-                   };
-        }
-
-        private static StoryViewModel GetStoryViewModel(RsvpStory rsvpStory)
-        {
-            return new StoryViewModel { Id = rsvpStory.Id, StoryTitle = rsvpStory.StoryTitle, StoryBody = rsvpStory.StoryBody, StorySubject = rsvpStory.StorySubject };
+            {
+                Id = guest.Id ?? Guid.NewGuid(),
+                FirstName = guest.FirstName,
+                Surname = guest.Surname,
+                IsAttending = guest.IsAttending == RsvpResponse.Yes,
+                DietaryRequirements = guest.DietaryRequirements,
+                GuestType = guest.GuestType
+            };
         }
 
         private static RsvpStory GetStory(StoryViewModel rsvpStory)

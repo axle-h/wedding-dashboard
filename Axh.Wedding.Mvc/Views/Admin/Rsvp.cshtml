@@ -1,0 +1,63 @@
+﻿@using Axh.Wedding.Mvc.Infrastructure.Helpers
+@using Axh.Wedding.Resources
+@model Axh.Wedding.Application.ViewModels.Admin.AdminRsvpPageViewModel
+
+
+
+<div class="container">
+    <h3>@Model.RsvpUser.RsvpDate - @Model.RsvpUser.UserName</h3>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Resources.FirstName
+                </th>
+                <th>
+                    @Resources.Surname
+                </th>
+                <th>
+                    @Resources.RsvpResponse
+                </th>
+                <th>
+                    @Resources.DietaryRequirements
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var guest in Model.Guests)
+                {
+                    <tr>
+                        <td>
+                            @guest.FirstName
+                        </td>
+                        <td>
+                            @guest.Surname
+                        </td>
+                        <td>
+                            @Model.RsvpResponseLabels[guest.IsAttending]
+                        </td>
+                        <td>
+                            @guest.DietaryRequirements
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    @foreach (var story in Model.Stories)
+    {
+        <h3>
+            @Html.Raw(story.StoryTitle)
+            @Html.Raw(Model.WeddingPartyMemberLabels[story.StorySubject])
+        </h3>
+
+        <p>
+            @story.StoryBody
+        </p>
+    }
+
+</div>

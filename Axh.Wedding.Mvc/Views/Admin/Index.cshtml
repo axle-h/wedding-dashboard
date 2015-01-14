@@ -1,5 +1,4 @@
-﻿@using Axh.Wedding.Application.ViewModels.Account
-@using Axh.Wedding.Application.ViewModels.Admin
+﻿@using Axh.Wedding.Application.ViewModels.Admin
 @using Axh.Wedding.Mvc.Infrastructure.Helpers
 @using Axh.Wedding.Resources
 @model AdminPageViewModel
@@ -17,10 +16,10 @@
                         @Resources.User_RsvpType
                     </th>
                     <th>
-                        @Resources.User_IsAdmin
+                        @Resources.User_RsvpDate
                     </th>
                     <th>
-                        @Resources.User_RsvpDate
+                        @Resources.User_IsAdmin
                     </th>
                     <th>
                         @Resources.AdminPage_Actions
@@ -38,10 +37,10 @@
                         @Html.GetDisplayValue(user.RsvpType)
                     </td>
                     <td>
-                        @user.IsAdmin
+                        @(user.RsvpDate == null ? Html.Raw("N/A") : Html.ActionLink(user.RsvpDate.ToString(), MVC.Admin.Rsvp(user.UserId)))
                     </td>
                     <td>
-                        @(user.RsvpDate == null ? "N/A" : user.RsvpDate.ToString())
+                        @user.IsAdmin
                     </td>
                     <td>
                         @Html.ActionLink(Resources.AdminPage_Edit, MVC.Admin.EditUser(user.UserId)) |

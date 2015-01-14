@@ -14,5 +14,7 @@
         Task<bool> DeleteUser(Guid userId);
 
         Task<bool> EditUser(EditUserPageViewModel model);
+
+        Task<AdminRsvpPageViewModel> GetAdminRsvpPageViewModel(UserViewModel user, Guid userId);
     }
 }

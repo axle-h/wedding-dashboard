@@ -187,6 +187,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dietary Requirements.
+        /// </summary>
+        public static string DietaryRequirements {
+            get {
+                return ResourceManager.GetString("DietaryRequirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First name.
         /// </summary>
         public static string FirstName {
@@ -201,6 +210,15 @@ namespace Axh.Wedding.Resources {
         public static string Guest {
             get {
                 return ResourceManager.GetString("Guest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guest Type.
+        /// </summary>
+        public static string GuestType {
+            get {
+                return ResourceManager.GetString("GuestType", resourceCulture);
             }
         }
         
@@ -618,6 +636,15 @@ namespace Axh.Wedding.Resources {
         public static string RsvpPage_Title {
             get {
                 return ResourceManager.GetString("RsvpPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response.
+        /// </summary>
+        public static string RsvpResponse {
+            get {
+                return ResourceManager.GetString("RsvpResponse", resourceCulture);
             }
         }
         

@@ -1,5 +1,6 @@
 namespace Axh.Wedding.Application.Contracts.ViewModelFactories.Account
 {
+    using Axh.Core.DomainModels.Accounts;
     using Axh.Wedding.Application.Contracts.Models.Account;
     using Axh.Wedding.Application.ViewModels.Account;
 
@@ -9,5 +10,7 @@ namespace Axh.Wedding.Application.Contracts.ViewModelFactories.Account
 
         LoginPageViewModel GetLoginViewModel(LoginPageViewModel loginPageViewModel);
         UserViewModel GetUserViewModel(WeddingUser weddingUser);
+
+        UserViewModel GetUserViewModel(User user);
     }
 }

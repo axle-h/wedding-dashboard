@@ -45,5 +45,12 @@
             await this.adminViewModelService.DeleteUser(userId);
             return RedirectToAction(MVC.Admin.Index());
         }
+
+        public virtual async Task<ActionResult> Rsvp(Guid userId)
+        {
+            var user = this.GetCurrentUser();
+            var model = await this.adminViewModelService.GetAdminRsvpPageViewModel(user, userId);
+            return View(model);
+        }
     }
 }
