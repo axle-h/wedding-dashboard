@@ -35,8 +35,9 @@
         public async Task<AdminPageViewModel> GetAdminPageViewModel(UserViewModel user)
         {
             var users = await this.weddingUserService.GetAllWeddingUsersAsync();
+            var rsvps = await this.rsvpService.GetAllRsvpsAsync();
 
-            return this.adminViewModelFactory.GetAdminPageViewModel(user, users);
+            return this.adminViewModelFactory.GetAdminPageViewModel(user, users, rsvps);
         }
 
         public async Task<EditUserPageViewModel> GetEditUserPageViewModel(UserViewModel user, Guid userId)

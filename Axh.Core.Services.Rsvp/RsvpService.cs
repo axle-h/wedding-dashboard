@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Services.Rsvp
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -52,6 +53,11 @@
             }
 
             return await this.rsvpRepository.CreateAsync(rsvp);
+        }
+
+        public async Task<IList<Rsvp>> GetAllRsvpsAsync()
+        {
+            return await this.rsvpRepository.GetAllRsvpsAsync();
         }
     }
 }

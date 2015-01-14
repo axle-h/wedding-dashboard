@@ -1,6 +1,7 @@
 ﻿namespace Axh.Core.Repositories.Wedding
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
     using System.Threading.Tasks;
@@ -72,6 +73,13 @@
             var context = this.DbContext;
             context.Rsvps.Add(rsvp);
             return await this.SaveAsync(context);
+        }
+
+        public async Task<IList<Rsvp>> GetAllRsvpsAsync()
+        {
+            var context = this.DbContext;
+
+            return await context.Rsvps.Where(x => x.RsvpDate.HasValue).ToListAsync();
         }
     }
 }

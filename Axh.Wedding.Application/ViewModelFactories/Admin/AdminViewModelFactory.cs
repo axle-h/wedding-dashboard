@@ -35,9 +35,23 @@
             this.rsvpViewModelFactory = rsvpViewModelFactory;
         }
 
-        public AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users)
+        public AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users, IList<Rsvp> rsvps)
         {
-            var model = new AdminPageViewModel { Users = users.Select(this.accountViewModelFactory.GetUserViewModel) };
+            var userViewModels = users.Select(x => new { ViewModel = this.accountViewModelFactory.GetUserViewModel(x), User = x }).ToArray();
+            var merged = userViewModels.GroupJoin(rsvps, u => u.ViewModel.UserId, r => r.Id, (u, r) => new { u.User, u.ViewModel, Rsvp = r.FirstOrDefault() }).ToArray();
+
+            var invited = merged.SelectMany(x => x.User.Guests.Select(y => new { x.ViewModel.RsvpType, Guest = y })).GroupBy(x => x.RsvpType).ToDictionary(grp => grp.Key, grp => grp.Count());
+            var rsvpGuestsByType = merged.Where(x => x.Rsvp != null).SelectMany(x => x.Rsvp.Guests.Select(y => new { x.ViewModel.RsvpType, Guest = y })).GroupBy(x => x.RsvpType).ToArray();
+
+            var model = new AdminPageViewModel
+                        {
+                            Users = userViewModels.Select(x => x.ViewModel),
+                            Invited = invited,
+                            Attending = rsvpGuestsByType.ToDictionary(x => x.Key, x => x.Count(y => y.Guest.IsAttending)),
+                            NotAttending = rsvpGuestsByType.ToDictionary(x => x.Key, x => x.Count(y => !y.Guest.IsAttending))
+                        };
+
+            model.Responded = model.Invited.Keys.ToDictionary(x => x, x => (model.Attending.ContainsKey(x) ? model.Attending[x] : 0) + (model.NotAttending.ContainsKey(x) ? model.NotAttending[x] : 0));
 
             return PrepareAdminPageViewModel(user, model);
         }

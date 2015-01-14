@@ -396,4 +396,25 @@ In our long winding journey, as new husband and wife!</value>
   <data name="DietaryRequirements" xml:space="preserve">
     <value>Dietary Requirements</value>
   </data>
+  <data name="AdminPage_Attending" xml:space="preserve">
+    <value>Attending</value>
+  </data>
+  <data name="AdminPage_Invited" xml:space="preserve">
+    <value>Invited</value>
+  </data>
+  <data name="AdminPage_NotAttending" xml:space="preserve">
+    <value>Not Attending</value>
+  </data>
+  <data name="AdminPage_Responded" xml:space="preserve">
+    <value>Responded</value>
+  </data>
+  <data name="AdminPage_Rsvps" xml:space="preserve">
+    <value>Rsvps</value>
+  </data>
+  <data name="AdminPage_Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="AdminPage_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
 </root>

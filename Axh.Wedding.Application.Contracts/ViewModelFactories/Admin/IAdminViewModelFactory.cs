@@ -10,7 +10,7 @@
 
     public interface IAdminViewModelFactory
     {
-        AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users);
+        AdminPageViewModel GetAdminPageViewModel(UserViewModel user, IEnumerable<WeddingUser> users, IList<Rsvp> rsvps);
 
         EditUserPageViewModel GetEditUserPageViewModel(UserViewModel user, WeddingUser weddingUser);
 

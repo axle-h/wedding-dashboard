@@ -5,26 +5,97 @@
 
 
 <div class="container">
+
+    <h3>@Resources.AdminPage_Summary</h3>
     <div class="table-responsive">
         <table class="table">
+
             <thead>
                 <tr>
                     <th>
-                        @Resources.User_UserName
+                        @Resources.AdminPage_Type
                     </th>
                     <th>
-                        @Resources.User_RsvpType
+                        @Resources.AdminPage_Invited
                     </th>
                     <th>
-                        @Resources.User_RsvpDate
+                        @Resources.AdminPage_Responded
                     </th>
                     <th>
-                        @Resources.User_IsAdmin
+                        @Resources.AdminPage_Attending
                     </th>
                     <th>
-                        @Resources.AdminPage_Actions
+                        @Resources.AdminPage_NotAttending
                     </th>
                 </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var type in Model.Invited.Keys)
+                {
+                    <tr>
+                        <td>
+                            @Html.GetDisplayValue(type)
+                        </td>
+                        <td>
+                            @(Model.Invited.ContainsKey(type) ? Model.Invited[type] : 0)
+                        </td>
+                        <td>
+                            @(Model.Responded.ContainsKey(type) ? Model.Responded[type] : 0)
+                        </td>
+                        <td>
+                            @(Model.Attending.ContainsKey(type) ? Model.Attending[type] : 0)
+                        </td>
+                        <td>
+                            @(Model.NotAttending.ContainsKey(type) ? Model.NotAttending[type] : 0)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td>
+                        Total
+                    </td>
+                    <td>
+                        @Model.TotalInvited
+                    </td>
+                    <td>
+                        @Model.TotalResponded (@Math.Round((double)Model.TotalResponded / Model.TotalInvited, 2)%)
+                    </td>
+                    <td>
+                        @Model.TotalAttending (@Math.Round((double)Model.TotalAttending / Model.TotalInvited, 2)%)
+                    </td>
+                    <td>
+                        @Model.TotalNotAttending (@Math.Round((double)Model.TotalNotAttending / Model.TotalInvited, 2)%)
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <h3>@Resources.AdminPage_Rsvps</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Resources.User_UserName
+                </th>
+                <th>
+                    @Resources.User_RsvpType
+                </th>
+                <th>
+                    @Resources.User_RsvpDate
+                </th>
+                <th>
+                    @Resources.User_IsAdmin
+                </th>
+                <th>
+                    @Resources.AdminPage_Actions
+                </th>
+            </tr>
             </thead>
             <tbody></tbody>
             @foreach (var user in Model.Users)
@@ -53,4 +124,5 @@
             }
         </table>
     </div>
+
 </div>

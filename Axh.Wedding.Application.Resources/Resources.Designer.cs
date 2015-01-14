@@ -97,6 +97,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attending.
+        /// </summary>
+        public static string AdminPage_Attending {
+            get {
+                return ResourceManager.GetString("AdminPage_Attending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string AdminPage_Delete {
@@ -115,6 +124,15 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invited.
+        /// </summary>
+        public static string AdminPage_Invited {
+            get {
+                return ResourceManager.GetString("AdminPage_Invited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to admin.
         /// </summary>
         public static string AdminPage_Link {
@@ -124,11 +142,56 @@ namespace Axh.Wedding.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not Attending.
+        /// </summary>
+        public static string AdminPage_NotAttending {
+            get {
+                return ResourceManager.GetString("AdminPage_NotAttending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Responded.
+        /// </summary>
+        public static string AdminPage_Responded {
+            get {
+                return ResourceManager.GetString("AdminPage_Responded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rsvps.
+        /// </summary>
+        public static string AdminPage_Rsvps {
+            get {
+                return ResourceManager.GetString("AdminPage_Rsvps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        public static string AdminPage_Summary {
+            get {
+                return ResourceManager.GetString("AdminPage_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Administration.
         /// </summary>
         public static string AdminPage_Title {
             get {
                 return ResourceManager.GetString("AdminPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string AdminPage_Type {
+            get {
+                return ResourceManager.GetString("AdminPage_Type", resourceCulture);
             }
         }
         
